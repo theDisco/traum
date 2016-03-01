@@ -1,0 +1,23 @@
+{
+    "name": "aferalabs/traum",
+    "description": "traum-ferienwohnungen.de API client",
+    "require": {
+        "guzzlehttp/guzzle": "^6.1",
+        "league/fractal": "^0.13.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^4.8",
+        "dshafik/guzzlehttp-vcr": "dev-master"
+    },
+    "authors": [
+        {
+            "name": "Wojtek Gancarczyk",
+            "email": "gancarczyk@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Traum\\": "src/"
+        }
+    }
+}

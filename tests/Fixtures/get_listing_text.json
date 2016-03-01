@@ -1,0 +1,31 @@
+[
+    {
+        "status": 200,
+        "headers": {
+            "Server": [
+                "nginx"
+            ],
+            "Date": [
+                "Tue, 01 Mar 2016 18:26:07 GMT"
+            ],
+            "Content-Type": [
+                "application\/hal+json"
+            ],
+            "Content-Length": [
+                "888"
+            ],
+            "Connection": [
+                "keep-alive"
+            ],
+            "X-Powered-By": [
+                "PHP\/5.6.18"
+            ],
+            "X-VCR-Recording": [
+                "1456856771"
+            ]
+        },
+        "body": "{\"_links\":{\"self\":{\"href\":\"http:\\\/\\\/clientapi.traum-ferienwohnungen.de\\\/listing\\\/131237\\\/text?page=1\"},\"first\":{\"href\":\"http:\\\/\\\/clientapi.traum-ferienwohnungen.de\\\/listing\\\/131237\\\/text\"},\"last\":{\"href\":\"http:\\\/\\\/clientapi.traum-ferienwohnungen.de\\\/listing\\\/131237\\\/text?page=1\"}},\"_embedded\":{\"text\":[{\"id\":1643144,\"language\":\"DEU\",\"text_type_id\":1,\"text\":\"- Kein Titel -\",\"_links\":{\"self\":{\"href\":\"http:\\\/\\\/clientapi.traum-ferienwohnungen.de\\\/listing\\\/131237\\\/text\\\/1643144\"}}},{\"id\":1646836,\"language\":\"DEU\",\"text_type_id\":8,\"text\":\"was zu tun\",\"_links\":{\"self\":{\"href\":\"http:\\\/\\\/clientapi.traum-ferienwohnungen.de\\\/listing\\\/131237\\\/text\\\/1646836\"}}},{\"id\":1643145,\"language\":\"ENG\",\"text_type_id\":1,\"text\":\"- No title -\",\"_links\":{\"self\":{\"href\":\"http:\\\/\\\/clientapi.traum-ferienwohnungen.de\\\/listing\\\/131237\\\/text\\\/1643145\"}}}]},\"page_count\":1,\"page_size\":25,\"total_items\":3,\"page\":1}",
+        "version": "1.1",
+        "reason": "OK"
+    }
+]
