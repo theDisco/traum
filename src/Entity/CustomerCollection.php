@@ -24,7 +24,7 @@ final class CustomerCollection extends Collection
      * @param array $data
      * @return \Traum\Entity\Customer
      */
-    function createEntity(array $data)
+    protected function createEntity(array $data)
     {
         return new Entity\Customer($data);
     }

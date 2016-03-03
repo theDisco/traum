@@ -17,3 +17,16 @@ function createClient($fixture, array &$container)
 
     return Client::create(['handler' => $stack]);
 }
+
+function compare(\Traum\Entity $entity, $transport, $assertion)
+{
+    $request = json_decode((string) $transport->getBody(), JSON_OBJECT_AS_ARRAY);
+    $assertion->assertEquals($entity->getRawData(), $request);
+}
+
+function fixture($name)
+{
+    $content = file_get_contents(__DIR__ . '/Fixtures/' . $name . '.json');
+
+    return json_decode($content, JSON_OBJECT_AS_ARRAY);
+}

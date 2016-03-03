@@ -55,5 +55,5 @@ abstract class Collection implements \Iterator
      * @param array $data
      * @return \Traum\Entity
      */
-    abstract function createEntity(array $data);
+    abstract protected function createEntity(array $data);
 }

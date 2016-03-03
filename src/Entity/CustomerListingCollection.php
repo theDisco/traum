@@ -22,10 +22,10 @@ final class CustomerListingCollection extends Collection
 
     /**
      * @param array $data
-     * @return \Traum\Entity\Listing
+     * @return \Traum\Entity\CustomerListing
      */
-    function createEntity(array $data)
+    protected function createEntity(array $data)
     {
-        return new Entity\Listing($data);
+        return new Entity\CustomerListing($data);
     }
 }

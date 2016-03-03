@@ -17,9 +17,9 @@ class ListingTest extends \PHPUnit_Framework_TestCase
         $mock = array_shift($history);
 
         $this->assertEquals('POST', $mock['request']->getMethod());
-        $this->assertEquals('/listing/1/text', $mock['request']->getUri());
-        $this->compare($entity, $mock['request']);
-        $this->compare($response, $mock['response']);
+        $this->assertEquals('/listing/1/text', $mock['request']->getUri()->getPath());
+        compare($entity, $mock['request'], $this);
+        compare($response, $mock['response'], $this);
     }
 
     public function testPatchListingText()
@@ -38,9 +38,10 @@ class ListingTest extends \PHPUnit_Framework_TestCase
         $response = $client->createListingResource()->patchText(1, $patch);
         $mock = array_shift($history);
 
-        $this->assertEquals('/listing/1/text/123', $mock['request']->getUri());
-        $this->compare($entity, $mock['request']);
-        $this->compare($response, $mock['response']);
+        $this->assertEquals('PATCH', $mock['request']->getMethod());
+        $this->assertEquals('/listing/1/text/123', $mock['request']->getUri()->getPath());
+        compare($entity, $mock['request'], $this);
+        compare($response, $mock['response'], $this);
     }
 
     public function testDeleteListingText()
@@ -51,13 +52,8 @@ class ListingTest extends \PHPUnit_Framework_TestCase
         $response = $client->createListingResource()->deleteText(1, $entity);
         $mock = array_shift($history);
 
-        $this->assertEquals('/listing/1/text/123', $mock['request']->getUri());
+        $this->assertEquals('DELETE', $mock['request']->getMethod());
+        $this->assertEquals('/listing/1/text/123', $mock['request']->getUri()->getPath());
         $this->assertTrue($response);
-    }
-
-    private function compare(\Traum\Entity $entity, $transport)
-    {
-        $request = json_decode((string) $transport->getBody(), JSON_OBJECT_AS_ARRAY);
-        $this->assertEquals($entity->getRawData(), $request);
     }
 }

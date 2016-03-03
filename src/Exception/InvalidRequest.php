@@ -39,6 +39,14 @@ final class InvalidRequest extends \Exception
     }
 
     /**
+     * @return \stdClass
+     */
+    public function getContent()
+    {
+        return $this->content;
+    }
+
+    /**
      * @param \stdClass $content
      * @return string
      */

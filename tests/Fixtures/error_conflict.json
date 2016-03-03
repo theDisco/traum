@@ -1,0 +1,31 @@
+[
+    {
+        "status": 409,
+        "headers": {
+            "Server": [
+                "nginx"
+            ],
+            "Date": [
+                "Thu, 03 Mar 2016 16:43:18 GMT"
+            ],
+            "Content-Type": [
+                "application\/problem+json"
+            ],
+            "Content-Length": [
+                "148"
+            ],
+            "Connection": [
+                "keep-alive"
+            ],
+            "X-Powered-By": [
+                "PHP\/5.6.18"
+            ],
+            "X-VCR-Recording": [
+                "1457023400"
+            ]
+        },
+        "body": "{\"type\":\"http:\/\/www.w3.org\/Protocols\/rfc2616\/rfc2616-sec10.html\",\"title\":\"Conflict\",\"status\":409,\"detail\":\"Duplicate entry! Customer already used.\"}",
+        "version": "1.1",
+        "reason": "Conflict"
+    }
+]

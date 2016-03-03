@@ -1,0 +1,31 @@
+[
+    {
+        "status": 200,
+        "headers": {
+            "Server": [
+                "nginx"
+            ],
+            "Date": [
+                "Thu, 03 Mar 2016 19:30:40 GMT"
+            ],
+            "Content-Type": [
+                "application\/hal+json"
+            ],
+            "Content-Length": [
+                "4384"
+            ],
+            "Connection": [
+                "keep-alive"
+            ],
+            "X-Powered-By": [
+                "PHP\/5.6.18"
+            ],
+            "X-VCR-Recording": [
+                "1457033442"
+            ]
+        },
+        "body": "{\"_links\":{\"self\":{\"href\":\"http:\\\/\\\/clientapi.traum-ferienwohnungen.de\\\/customer\\\/16300\\\/listing?page=1\"},\"first\":{\"href\":\"http:\\\/\\\/clientapi.traum-ferienwohnungen.de\\\/customer\\\/16300\\\/listing\"},\"last\":{\"href\":\"http:\\\/\\\/clientapi.traum-ferienwohnungen.de\\\/customer\\\/16300\\\/listing?page=3\"},\"next\":{\"href\":\"http:\\\/\\\/clientapi.traum-ferienwohnungen.de\\\/customer\\\/16300\\\/listing?page=2\"}},\"_embedded\":{\"listing\":[{\"id\":12833,\"object_type_id\":25,\"email_type_id\":1,\"_links\":{\"self\":{\"href\":\"http:\\\/\\\/clientapi.traum-ferienwohnungen.de\\\/customer\\\/16300\\\/listing\\\/12833\"}}},{\"id\":19804,\"object_type_id\":25,\"email_type_id\":1,\"_links\":{\"self\":{\"href\":\"http:\\\/\\\/clientapi.traum-ferienwohnungen.de\\\/customer\\\/16300\\\/listing\\\/19804\"}}},{\"id\":31209,\"object_type_id\":9,\"email_type_id\":1,\"_links\":{\"self\":{\"href\":\"http:\\\/\\\/clientapi.traum-ferienwohnungen.de\\\/customer\\\/16300\\\/listing\\\/31209\"}}},{\"id\":40484,\"object_type_id\":25,\"email_type_id\":1,\"_links\":{\"self\":{\"href\":\"http:\\\/\\\/clientapi.traum-ferienwohnungen.de\\\/customer\\\/16300\\\/listing\\\/40484\"}}},{\"id\":43955,\"object_type_id\":9,\"email_type_id\":1,\"_links\":{\"self\":{\"href\":\"http:\\\/\\\/clientapi.traum-ferienwohnungen.de\\\/customer\\\/16300\\\/listing\\\/43955\"}}},{\"id\":44056,\"object_type_id\":9,\"email_type_id\":1,\"_links\":{\"self\":{\"href\":\"http:\\\/\\\/clientapi.traum-ferienwohnungen.de\\\/customer\\\/16300\\\/listing\\\/44056\"}}},{\"id\":44407,\"object_type_id\":9,\"email_type_id\":1,\"_links\":{\"self\":{\"href\":\"http:\\\/\\\/clientapi.traum-ferienwohnungen.de\\\/customer\\\/16300\\\/listing\\\/44407\"}}},{\"id\":45167,\"object_type_id\":12,\"email_type_id\":1,\"_links\":{\"self\":{\"href\":\"http:\\\/\\\/clientapi.traum-ferienwohnungen.de\\\/customer\\\/16300\\\/listing\\\/45167\"}}},{\"id\":49663,\"object_type_id\":9,\"email_type_id\":1,\"_links\":{\"self\":{\"href\":\"http:\\\/\\\/clientapi.traum-ferienwohnungen.de\\\/customer\\\/16300\\\/listing\\\/49663\"}}},{\"id\":53245,\"object_type_id\":12,\"email_type_id\":1,\"_links\":{\"self\":{\"href\":\"http:\\\/\\\/clientapi.traum-ferienwohnungen.de\\\/customer\\\/16300\\\/listing\\\/53245\"}}},{\"id\":62159,\"object_type_id\":9,\"email_type_id\":1,\"_links\":{\"self\":{\"href\":\"http:\\\/\\\/clientapi.traum-ferienwohnungen.de\\\/customer\\\/16300\\\/listing\\\/62159\"}}},{\"id\":65846,\"object_type_id\":9,\"email_type_id\":1,\"_links\":{\"self\":{\"href\":\"http:\\\/\\\/clientapi.traum-ferienwohnungen.de\\\/customer\\\/16300\\\/listing\\\/65846\"}}},{\"id\":66131,\"object_type_id\":12,\"email_type_id\":1,\"_links\":{\"self\":{\"href\":\"http:\\\/\\\/clientapi.traum-ferienwohnungen.de\\\/customer\\\/16300\\\/listing\\\/66131\"}}},{\"id\":66155,\"object_type_id\":9,\"email_type_id\":1,\"_links\":{\"self\":{\"href\":\"http:\\\/\\\/clientapi.traum-ferienwohnungen.de\\\/customer\\\/16300\\\/listing\\\/66155\"}}},{\"id\":69358,\"object_type_id\":12,\"email_type_id\":1,\"_links\":{\"self\":{\"href\":\"http:\\\/\\\/clientapi.traum-ferienwohnungen.de\\\/customer\\\/16300\\\/listing\\\/69358\"}}},{\"id\":70303,\"object_type_id\":12,\"email_type_id\":1,\"_links\":{\"self\":{\"href\":\"http:\\\/\\\/clientapi.traum-ferienwohnungen.de\\\/customer\\\/16300\\\/listing\\\/70303\"}}},{\"id\":73078,\"object_type_id\":12,\"email_type_id\":1,\"_links\":{\"self\":{\"href\":\"http:\\\/\\\/clientapi.traum-ferienwohnungen.de\\\/customer\\\/16300\\\/listing\\\/73078\"}}},{\"id\":73343,\"object_type_id\":12,\"email_type_id\":1,\"_links\":{\"self\":{\"href\":\"http:\\\/\\\/clientapi.traum-ferienwohnungen.de\\\/customer\\\/16300\\\/listing\\\/73343\"}}},{\"id\":73344,\"object_type_id\":12,\"email_type_id\":1,\"_links\":{\"self\":{\"href\":\"http:\\\/\\\/clientapi.traum-ferienwohnungen.de\\\/customer\\\/16300\\\/listing\\\/73344\"}}},{\"id\":76175,\"object_type_id\":25,\"email_type_id\":1,\"_links\":{\"self\":{\"href\":\"http:\\\/\\\/clientapi.traum-ferienwohnungen.de\\\/customer\\\/16300\\\/listing\\\/76175\"}}},{\"id\":77961,\"object_type_id\":12,\"email_type_id\":1,\"_links\":{\"self\":{\"href\":\"http:\\\/\\\/clientapi.traum-ferienwohnungen.de\\\/customer\\\/16300\\\/listing\\\/77961\"}}},{\"id\":79509,\"object_type_id\":12,\"email_type_id\":1,\"_links\":{\"self\":{\"href\":\"http:\\\/\\\/clientapi.traum-ferienwohnungen.de\\\/customer\\\/16300\\\/listing\\\/79509\"}}},{\"id\":79687,\"object_type_id\":12,\"email_type_id\":1,\"_links\":{\"self\":{\"href\":\"http:\\\/\\\/clientapi.traum-ferienwohnungen.de\\\/customer\\\/16300\\\/listing\\\/79687\"}}},{\"id\":81409,\"object_type_id\":9,\"email_type_id\":1,\"_links\":{\"self\":{\"href\":\"http:\\\/\\\/clientapi.traum-ferienwohnungen.de\\\/customer\\\/16300\\\/listing\\\/81409\"}}},{\"id\":81410,\"object_type_id\":12,\"email_type_id\":1,\"_links\":{\"self\":{\"href\":\"http:\\\/\\\/clientapi.traum-ferienwohnungen.de\\\/customer\\\/16300\\\/listing\\\/81410\"}}}]},\"page_count\":3,\"page_size\":25,\"total_items\":61,\"page\":1}",
+        "version": "1.1",
+        "reason": "OK"
+    }
+]

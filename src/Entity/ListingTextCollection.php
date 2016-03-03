@@ -24,7 +24,7 @@ final class ListingTextCollection extends Collection
      * @param array $data
      * @return \Traum\Entity\ListingText
      */
-    function createEntity(array $data)
+    protected function createEntity(array $data)
     {
         return new Entity\ListingText($data);
     }

@@ -32,7 +32,7 @@ final class Client
     public static function create(array $config = [])
     {
         $clientConfig = [
-            'baseUri' => 'https://clientapi.traum-ferienwohnungen.de',
+            'base_uri' => 'https://clientapi.traum-ferienwohnungen.de',
             'headers' => [
                 'Accept' => 'application/json',
                 'Content-Type' => 'application/json',
