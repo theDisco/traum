@@ -28,5 +28,4 @@ final class CustomerCollection extends Collection
     {
         return new Entity\Customer($data);
     }
-
 }

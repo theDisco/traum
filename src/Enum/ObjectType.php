@@ -12,8 +12,8 @@ interface ObjectType
     const APARTMENT = 2;
     const FARMHOUSE = 3;
     const BIO_FARM = 4;
-    const BUNGALOW = 5; 
-    const HOLIDAY_HOUSE =  9;
+    const BUNGALOW = 5;
+    const HOLIDAY_HOUSE = 9;
     const HOLIDAY_APARTMENT = 12;
     const HOLIDAY_ROOM = 14;
     const FINCA = 15;

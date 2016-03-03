@@ -7,7 +7,8 @@
     },
     "require-dev": {
         "phpunit/phpunit": "^4.8",
-        "dshafik/guzzlehttp-vcr": "dev-master"
+        "dshafik/guzzlehttp-vcr": "dev-master",
+        "instaclick/php-code-sniffer": "^1.4"
     },
     "authors": [
         {
