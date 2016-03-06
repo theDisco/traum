@@ -1,0 +1,31 @@
+[
+    {
+        "status": 200,
+        "headers": {
+            "Server": [
+                "nginx"
+            ],
+            "Date": [
+                "Sun, 06 Mar 2016 20:11:30 GMT"
+            ],
+            "Content-Type": [
+                "application\/hal+json"
+            ],
+            "Content-Length": [
+                "175"
+            ],
+            "Connection": [
+                "keep-alive"
+            ],
+            "X-Powered-By": [
+                "PHP\/5.6.18"
+            ],
+            "X-VCR-Recording": [
+                "1457295094"
+            ]
+        },
+        "body": "{\"id\":6462000,\"text\":null,\"language\":\"ENG\",\"_links\":{\"self\":{\"href\":\"http:\\\/\\\/clientapi.traum-ferienwohnungen.de\\\/listing\\\/131237\\\/picture\\\/3010662\\\/picture-title\\\/6462000\"}}}",
+        "version": "1.1",
+        "reason": "OK"
+    }
+]

@@ -131,4 +131,45 @@ final class Listing extends Resource
 
         return $response->getStatusCode() === 204;
     }
+
+    /**
+     * @param int $listingId
+     * @param int $pictureId
+     * @return \Traum\Entity\ListingPictureTitleCollection|\Traum\Entity\ListingPictureTitle
+     */
+    public function getListingPictureTitles($listingId, $pictureId)
+    {
+        $uri = sprintf('/listing/%d/picture/%d/picture-title', $listingId, $pictureId);
+        $body = $this->executeGet($uri);
+
+        return new Entity\ListingPictureTitleCollection($body);
+    }
+
+    /**
+     * @param int $listingId
+     * @param int $pictureId
+     * @param int $pictureTitleId
+     * @return \Traum\Entity\ListingPictureTitle
+     */
+    public function getListingPictureTitle($listingId, $pictureId, $pictureTitleId)
+    {
+        $uri = sprintf('/listing/%d/picture/%d/picture-title/%d', $listingId, $pictureId, $pictureTitleId);
+        $body = $this->executeGet($uri);
+
+        return new Entity\ListingPictureTitle($body);
+    }
+
+    /**
+     * @param int $listingId
+     * @param int $pictureId
+     * @param \Traum\Entity\ListingPictureTitle $pictureTitle
+     * @return \Traum\Entity\ListingPictureTitle
+     */
+    public function patchListingPictureTitle($listingId, $pictureId, Entity\ListingPictureTitle $pictureTitle)
+    {
+        $uri = sprintf('/listing/%d/picture/%d/picture-title/%d', $listingId, $pictureId, $pictureTitle->getId());
+        $body = $this->executePatch($uri, $pictureTitle, new Transformer\ListingPictureTitle);
+
+        return new Entity\Listing($body);
+    }
 }

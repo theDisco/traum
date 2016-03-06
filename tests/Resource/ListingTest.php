@@ -158,4 +158,52 @@ class ListingTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('/listing/123/picture', $mock['request']->getUri()->getPath());
         $this->assertTrue($response);
     }
+
+    public function testGetListingPictureTitles()
+    {
+        $history = [];
+        $client = createClient('get_listing_picture_titles', $history);
+        $response = $client->createListingResource()->getListingPictureTitles(131237, 123456);
+        $mock = array_shift($history);
+
+        $fixture = fixture('get_listing_picture_titles');
+        $data = json_decode(current($fixture)['body'], JSON_OBJECT_AS_ARRAY);
+        $expected = new \Traum\Entity\ListingPictureTitle($data['_embedded']['picture_title'][0]);
+
+        $this->assertEquals('GET', $mock['request']->getMethod());
+        $this->assertEquals('/listing/131237/picture/123456/picture-title', $mock['request']->getUri()->getPath());
+        $this->assertEquals($expected, $response->current());
+    }
+
+    public function testGetListingPictureTitle()
+    {
+        $history = [];
+        $client = createClient('get_listing_picture_title', $history);
+        $response = $client->createListingResource()->getListingPictureTitle(12, 34, 56);
+        $mock = array_shift($history);
+
+        $this->assertEquals('GET', $mock['request']->getMethod());
+        $this->assertEquals('/listing/12/picture/34/picture-title/56', $mock['request']->getUri()->getPath());
+        compare($response, $mock['response'], $this);
+    }
+
+    public function testPatchGetListingPictureTitle()
+    {
+        $history = [];
+        $client = createClient('patch_listing_picture_title', $history);
+        $entity = new Traum\Entity\ListingPictureTitle(
+            [
+                'text' => 'bla',
+            ]
+        );
+        $patch = clone $entity;
+        $patch->setId(56);
+        $response = $client->createListingResource()->patchListingPictureTitle(12, 34, $patch);
+        $mock = array_shift($history);
+
+        $this->assertEquals('PATCH', $mock['request']->getMethod());
+        $this->assertEquals('/listing/12/picture/34/picture-title/56', $mock['request']->getUri()->getPath());
+        compare($entity, $mock['request'], $this);
+        compare($response, $mock['response'], $this);
+    }
 }
