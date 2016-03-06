@@ -35,11 +35,11 @@ abstract class Resource
     }
 
     /**
-     * @param $entity
+     * @param \Traum\Entity $entity
      * @param \League\Fractal\TransformerAbstract $transformer
      * @return \League\Fractal\Scope
      */
-    protected function transformEntity($entity, Fractal\TransformerAbstract $transformer)
+    protected function transformEntity(Entity $entity, Fractal\TransformerAbstract $transformer)
     {
         $resource = new Fractal\Resource\Item($entity, $transformer);
 
@@ -76,5 +76,59 @@ abstract class Resource
         } catch (Exception\ClientException $e) {
             throw InvalidRequest::create($e->getResponse());
         }
+    }
+
+    /**
+     * @param string $uri
+     * @return array
+     * @throws \Traum\Exception\InvalidRequest
+     */
+    protected function executeGet($uri)
+    {
+        $response = $this->request('GET', $uri);
+        $body = $response->getBody()->getContents();
+
+        return json_decode($body, JSON_OBJECT_AS_ARRAY);
+    }
+
+    /**
+     * @param string $uri
+     * @param \Traum\Entity $entity
+     * @param Fractal\TransformerAbstract $transformer
+     * @return array
+     * @throws \Traum\Exception\InvalidRequest
+     */
+    protected function executePost($uri, Entity $entity, Fractal\TransformerAbstract $transformer)
+    {
+        return $this->executeWrite('POST', $uri, $entity, $transformer);
+    }
+
+    /**
+     * @param string $uri
+     * @param \Traum\Entity $entity
+     * @param Fractal\TransformerAbstract $transformer
+     * @return array
+     * @throws \Traum\Exception\InvalidRequest
+     */
+    protected function executePatch($uri, Entity $entity, Fractal\TransformerAbstract $transformer)
+    {
+        return $this->executeWrite('PATCH', $uri, $entity, $transformer);
+    }
+
+    /**
+     * @param string $method
+     * @param string $uri
+     * @param \Traum\Entity $entity
+     * @param Fractal\TransformerAbstract $transformer
+     * @return array
+     * @throws \Traum\Exception\InvalidRequest
+     */
+    private function executeWrite($method, $uri, Entity $entity, Fractal\TransformerAbstract $transformer)
+    {
+        $data = $this->transformEntity($entity, $transformer);
+        $response = $this->request($method, $uri, [], $data->toJson());
+        $body = $response->getBody()->getContents();
+
+        return json_decode($body, JSON_OBJECT_AS_ARRAY);
     }
 }

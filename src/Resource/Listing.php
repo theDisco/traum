@@ -21,10 +21,9 @@ final class Listing extends Resource
     public function get($listingId)
     {
         $uri = sprintf('/listing/%d', $listingId);
-        $response = $this->request('GET', $uri);
-        $body = $response->getBody()->getContents();
+        $body = $this->executeGet($uri);
 
-        return new Entity\Listing(json_decode($body, JSON_OBJECT_AS_ARRAY));
+        return new Entity\Listing($body);
     }
 
     /**
@@ -35,11 +34,9 @@ final class Listing extends Resource
     public function patch(Entity\Listing $listing)
     {
         $uri = sprintf('/listing/%d', $listing->getId());
-        $data = $this->transformEntity($listing, new Transformer\Listing);
-        $response = $this->request('PATCH', $uri, [], $data->toJson());
-        $body = $response->getBody()->getContents();
+        $body = $this->executePatch($uri, $listing, new Transformer\Listing);
 
-        return new Entity\Listing(json_decode($body, JSON_OBJECT_AS_ARRAY));
+        return new Entity\Listing($body);
     }
 
     /**
@@ -50,10 +47,9 @@ final class Listing extends Resource
     public function getTexts($listingId)
     {
         $uri = sprintf('/listing/%s/text', $listingId);
-        $response = $this->request('GET', $uri);
-        $body = $response->getBody()->getContents();
+        $body = $this->executeGet($uri);
 
-        return new Entity\ListingTextCollection(json_decode($body, JSON_OBJECT_AS_ARRAY));
+        return new Entity\ListingTextCollection($body);
     }
 
     /**
@@ -65,11 +61,9 @@ final class Listing extends Resource
     public function postText($listingId, Entity\ListingText $text)
     {
         $uri = sprintf('/listing/%d/text', $listingId);
-        $data = $this->transformEntity($text, new Transformer\ListingText);
-        $response = $this->request('POST', $uri, [], $data->toJson());
-        $body = $response->getBody()->getContents();
+        $body = $this->executePost($uri, $text, new Transformer\ListingText);
 
-        return new Entity\ListingText(json_decode($body, JSON_OBJECT_AS_ARRAY));
+        return new Entity\ListingText($body);
     }
 
     /**
@@ -81,11 +75,9 @@ final class Listing extends Resource
     public function patchText($listingId, Entity\ListingText $text)
     {
         $uri = sprintf('/listing/%d/text/%d', $listingId, $text->getId());
-        $data = $this->transformEntity($text, new Transformer\ListingText);
-        $response = $this->request('PATCH', $uri, [], $data->toJson());
-        $body = $response->getBody()->getContents();
+        $body = $this->executePatch($uri, $text, new Transformer\ListingText);
 
-        return new Entity\ListingText(json_decode($body, JSON_OBJECT_AS_ARRAY));
+        return new Entity\ListingText($body);
     }
 
     /**
@@ -100,5 +92,18 @@ final class Listing extends Resource
         $response = $this->request('DELETE', $uri);
 
         return $response->getStatusCode() === 204;
+    }
+
+    /**
+     * @param int $listingId
+     * @param \Traum\Entity\ListingPicture $listingPicture
+     * @return \Traum\Entity\ListingPicture
+     */
+    public function postListingPicture($listingId, Entity\ListingPicture $listingPicture)
+    {
+        $uri = sprintf('/listing/%d/picture', $listingId);
+        $body = $this->executePost($uri, $listingPicture, new Transformer\ListingPicture);
+
+        return new Entity\ListingPicture($body);
     }
 }

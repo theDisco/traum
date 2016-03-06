@@ -1,0 +1,31 @@
+[
+    {
+        "status": 200,
+        "headers": {
+            "Server": [
+                "nginx"
+            ],
+            "Date": [
+                "Thu, 03 Mar 2016 21:14:56 GMT"
+            ],
+            "Content-Type": [
+                "application\/hal+json"
+            ],
+            "Content-Length": [
+                "233"
+            ],
+            "Connection": [
+                "keep-alive"
+            ],
+            "X-Powered-By": [
+                "PHP\/5.6.18"
+            ],
+            "X-VCR-Recording": [
+                "1457039698"
+            ]
+        },
+        "body": "{\"id\":131237,\"accessibility_id\":1,\"classification_star_id\":0,\"classification_expire_date\":null,\"max_persons\":5,\"size\":\"120\",\"object_type_id\":9,\"_links\":{\"self\":{\"href\":\"http:\\\/\\\/clientapi.traum-ferienwohnungen.de\\\/listing\\\/131237\"}}}",
+        "version": "1.1",
+        "reason": "OK"
+    }
+]
