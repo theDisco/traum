@@ -118,4 +118,17 @@ final class Listing extends Resource
 
         return new Entity\ListingPicture($body);
     }
+
+    /**
+     * @param int $listingId
+     * @return bool
+     * @throws \Traum\Exception\InvalidRequest
+     */
+    public function deleteListingPictures($listingId)
+    {
+        $uri = sprintf('/listing/%d/picture', $listingId);
+        $response = $this->request('DELETE', $uri);
+
+        return $response->getStatusCode() === 204;
+    }
 }

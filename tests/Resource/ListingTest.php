@@ -146,4 +146,16 @@ class ListingTest extends \PHPUnit_Framework_TestCase
         compare($entity, $mock['request'], $this);
         compare($response, $mock['response'], $this);
     }
+
+    public function testDeleteListingPictures()
+    {
+        $history = [];
+        $client = createClient('delete_listing_pictures', $history);;
+        $response = $client->createListingResource()->deleteListingPictures(123);
+        $mock = array_shift($history);
+
+        $this->assertEquals('DELETE', $mock['request']->getMethod());
+        $this->assertEquals('/listing/123/picture', $mock['request']->getUri()->getPath());
+        $this->assertTrue($response);
+    }
 }
