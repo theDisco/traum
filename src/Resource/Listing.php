@@ -41,7 +41,7 @@ final class Listing extends Resource
 
     /**
      * @param int $listingId
-     * @return \Traum\Entity\ListingTextCollection
+     * @return \Traum\Entity\ListingTextCollection|\Traum\Entity\ListingText
      * @throws \Traum\Exception\InvalidRequest
      */
     public function getTexts($listingId)
@@ -92,6 +92,18 @@ final class Listing extends Resource
         $response = $this->request('DELETE', $uri);
 
         return $response->getStatusCode() === 204;
+    }
+
+    /**
+     * @param int $listingId
+     * @return \Traum\Entity\ListingPictureCollection|\Traum\Entity\ListingPicture
+     */
+    public function getListingPictures($listingId)
+    {
+        $uri = sprintf('/listing/%d/picture', $listingId);
+        $body = $this->executeGet($uri);
+
+        return new Entity\ListingPictureCollection($body);
     }
 
     /**

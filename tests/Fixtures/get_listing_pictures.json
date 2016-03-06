@@ -1,0 +1,31 @@
+[
+    {
+        "status": 200,
+        "headers": {
+            "Server": [
+                "nginx"
+            ],
+            "Date": [
+                "Sun, 06 Mar 2016 19:14:35 GMT"
+            ],
+            "Content-Type": [
+                "application\/hal+json"
+            ],
+            "Content-Length": [
+                "781"
+            ],
+            "Connection": [
+                "keep-alive"
+            ],
+            "X-Powered-By": [
+                "PHP\/5.6.18"
+            ],
+            "X-VCR-Recording": [
+                "1457291679"
+            ]
+        },
+        "body": "{\"_links\":{\"self\":{\"href\":\"http:\\\/\\\/clientapi.traum-ferienwohnungen.de\\\/listing\\\/131237\\\/picture?page=1\"},\"first\":{\"href\":\"http:\\\/\\\/clientapi.traum-ferienwohnungen.de\\\/listing\\\/131237\\\/picture\"},\"last\":{\"href\":\"http:\\\/\\\/clientapi.traum-ferienwohnungen.de\\\/listing\\\/131237\\\/picture?page=1\"}},\"_embedded\":{\"picture\":[{\"id\":3009400,\"url\":\"http:\\\/\\\/ferienhaussizilien.de\\\/resources\\\/rental\\\/entity\\\/241\\\/large_IMG_9114.jpg\",\"category_id\":1,\"sha256_hash\":\"809b652cc066784bb75da370e96792f13cb5a72d65aceb22d12e5bc13a9b578e\",\"added\":\"2016-03-06 12:07:20\",\"activated\":null,\"is_winter_picture\":false,\"is_summer_picture\":true,\"_links\":{\"self\":{\"href\":\"http:\\\/\\\/clientapi.traum-ferienwohnungen.de\\\/listing\\\/131237\\\/picture\\\/3009400\"}}}]},\"page_count\":1,\"page_size\":25,\"total_items\":1,\"page\":1}",
+        "version": "1.1",
+        "reason": "OK"
+    }
+]

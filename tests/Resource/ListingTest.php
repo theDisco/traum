@@ -110,6 +110,22 @@ class ListingTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue($response);
     }
 
+    public function testGetListingPictures()
+    {
+        $history = [];
+        $client = createClient('get_listing_pictures', $history);
+        $response = $client->createListingResource()->getListingPictures(131237);
+        $mock = array_shift($history);
+
+        $fixture = fixture('get_listing_pictures');
+        $data = json_decode(current($fixture)['body'], JSON_OBJECT_AS_ARRAY);
+        $expected = new \Traum\Entity\ListingPicture($data['_embedded']['picture'][0]);
+
+        $this->assertEquals('GET', $mock['request']->getMethod());
+        $this->assertEquals('/listing/131237/picture', $mock['request']->getUri()->getPath());
+        $this->assertEquals($expected, $response->current());
+    }
+
     public function testPostListingPicture()
     {
         $history = [];
