@@ -81,4 +81,20 @@ final class Client
     {
         return new Resource\Listing($this->httpClient);
     }
+
+    /**
+     * @return \Traum\Service\Listing
+     */
+    public function createListingService()
+    {
+        return new Service\Listing($this);
+    }
+
+    /**
+     * @return \Traum\Service\Picture
+     */
+    public function createPictureService()
+    {
+        return new Service\Picture($this);
+    }
 }

@@ -11,7 +11,25 @@ use Traum\Entity;
  */
 final class Customer extends Entity
 {
+    const ID = 'id';
     const CUSTOMER_ID = 'customer_id';
+
+    /**
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->getData(self::ID);
+    }
+
+    /**
+     * @param int $id
+     * @return void
+     */
+    public function setId($id)
+    {
+        $this->setData(self::ID, $id);
+    }
 
     /**
      * @return int
