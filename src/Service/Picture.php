@@ -28,6 +28,34 @@ class Picture
     }
 
     /**
+     * Add multiple pictures at the same time. Provide following array
+     * as $pictures in order to process them correctly:
+     *
+     * <code>
+     * [
+     *   [
+     *     'pictureUrl' => 'http://example.com/picture.jpeg',
+     *     'categoryId' => \Traum\Enum\PictureCategory::OUTDOOR,
+     *     'titles' => [
+     *       \Traum\Enum\Language::DEU => 'German title',
+     *       \Traum\Enum\Language::ENG => 'English title',
+     *     ],
+     *   ],
+     * ]
+     * </code>
+     *
+     * @param int $listingId
+     * @param array $pictures
+     * @return void
+     */
+    public function addPictures($listingId, array $pictures)
+    {
+        foreach ($pictures as $picture) {
+            $this->addPicture($listingId, $picture['pictureUrl'], $picture['categoryId'], $picture['titles']);
+        }
+    }
+
+    /**
      * In order to store the titles correctly, provide the data in following format:
      *
      * <code>
@@ -38,17 +66,17 @@ class Picture
      * </code>
      *
      * @param int $listingId
-     * @param string $url
+     * @param string $pictureUrl
      * @param int $categoryId
      * @param array $titles
      * @return bool
      */
-    public function addPicture($listingId, $url, $categoryId, array $titles)
+    public function addPicture($listingId, $pictureUrl, $categoryId, array $titles)
     {
         $listing = $this->client->createListingResource();
         $picture = new Entity\ListingPicture(
             [
-                Entity\ListingPicture::URL => $url,
+                Entity\ListingPicture::URL => $pictureUrl,
                 Entity\ListingPicture::CATEGORY_ID => $categoryId,
             ]
         );

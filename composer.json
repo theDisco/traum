@@ -1,5 +1,8 @@
 {
     "name": "aferalabs/traum",
+    "version": "0.1.0",
+    "type": "library",
+    "license": "MIT",
     "description": "traum-ferienwohnungen.de API client",
     "require": {
         "php": ">=5.5.9",
@@ -14,7 +17,7 @@
     "authors": [
         {
             "name": "Wojtek Gancarczyk",
-            "email": "gancarczyk@gmail.com"
+            "email": "wojtek@aferalabs.com"
         }
     ],
     "autoload": {

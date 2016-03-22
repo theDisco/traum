@@ -39,6 +39,11 @@ use Traum\Enum;
 $client = Client::create(['auth' => ['john.doe@example.com', 'Pa**word!']]);
 ```
 
+# Want to help?
+
+Take a look at the [roadmap](https://github.com/theDisco/traum/wiki#roadmap) and implement
+one of the missing endpoints.
+
 # TODO
 
 * Finish documentation

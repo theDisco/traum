@@ -135,7 +135,7 @@ final class Listing extends Resource
     /**
      * @param int $listingId
      * @param int $pictureId
-     * @return \Traum\Entity\ListingPictureTitleCollection|\Traum\Entity\ListingPictureTitle
+     * @return \Traum\Entity\ListingPictureTitleCollection|\Traum\Entity\ListingPictureTitle[]
      */
     public function getListingPictureTitles($listingId, $pictureId)
     {
