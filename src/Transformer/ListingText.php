@@ -2,7 +2,7 @@
 
 namespace Traum\Transformer;
 
-use League\Fractal;
+use Traum\Transformer;
 use Traum\Entity;
 
 /**
@@ -10,7 +10,7 @@ use Traum\Entity;
  * @package Traum\Transformer
  * @author Wojtek Gancarczyk <wojtek@aferalabs.com>
  */
-final class ListingText extends Fractal\TransformerAbstract
+final class ListingText extends Transformer
 {
     /**
      * @param \Traum\Entity\ListingText $text
@@ -18,10 +18,10 @@ final class ListingText extends Fractal\TransformerAbstract
      */
     public function transform(Entity\ListingText $text)
     {
-        return [
-            Entity\ListingText::LANGUAGE => (string) $text->getLanguage(),
-            Entity\ListingText::TEXT_TYPE_ID => (int) $text->getTextTypeId(),
-            Entity\ListingText::TEXT => (string) $text->getText(),
-        ];
+        $this->addField(Entity\ListingText::LANGUAGE, $text->getLanguage(), 'string');
+        $this->addField(Entity\ListingText::TEXT_TYPE_ID, $text->getTextTypeId(), 'int');
+        $this->addField(Entity\ListingText::TEXT, $text->getText(), 'string');
+
+        return $this->getFields();
     }
 }

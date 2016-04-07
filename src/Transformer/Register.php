@@ -2,7 +2,7 @@
 
 namespace Traum\Transformer;
 
-use League\Fractal;
+use Traum\Transformer;
 use Traum\Entity;
 
 /**
@@ -10,7 +10,7 @@ use Traum\Entity;
  * @package Traum\Transformer
  * @author Wojtek Gancarczyk <wojtek@aferalabs.com>
  */
-final class Register extends Fractal\TransformerAbstract
+final class Register extends Transformer
 {
     /**
      * @param \Traum\Entity\Register $register
@@ -18,13 +18,13 @@ final class Register extends Fractal\TransformerAbstract
      */
     public function transform(Entity\Register $register)
     {
-        return [
-            Entity\Register::FIRST_NAME => $register->getFirstName(),
-            Entity\Register::LAST_NAME => $register->getLastName(),
-            Entity\Register::COMPANY => $register->getCompany(),
-            Entity\Register::EMAIL => $register->getEmail(),
-            Entity\Register::SALUTATION_ID => (int) $register->getSalutationId(),
-            Entity\Register::PASSWORD => $register->getPassword(),
-        ];
+        $this->addField(Entity\Register::FIRST_NAME, $register->getFirstName(), 'string');
+        $this->addField(Entity\Register::LAST_NAME, $register->getLastName(), 'string');
+        $this->addField(Entity\Register::COMPANY, $register->getCompany(), 'string');
+        $this->addField(Entity\Register::EMAIL, $register->getEmail(), 'string');
+        $this->addField(Entity\Register::SALUTATION_ID, $register->getSalutationId(), 'int');
+        $this->addField(Entity\Register::PASSWORD, $register->getPassword(), 'string');
+
+        return $this->getFields();
     }
 }

@@ -2,7 +2,7 @@
 
 namespace Traum\Transformer;
 
-use League\Fractal;
+use Traum\Transformer;
 use Traum\Entity;
 
 /**
@@ -10,7 +10,7 @@ use Traum\Entity;
  * @package Traum\Transformer
  * @author Wojtek Gancarczyk <wojtek@aferalabs.com>
  */
-final class CustomerListing extends Fractal\TransformerAbstract
+final class CustomerListing extends Transformer
 {
     /**
      * @param \Traum\Entity\CustomerListing $listing
@@ -18,9 +18,9 @@ final class CustomerListing extends Fractal\TransformerAbstract
      */
     public function transform(Entity\CustomerListing $listing)
     {
-        return [
-            Entity\CustomerListing::OBJECT_TYPE_ID => (int) $listing->getObjectTypeId(),
-            Entity\CustomerListing::EMAIL_TYPE_ID => (int) $listing->getEmailTypeId(),
-        ];
+        $this->addField(Entity\CustomerListing::OBJECT_TYPE_ID, $listing->getObjectTypeId(), 'int');
+        $this->addField(Entity\CustomerListing::EMAIL_TYPE_ID, $listing->getEmailTypeId(), 'int');
+
+        return $this->getFields();
     }
 }

@@ -2,7 +2,7 @@
 
 namespace Traum\Transformer;
 
-use League\Fractal;
+use Traum\Transformer;
 use Traum\Entity;
 
 /**
@@ -10,7 +10,7 @@ use Traum\Entity;
  * @package Traum\Transformer
  * @author Wojtek Gancarczyk <wojtek@aferalabs.com>
  */
-class Vat extends Fractal\TransformerAbstract
+class Vat extends Transformer
 {
     /**
      * @param \Traum\Entity\Vat $vat
@@ -18,8 +18,8 @@ class Vat extends Fractal\TransformerAbstract
      */
     public function transform(Entity\Vat $vat)
     {
-        return [
-            Entity\Vat::ENABLE_VAT => (bool) $vat->getEnableVat(),
-        ];
+        $this->addField(Entity\Vat::ENABLE_VAT, $vat->getEnableVat(), 'bool');
+
+        return $this->getFields();
     }
 }
