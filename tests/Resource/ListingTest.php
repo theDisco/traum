@@ -20,12 +20,12 @@ class ListingTest extends \PHPUnit_Framework_TestCase
         $client = createClient('patch_listing', $history);
         $entity = new Traum\Entity\Listing(
             [
-                'accessibility_id' => 0,
-                'classification_star_id' => 0,
-                'classification_expire_date' => null,
-                'max_persons' => 0,
-                'size' => 0,
-                'object_type_id' => 0,
+                'accessibility_id' => 1,
+                'classification_star_id' => 5,
+                'classification_expire_date' => '2017-01-01',
+                'max_persons' => 5,
+                'size' => 120,
+                'object_type_id' => 2,
             ]
         );
         $patch = clone $entity;

@@ -25,8 +25,7 @@ class Listing extends Transformer
         $this->addField(Entity\Listing::MAX_PERSONS , $listing->getMaxPersons(), 'int');
         $this->addField(Entity\Listing::SIZE , $listing->getSize(), 'int');
         $this->addField(Entity\Listing::OBJECT_TYPE_ID , $listing->getObjectTypeId(), 'int');
-        
-        
+
         return $this->getFields();
     }
 }

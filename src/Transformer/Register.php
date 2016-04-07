@@ -19,7 +19,7 @@ final class Register extends Transformer
     public function transform(Entity\Register $register)
     {
         $this->addField(Entity\Register::FIRST_NAME, $register->getFirstName(), 'string');
-        $this->addField(Entity\Register::LAST_NAME, $register->getLastName(), 'int');
+        $this->addField(Entity\Register::LAST_NAME, $register->getLastName(), 'string');
         $this->addField(Entity\Register::COMPANY, $register->getCompany(), 'string');
         $this->addField(Entity\Register::EMAIL, $register->getEmail(), 'string');
         $this->addField(Entity\Register::SALUTATION_ID, $register->getSalutationId(), 'int');
