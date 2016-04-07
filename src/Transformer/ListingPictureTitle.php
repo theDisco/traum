@@ -2,7 +2,7 @@
 
 namespace Traum\Transformer;
 
-use League\Fractal;
+use Traum\Transformer;
 use Traum\Entity;
 
 /**
@@ -10,7 +10,7 @@ use Traum\Entity;
  * @package Traum\Transformer
  * @author Wojtek Gancarczyk <wojtek@aferalabs.com>
  */
-class ListingPictureTitle extends Fractal\TransformerAbstract
+class ListingPictureTitle extends Transformer
 {
     /**
      * @param \Traum\Entity\ListingPictureTitle $pictureTitle
@@ -18,8 +18,8 @@ class ListingPictureTitle extends Fractal\TransformerAbstract
      */
     public function transform(Entity\ListingPictureTitle $pictureTitle)
     {
-        return [
-            Entity\ListingPictureTitle::TEXT => $pictureTitle->getText(),
-        ];
+        $this->addField(Entity\ListingPictureTitle::TEXT , $pictureTitle->getText(), 'string');
+
+        return $this->getFields();
     }
 }

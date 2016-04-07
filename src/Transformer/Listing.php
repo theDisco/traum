@@ -2,7 +2,7 @@
 
 namespace Traum\Transformer;
 
-use League\Fractal;
+use Traum\Transformer;
 use Traum\Entity;
 
 /**
@@ -10,7 +10,7 @@ use Traum\Entity;
  * @package Traum\Transformer
  * @author Wojtek Gancarczyk <wojtek@aferalabs.com>
  */
-class Listing extends Fractal\TransformerAbstract
+class Listing extends Transformer
 {
     /**
      * @param \Traum\Entity\Listing $listing
@@ -18,14 +18,15 @@ class Listing extends Fractal\TransformerAbstract
      */
     public function transform(Entity\Listing $listing)
     {
-        return [
-            Entity\Listing::ACCESSIBILITY_ID => (int) $listing->getAccessibilityId(),
-            Entity\Listing::CLASSIFICATION_STAR_ID => (int) $listing->getClassificationStarId(),
-            // TODO should be \DateTime
-            Entity\Listing::CLASSIFICATION_EXPIRE_DATE => $listing->getClassificationExpireDate(),
-            Entity\Listing::MAX_PERSONS => (int) $listing->getMaxPersons(),
-            Entity\Listing::SIZE => (int) $listing->getSize(),
-            Entity\Listing::OBJECT_TYPE_ID => (int) $listing->getObjectTypeId(),
-        ];
+        $this->addField(Entity\Listing::ACCESSIBILITY_ID , $listing->getAccessibilityId(), 'int');
+        $this->addField(Entity\Listing::CLASSIFICATION_STAR_ID , $listing->getClassificationStarId(), 'int');
+        // TODO should be \DateTime
+        $this->addField(Entity\Listing::CLASSIFICATION_EXPIRE_DATE , $listing->getClassificationExpireDate(), 'string');
+        $this->addField(Entity\Listing::MAX_PERSONS , $listing->getMaxPersons(), 'int');
+        $this->addField(Entity\Listing::SIZE , $listing->getSize(), 'int');
+        $this->addField(Entity\Listing::OBJECT_TYPE_ID , $listing->getObjectTypeId(), 'int');
+        
+        
+        return $this->getFields();
     }
 }

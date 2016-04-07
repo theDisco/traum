@@ -2,7 +2,7 @@
 
 namespace Traum\Transformer;
 
-use League\Fractal;
+use Traum\Transformer;
 use Traum\Entity;
 
 /**
@@ -10,16 +10,16 @@ use Traum\Entity;
  * @package Traum\Transformer
  * @author Wojtek Gancarczyk <wojtek@aferalabs.com>
  */
-final class Customer extends Fractal\TransformerAbstract
+final class Customer extends Transformer
 {
     /**
      * @param \Traum\Entity\Customer $customer
      * @return array
      */
     public function transform(Entity\Customer $customer)
-    {
-        return [
-            Entity\Customer::CUSTOMER_ID => (int) $customer->getCustomerId(),
-        ];
+    {        
+        $this->addField(Entity\Customer::CUSTOMER_ID , $customer->getCustomerId(), 'int');
+        
+        return $this->getFields();
     }
 }
