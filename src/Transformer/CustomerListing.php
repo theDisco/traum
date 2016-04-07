@@ -18,9 +18,9 @@ final class CustomerListing extends Transformer
      */
     public function transform(Entity\CustomerListing $listing)
     {
-        $this->addField(Entity\CustomerListing::OBJECT_TYPE_ID , $listing->getObjectTypeId(), 'int');
-        $this->addField(Entity\CustomerListing::EMAIL_TYPE_ID , $listing->getEmailTypeId(), 'int');
+        $this->addField(Entity\CustomerListing::OBJECT_TYPE_ID, $listing->getObjectTypeId(), 'int');
+        $this->addField(Entity\CustomerListing::EMAIL_TYPE_ID, $listing->getEmailTypeId(), 'int');
 
-        return $this->getFields(); 
+        return $this->getFields();
     }
 }

@@ -18,7 +18,7 @@ class Vat extends Transformer
      */
     public function transform(Entity\Vat $vat)
     {
-        $this->addField(Entity\Vat::ENABLE_VAT , $vat->getEnableVat(), 'bool');
+        $this->addField(Entity\Vat::ENABLE_VAT, $vat->getEnableVat(), 'bool');
 
         return $this->getFields();
     }

@@ -53,4 +53,3 @@ abstract class Transformer
         throw new \RuntimeException("Unrecognized type `$type`");
     }
 }
-

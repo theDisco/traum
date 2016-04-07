@@ -17,9 +17,9 @@ final class Customer extends Transformer
      * @return array
      */
     public function transform(Entity\Customer $customer)
-    {        
-        $this->addField(Entity\Customer::CUSTOMER_ID , $customer->getCustomerId(), 'int');
-        
+    {
+        $this->addField(Entity\Customer::CUSTOMER_ID, $customer->getCustomerId(), 'int');
+
         return $this->getFields();
     }
 }

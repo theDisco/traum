@@ -18,7 +18,7 @@ class ListingPictureTitle extends Transformer
      */
     public function transform(Entity\ListingPictureTitle $pictureTitle)
     {
-        $this->addField(Entity\ListingPictureTitle::TEXT , $pictureTitle->getText(), 'string');
+        $this->addField(Entity\ListingPictureTitle::TEXT, $pictureTitle->getText(), 'string');
 
         return $this->getFields();
     }
