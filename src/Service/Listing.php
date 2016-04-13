@@ -77,9 +77,18 @@ class Listing
         $listing = new Entity\Listing(
             [
                 Entity\Listing::ID => $customerListing->getId(),
-                Entity\Listing::ACCESSIBILITY_ID => $listing['accessibilityId'],
-                Entity\Listing::CLASSIFICATION_STAR_ID => $listing['classificationStarId'],
-                Entity\Listing::CLASSIFICATION_EXPIRE_DATE => $listing['classificationExpireDate'],
+                Entity\Listing::ACCESSIBILITY_ID => $this->getFieldValue(
+                    'accessibilityId',
+                    $listing
+                ),
+                Entity\Listing::CLASSIFICATION_STAR_ID => $this->getFieldValue(
+                    'classificationStarId',
+                    $listing
+                ),
+                Entity\Listing::CLASSIFICATION_EXPIRE_DATE => $this->getFieldValue(
+                    'classificationExpireDate',
+                    $listing
+                ),
                 Entity\Listing::MAX_PERSONS => $listing['maxPersons'],
                 Entity\Listing::SIZE => $listing['size'],
                 Entity\Listing::OBJECT_TYPE_ID => $listing['objectType'],
@@ -123,5 +132,19 @@ class Listing
         }
 
         return $listing;
+    }
+
+    /**
+     * @param string $name
+     * @param array $struct
+     * @return mixed
+     */
+    private function getFieldValue($name, array $struct)
+    {
+        if (isset($struct[$name])) {
+            return $struct[$name];
+        }
+
+        return null;
     }
 }
