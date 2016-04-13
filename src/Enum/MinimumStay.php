@@ -1,0 +1,23 @@
+<?php
+
+namespace Traum\Enum;
+
+/**
+ * Interface MinimumStay
+ * @package Traum\Enum
+ * @author Wojtek Gancarczyk <wojtek@aferalabs.com>
+ */
+interface MinimumStay
+{
+    const SEVEN_NIGHTS = 7;
+    const EIGHT_NIGHTS = 8;
+    const NINE_NIGHTS = 9;
+    const TEN_NIGHTS = 10;
+    const ELEVEN_NIGHTS = 11;
+    const TWELVE_NIGHTS = 12;
+    const THIRTEEN_NIGHTS = 13;
+    const TWO_WEEKS = 14;
+    const THREE_WEEKS = 21;
+    const FOUR_WEEKS = 28;
+    const SIX_MONTHS = 180;
+}

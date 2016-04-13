@@ -170,6 +170,83 @@ final class Listing extends Resource
         $uri = sprintf('/listing/%d/picture/%d/picture-title/%d', $listingId, $pictureId, $pictureTitle->getId());
         $body = $this->executePatch($uri, $pictureTitle, new Transformer\ListingPictureTitle);
 
-        return new Entity\Listing($body);
+        return new Entity\ListingPictureTitle($body);
+    }
+
+    /**
+     * @param int $listingId
+     * @return \Traum\Entity\ListingWeekPriceTableCollection
+     */
+    public function getWeekPriceTables($listingId)
+    {
+        $uri = sprintf('/listing/%d/week-price-table', $listingId);
+        $body = $this->executeGet($uri);
+
+        return new Entity\ListingWeekPriceTableCollection($body);
+    }
+
+    /**
+     * @param int $listingId
+     * @return bool
+     * @throws \Traum\Exception\InvalidRequest
+     */
+    public function deleteWeekPriceTables($listingId)
+    {
+        $uri = sprintf('/listing/%d/week-price-table', $listingId);
+        $response = $this->request('DELETE', $uri);
+
+        return $response->getStatusCode() === 204;
+    }
+
+    /**
+     * @param int $listingId
+     * @param int $weekPriceTableId
+     * @return \Traum\Entity\ListingPicture
+     */
+    public function getWeekPriceTable($listingId, $weekPriceTableId)
+    {
+        $uri = sprintf('/listing/%d/week-price-table/%d', $listingId, $weekPriceTableId);
+        $body = $this->executeGet($uri);
+
+        return new Entity\ListingWeekPriceTable($body);
+    }
+
+    /**
+     * @param int $listingId
+     * @param \Traum\Entity\ListingWeekPriceTable $listingWeekPriceTable
+     * @return \Traum\Entity\ListingWeekPriceTable
+     */
+    public function postWeekPriceTable($listingId, Entity\ListingWeekPriceTable $listingWeekPriceTable)
+    {
+        $uri = sprintf('/listing/%d/week-price-table', $listingId);
+        $body = $this->executePost($uri, $listingWeekPriceTable, new Transformer\ListingWeekPriceTable);
+
+        return new Entity\ListingWeekPriceTable($body);
+    }
+
+    /**
+     * @param int $listingId
+     * @param \Traum\Entity\ListingWeekPriceTable $listingWeekPriceTable
+     * @return \Traum\Entity\ListingWeekPriceTable
+     */
+    public function patchWeekPriceTable($listingId, Entity\ListingWeekPriceTable $listingWeekPriceTable)
+    {
+        $uri = sprintf('/listing/%d/week-price-table/%d', $listingId, $listingWeekPriceTable->getId());
+        $body = $this->executePatch($uri, $listingWeekPriceTable, new Transformer\ListingWeekPriceTable);
+
+        return new Entity\ListingWeekPriceTable($body);
+    }
+
+    /**
+     * @param int $listingId
+     * @param int $weekPriceTableId
+     * @return \Traum\Entity\ListingWeekPriceTable
+     */
+    public function deleteWeekPriceTable($listingId, $weekPriceTableId)
+    {
+        $uri = sprintf('/listing/%d/week-price-table/%d', $listingId, $weekPriceTableId);
+        $response = $this->request('DELETE', $uri);
+
+        return $response->getStatusCode() === 204;
     }
 }

@@ -15,15 +15,16 @@ abstract class Transformer
     private $fields;
 
     /**
-     * @param $name
-     * @param $value
-     * @param $type
+     * @param string $name
+     * @param bool|int|string|double|null $value
+     * @param string $type
      */
     protected function addField($name, $value, $type)
     {
         if (is_null($value)) {
             return;
         }
+
         $this->fields[$name] = $this->normalize($value, $type);
     }
 
@@ -36,9 +37,9 @@ abstract class Transformer
     }
 
     /**
-     * @param $value
-     * @param $type
-     * @return bool|int|string
+     * @param string $value
+     * @param bool|int|string|double $type
+     * @return bool|int|string|double
      */
     private function normalize($value, $type)
     {
@@ -48,6 +49,8 @@ abstract class Transformer
             return (string) $value;
         } elseif ($type == 'bool') {
             return (bool) $value;
+        } elseif ($type == 'double') {
+            return (double) $value;
         }
 
         throw new \RuntimeException("Unrecognized type `$type`");
