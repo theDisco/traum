@@ -12,12 +12,6 @@ use Traum\Entity;
  */
 final class Address extends Transformer
 {
-    const STREET = 'street';
-    const ZIP = 'zip';
-    const CITY = 'city';
-    const LONGITUDE = 'longitude';
-    const LATITUDE = 'latitude';
-    const HIDE_EXACT_POSITION = 'hide_exact_position';
     /**
      * @param \Traum\Entity\Address $address
      * @return array

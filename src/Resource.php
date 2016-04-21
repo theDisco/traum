@@ -95,7 +95,7 @@ abstract class Resource
     /**
      * @param string $uri
      * @param \Traum\Entity $entity
-     * @param Transformer $transformer
+     * @param \Traum\Transformer $transformer
      * @return array
      * @throws \Traum\Exception\InvalidRequest
      */
@@ -107,13 +107,25 @@ abstract class Resource
     /**
      * @param string $uri
      * @param \Traum\Entity $entity
-     * @param Transformer $transformer
+     * @param \Traum\Transformer $transformer
      * @return array
      * @throws \Traum\Exception\InvalidRequest
      */
     protected function executePatch($uri, Entity $entity, Transformer $transformer)
     {
         return $this->executeWrite('PATCH', $uri, $entity, $transformer);
+    }
+
+    /**
+     * @param string $uri
+     * @param \Traum\Entity $entity
+     * @param \Traum\Transformer $transformer
+     * @return array
+     * @throws \Traum\Exception\InvalidRequest
+     */
+    protected function executePut($uri, Entity $entity, Transformer $transformer)
+    {
+        return $this->executeWrite('PUT', $uri, $entity, $transformer);
     }
 
     /**

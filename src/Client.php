@@ -91,7 +91,7 @@ final class Client
     }
 
     /**
-     * @return Resource\PriceOption
+     * @return \Traum\Resource\PriceOption
      */
     public function createPriceOptionResource()
     {
@@ -99,11 +99,19 @@ final class Client
     }
 
     /**
-     * @return Resource\Address
+     * @return \Traum\Resource\Address
      */
     public function createAddressResource()
     {
         return new Resource\Address($this->httpClient);
+    }
+
+    /**
+     * @return \Traum\Resource\Contact
+     */
+    public function createContactResource()
+    {
+        return new Resource\Contact($this->httpClient);
     }
 
     /**
