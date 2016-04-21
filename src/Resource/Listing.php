@@ -249,4 +249,55 @@ final class Listing extends Resource
 
         return $response->getStatusCode() === 204;
     }
+
+    /**
+     * @param int $listingId
+     * @return \Traum\Entity\ListingPaymentMethodCollection
+     */
+    public function getPaymentMethods($listingId)
+    {
+        $uri = sprintf('/listing/%d/payment-method', $listingId);
+        $body = $this->executeGet($uri);
+
+        return new Entity\ListingPaymentMethodCollection($body);
+    }
+
+    /**
+     * @param int $listingId
+     * @return bool
+     * @throws \Traum\Exception\InvalidRequest
+     */
+    public function deletePaymentMethods($listingId)
+    {
+        $uri = sprintf('/listing/%d/payment-method', $listingId);
+        $response = $this->request('DELETE', $uri);
+
+        return $response->getStatusCode() === 204;
+    }
+
+    /**
+     * @param int $listingId
+     * @param \Traum\Entity\ListingPaymentMethod $listingPaymentMethod
+     * @return \Traum\Entity\ListingPaymentMethod
+     */
+    public function postPaymentMethod($listingId, Entity\ListingPaymentMethod $listingPaymentMethod)
+    {
+        $uri = sprintf('/listing/%d/payment-method', $listingId);
+        $body = $this->executePost($uri, $listingPaymentMethod, new Transformer\ListingPaymentMethod);
+
+        return new Entity\ListingPaymentMethod($body);
+    }
+
+    /**
+     * @param int $listingId
+     * @param int $paymentMethodId
+     * @return bool
+     */
+    public function deletePaymentMethod($listingId, $paymentMethodId)
+    {
+        $uri = sprintf('/listing/%d/payment-method/%d', $listingId, $paymentMethodId);
+        $response = $this->request('DELETE', $uri);
+
+        return $response->getStatusCode() === 204;
+    }
 }
