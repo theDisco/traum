@@ -99,6 +99,14 @@ final class Client
     }
 
     /**
+     * @return Resource\Address
+     */
+    public function createAddressResource()
+    {
+        return new Resource\Address($this->httpClient);
+    }
+
+    /**
      * @return \Traum\Service\Listing
      */
     public function createListingService()
