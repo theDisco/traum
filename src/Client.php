@@ -91,6 +91,14 @@ final class Client
     }
 
     /**
+     * @return Resource\PriceOption
+     */
+    public function createPriceOptionResource()
+    {
+        return new Resource\PriceOption($this->httpClient);
+    }
+
+    /**
      * @return \Traum\Service\Listing
      */
     public function createListingService()
