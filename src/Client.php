@@ -83,6 +83,14 @@ final class Client
     }
 
     /**
+     * @return \Traum\Resource\PriceLogic
+     */
+    public function createPriceLogicResource()
+    {
+        return new Resource\PriceLogic($this->httpClient);
+    }
+
+    /**
      * @return \Traum\Service\Listing
      */
     public function createListingService()
