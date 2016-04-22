@@ -201,7 +201,7 @@ final class Listing extends Resource
     /**
      * @param int $listingId
      * @param int $weekPriceTableId
-     * @return \Traum\Entity\ListingPicture
+     * @return \Traum\Entity\ListingWeekPriceTable
      */
     public function getWeekPriceTable($listingId, $weekPriceTableId)
     {
@@ -296,6 +296,70 @@ final class Listing extends Resource
     public function deletePaymentMethod($listingId, $paymentMethodId)
     {
         $uri = sprintf('/listing/%d/payment-method/%d', $listingId, $paymentMethodId);
+        $response = $this->request('DELETE', $uri);
+
+        return $response->getStatusCode() === 204;
+    }
+
+    /**
+     * @param int $listingId
+     * @return \Traum\Entity\ListingLeisureActivityCollection
+     */
+    public function getLeisureActivities($listingId)
+    {
+        $uri = sprintf('/listing/%d/leisure-activity', $listingId);
+        $body = $this->executeGet($uri);
+
+        return new Entity\ListingLeisureActivityCollection($body);
+    }
+
+    /**
+     * @param int $listingId
+     * @param \Traum\Entity\ListingLeisureActivity $listingLeisureActivity
+     * @return \Traum\Entity\ListingLeisureActivity
+     */
+    public function postLeisureActivities($listingId, Entity\ListingLeisureActivity $listingLeisureActivity)
+    {
+        $uri = sprintf('/listing/%d/leisure-activity', $listingId);
+        $body = $this->executePost($uri, $listingLeisureActivity, new Transformer\ListingLeisureActivity);
+
+        return new Entity\ListingLeisureActivity($body);
+    }
+
+    /**
+     * @param int $listingId
+     * @return bool
+     * @throws \Traum\Exception\InvalidRequest
+     */
+    public function deleteLeisureActivities($listingId)
+    {
+        $uri = sprintf('/listing/%d/leisure-activity', $listingId);
+        $response = $this->request('DELETE', $uri);
+
+        return $response->getStatusCode() === 204;
+    }
+
+    /**
+     * @param int $listingId
+     * @param int $leisureActivityId
+     * @return \Traum\Entity\ListingLeisureActivity
+     */
+    public function getLeisureActivity($listingId, $leisureActivityId)
+    {
+        $uri = sprintf('/listing/%d/leisure-activity/%d', $listingId, $leisureActivityId);
+        $body = $this->executeGet($uri);
+
+        return new Entity\ListingLeisureActivity($body);
+    }
+
+    /**
+     * @param int $listingId
+     * @param int $leisureActivityId
+     * @return \Traum\Entity\ListingLeisureActivity
+     */
+    public function deleteLeisureActivity($listingId, $leisureActivityId)
+    {
+        $uri = sprintf('/listing/%d/leisure-activity/%d', $listingId, $leisureActivityId);
         $response = $this->request('DELETE', $uri);
 
         return $response->getStatusCode() === 204;
