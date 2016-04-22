@@ -364,4 +364,68 @@ final class Listing extends Resource
 
         return $response->getStatusCode() === 204;
     }
+
+    /**
+     * @param int $listingId
+     * @return \Traum\Entity\ListingLanguageCollection
+     */
+    public function getLanguages($listingId)
+    {
+        $uri = sprintf('/listing/%d/language', $listingId);
+        $body = $this->executeGet($uri);
+
+        return new Entity\ListingLanguageCollection($body);
+    }
+
+    /**
+     * @param int $listingId
+     * @param \Traum\Entity\ListingLanguage $listingLanguage
+     * @return \Traum\Entity\ListingLanguage
+     */
+    public function postLanguages($listingId, Entity\ListingLanguage $listingLanguage)
+    {
+        $uri = sprintf('/listing/%d/language', $listingId);
+        $body = $this->executePost($uri, $listingLanguage, new Transformer\ListingLanguage);
+
+        return new Entity\ListingLanguage($body);
+    }
+
+    /**
+     * @param int $listingId
+     * @return bool
+     * @throws \Traum\Exception\InvalidRequest
+     */
+    public function deleteLanguages($listingId)
+    {
+        $uri = sprintf('/listing/%d/language', $listingId);
+        $response = $this->request('DELETE', $uri);
+
+        return $response->getStatusCode() === 204;
+    }
+
+    /**
+     * @param int $listingId
+     * @param int $languageId
+     * @return \Traum\Entity\ListingLanguage
+     */
+    public function getLanguage($listingId, $languageId)
+    {
+        $uri = sprintf('/listing/%d/language/%d', $listingId, $languageId);
+        $body = $this->executeGet($uri);
+
+        return new Entity\ListingLanguage($body);
+    }
+
+    /**
+     * @param int $listingId
+     * @param int $languageId
+     * @return \Traum\Entity\ListingLanguage
+     */
+    public function deleteLanguage($listingId, $languageId)
+    {
+        $uri = sprintf('/listing/%d/language/%d', $listingId, $languageId);
+        $response = $this->request('DELETE', $uri);
+
+        return $response->getStatusCode() === 204;
+    }
 }
