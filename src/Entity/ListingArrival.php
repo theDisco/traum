@@ -5,14 +5,14 @@ namespace Traum\Entity;
 use Traum\Entity;
 
 /**
- * Class ListingLanguage
+ * Class ListingArrival
  * @package Traum\Entity
  * @author Oskar Golde <info@oskargolde.de>
  */
-class ListingLanguage extends Entity
+class ListingArrival extends Entity
 {
     const ID = 'id';
-    const LANGUAGE = 'language';
+    const DAY_ID = 'day_id';
 
     /**
      * @return int
@@ -32,19 +32,19 @@ class ListingLanguage extends Entity
     }
 
     /**
-     * @return string
+     * @return int
      */
-    public function getLanguage()
+    public function getDayId()
     {
-        return $this->getData(self::LANGUAGE);
+        return $this->getData(self::DAY_ID);
     }
 
     /**
-     * @param string $language
+     * @param int $dayId
      * @return void
      */
-    public function setLanguage($language)
+    public function setDayId($dayId)
     {
-        $this->setData(self::LANGUAGE, $language);
+        $this->setData(self::DAY_ID, $dayId);
     }
 }

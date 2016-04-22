@@ -53,7 +53,7 @@ final class Listing extends Resource
     }
 
     /**
-     * @param int $listingId
+     * @param int                       $listingId
      * @param \Traum\Entity\ListingText $text
      * @return \Traum\Entity\ListingText
      * @throws \Traum\Exception\InvalidRequest
@@ -67,7 +67,7 @@ final class Listing extends Resource
     }
 
     /**
-     * @param int $listingId
+     * @param int                       $listingId
      * @param \Traum\Entity\ListingText $text
      * @return \Traum\Entity\ListingText
      * @throws \Traum\Exception\InvalidRequest
@@ -81,7 +81,7 @@ final class Listing extends Resource
     }
 
     /**
-     * @param int $listingId
+     * @param int                       $listingId
      * @param \Traum\Entity\ListingText $text
      * @return bool
      * @throws \Traum\Exception\InvalidRequest
@@ -107,7 +107,7 @@ final class Listing extends Resource
     }
 
     /**
-     * @param int $listingId
+     * @param int                          $listingId
      * @param \Traum\Entity\ListingPicture $listingPicture
      * @return \Traum\Entity\ListingPicture
      */
@@ -160,8 +160,8 @@ final class Listing extends Resource
     }
 
     /**
-     * @param int $listingId
-     * @param int $pictureId
+     * @param int                               $listingId
+     * @param int                               $pictureId
      * @param \Traum\Entity\ListingPictureTitle $pictureTitle
      * @return \Traum\Entity\ListingPictureTitle
      */
@@ -212,7 +212,7 @@ final class Listing extends Resource
     }
 
     /**
-     * @param int $listingId
+     * @param int                                 $listingId
      * @param \Traum\Entity\ListingWeekPriceTable $listingWeekPriceTable
      * @return \Traum\Entity\ListingWeekPriceTable
      */
@@ -225,7 +225,7 @@ final class Listing extends Resource
     }
 
     /**
-     * @param int $listingId
+     * @param int                                 $listingId
      * @param \Traum\Entity\ListingWeekPriceTable $listingWeekPriceTable
      * @return \Traum\Entity\ListingWeekPriceTable
      */
@@ -276,7 +276,7 @@ final class Listing extends Resource
     }
 
     /**
-     * @param int $listingId
+     * @param int                                $listingId
      * @param \Traum\Entity\ListingPaymentMethod $listingPaymentMethod
      * @return \Traum\Entity\ListingPaymentMethod
      */
@@ -314,7 +314,7 @@ final class Listing extends Resource
     }
 
     /**
-     * @param int $listingId
+     * @param int                                  $listingId
      * @param \Traum\Entity\ListingLeisureActivity $listingLeisureActivity
      * @return \Traum\Entity\ListingLeisureActivity
      */
@@ -378,7 +378,7 @@ final class Listing extends Resource
     }
 
     /**
-     * @param int $listingId
+     * @param int                           $listingId
      * @param \Traum\Entity\ListingLanguage $listingLanguage
      * @return \Traum\Entity\ListingLanguage
      */
@@ -424,6 +424,70 @@ final class Listing extends Resource
     public function deleteLanguage($listingId, $languageId)
     {
         $uri = sprintf('/listing/%d/language/%d', $listingId, $languageId);
+        $response = $this->request('DELETE', $uri);
+
+        return $response->getStatusCode() === 204;
+    }
+
+    /**
+     * @param int $listingId
+     * @return \Traum\Entity\ListingArrivalCollection
+     */
+    public function getArrivals($listingId)
+    {
+        $uri = sprintf('/listing/%d/arrival', $listingId);
+        $body = $this->executeGet($uri);
+
+        return new Entity\ListingArrivalCollection($body);
+    }
+
+    /**
+     * @param int                          $listingId
+     * @param \Traum\Entity\ListingArrival $listingArrival
+     * @return \Traum\Entity\ListingArrival
+     */
+    public function postArrivals($listingId, Entity\ListingArrival $listingArrival)
+    {
+        $uri = sprintf('/listing/%d/arrival', $listingId);
+        $body = $this->executePost($uri, $listingArrival, new Transformer\ListingArrival);
+
+        return new Entity\ListingArrival($body);
+    }
+
+    /**
+     * @param int $listingId
+     * @return bool
+     * @throws \Traum\Exception\InvalidRequest
+     */
+    public function deleteArrivals($listingId)
+    {
+        $uri = sprintf('/listing/%d/arrival', $listingId);
+        $response = $this->request('DELETE', $uri);
+
+        return $response->getStatusCode() === 204;
+    }
+
+    /**
+     * @param int $listingId
+     * @param int $arrivalId
+     * @return \Traum\Entity\ListingArrival
+     */
+    public function getArrival($listingId, $arrivalId)
+    {
+        $uri = sprintf('/listing/%d/arrival/%d', $listingId, $arrivalId);
+        $body = $this->executeGet($uri);
+
+        return new Entity\ListingArrival($body);
+    }
+
+    /**
+     * @param int $listingId
+     * @param int $arrivalId
+     * @return \Traum\Entity\ListingArrival
+     */
+    public function deleteArrival($listingId, $arrivalId)
+    {
+        $uri = sprintf('/listing/%d/arrival/%d', $listingId, $arrivalId);
         $response = $this->request('DELETE', $uri);
 
         return $response->getStatusCode() === 204;
