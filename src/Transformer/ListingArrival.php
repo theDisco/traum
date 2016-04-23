@@ -6,7 +6,7 @@ use Traum\Entity;
 use Traum\Transformer;
 
 /**
- * Class ListingLanguage
+ * Class ListingArrival
  * @package Traum\Transformer
  * @author Oskar Golde <info@oskargolde.de>
  */

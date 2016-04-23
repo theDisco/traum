@@ -3,7 +3,7 @@
 namespace Traum\Enum;
 
 /**
- * Interface Arrival
+ * Interface TravelTime
  * @package Traum\Enum
  * @author Oskar Golde <info@oskargolde.de>
  */

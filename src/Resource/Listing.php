@@ -317,6 +317,7 @@ final class Listing extends Resource
      * @param int                                  $listingId
      * @param \Traum\Entity\ListingLeisureActivity $listingLeisureActivity
      * @return \Traum\Entity\ListingLeisureActivity
+     * ToDo: post collection or entity? (https://github.com/theDisco/traum/issues/7)
      */
     public function postLeisureActivities($listingId, Entity\ListingLeisureActivity $listingLeisureActivity)
     {
@@ -381,6 +382,7 @@ final class Listing extends Resource
      * @param int                           $listingId
      * @param \Traum\Entity\ListingLanguage $listingLanguage
      * @return \Traum\Entity\ListingLanguage
+     * ToDo: post collection or entity? (https://github.com/theDisco/traum/issues/7)
      */
     public function postLanguages($listingId, Entity\ListingLanguage $listingLanguage)
     {
@@ -445,6 +447,7 @@ final class Listing extends Resource
      * @param int                          $listingId
      * @param \Traum\Entity\ListingArrival $listingArrival
      * @return \Traum\Entity\ListingArrival
+     * ToDo: post collection or entity? (https://github.com/theDisco/traum/issues/7)
      */
     public function postArrivals($listingId, Entity\ListingArrival $listingArrival)
     {
@@ -491,5 +494,72 @@ final class Listing extends Resource
         $response = $this->request('DELETE', $uri);
 
         return $response->getStatusCode() === 204;
+    }
+
+    /**
+     * @param int $listingId
+     * @return \Traum\Entity\ListingSuitabilityCollection
+     */
+    public function getSuitabilities($listingId)
+    {
+        $uri = sprintf('/listing/%d/suitability', $listingId);
+        $body = $this->executeGet($uri);
+
+        return new Entity\ListingSuitabilityCollection($body);
+    }
+
+    /**
+     * @param int                              $listingId
+     * @param \Traum\Entity\ListingSuitability $listingSuitability
+     * @return \Traum\Entity\ListingSuitability
+     * ToDo: post collection or entity? (https://github.com/theDisco/traum/issues/7)
+     */
+    public function postSuitabilities($listingId, Entity\ListingSuitability $listingSuitability)
+    {
+        $uri = sprintf('/listing/%d/suitability', $listingId);
+        $body = $this->executePost($uri, $listingSuitability, new Transformer\ListingSuitability);
+
+        return new Entity\ListingSuitability($body);
+    }
+
+    /**
+     * @param int                              $listingId
+     * @param \Traum\Entity\ListingSuitability $listingSuitability
+     * @return \Traum\Entity\ListingSuitability
+     * ToDo: post collection or entity? (https://github.com/theDisco/traum/issues/7)
+     */
+    public function patchSuitabilities($listingId, Entity\ListingSuitability $listingSuitability)
+    {
+        $uri = sprintf('/listing/%d/suitability', $listingId);
+        $body = $this->executePatch($uri, $listingSuitability, new Transformer\ListingSuitability);
+
+        return new Entity\ListingSuitability($body);
+    }
+
+    /**
+     * @param int $listingId
+     * @param int $suitabilityId
+     * @return \Traum\Entity\ListingSuitability
+     */
+    public function getSuitabilitiy($listingId, $suitabilityId)
+    {
+        $uri = sprintf('/listing/%d/suitability/%d', $listingId, $suitabilityId);
+        $body = $this->executeGet($uri);
+
+        return new Entity\ListingSuitability($body);
+    }
+
+    /**
+     * @param int                              $listingId
+     * @param int                              $suitabilityId
+     * @param \Traum\Entity\ListingSuitability $listingSuitability
+     * @return \Traum\Entity\ListingSuitability
+     */
+    public function patchSuitability($listingId, $suitabilityId, Entity\ListingSuitability $listingSuitability)
+    {
+        $uri = sprintf('/listing/%d/suitability/%d', $listingId, $suitabilityId);
+        $body = $this->executePatch($uri, $listingSuitability, new Transformer\ListingSuitability);
+
+        return new Entity\ListingSuitability($body);
     }
 }
