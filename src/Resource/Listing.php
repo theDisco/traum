@@ -53,7 +53,7 @@ final class Listing extends Resource
     }
 
     /**
-     * @param int $listingId
+     * @param int                       $listingId
      * @param \Traum\Entity\ListingText $text
      * @return \Traum\Entity\ListingText
      * @throws \Traum\Exception\InvalidRequest
@@ -67,7 +67,7 @@ final class Listing extends Resource
     }
 
     /**
-     * @param int $listingId
+     * @param int                       $listingId
      * @param \Traum\Entity\ListingText $text
      * @return \Traum\Entity\ListingText
      * @throws \Traum\Exception\InvalidRequest
@@ -81,7 +81,7 @@ final class Listing extends Resource
     }
 
     /**
-     * @param int $listingId
+     * @param int                       $listingId
      * @param \Traum\Entity\ListingText $text
      * @return bool
      * @throws \Traum\Exception\InvalidRequest
@@ -107,7 +107,7 @@ final class Listing extends Resource
     }
 
     /**
-     * @param int $listingId
+     * @param int                          $listingId
      * @param \Traum\Entity\ListingPicture $listingPicture
      * @return \Traum\Entity\ListingPicture
      */
@@ -160,8 +160,8 @@ final class Listing extends Resource
     }
 
     /**
-     * @param int $listingId
-     * @param int $pictureId
+     * @param int                               $listingId
+     * @param int                               $pictureId
      * @param \Traum\Entity\ListingPictureTitle $pictureTitle
      * @return \Traum\Entity\ListingPictureTitle
      */
@@ -201,7 +201,7 @@ final class Listing extends Resource
     /**
      * @param int $listingId
      * @param int $weekPriceTableId
-     * @return \Traum\Entity\ListingPicture
+     * @return \Traum\Entity\ListingWeekPriceTable
      */
     public function getWeekPriceTable($listingId, $weekPriceTableId)
     {
@@ -212,7 +212,7 @@ final class Listing extends Resource
     }
 
     /**
-     * @param int $listingId
+     * @param int                                 $listingId
      * @param \Traum\Entity\ListingWeekPriceTable $listingWeekPriceTable
      * @return \Traum\Entity\ListingWeekPriceTable
      */
@@ -225,7 +225,7 @@ final class Listing extends Resource
     }
 
     /**
-     * @param int $listingId
+     * @param int                                 $listingId
      * @param \Traum\Entity\ListingWeekPriceTable $listingWeekPriceTable
      * @return \Traum\Entity\ListingWeekPriceTable
      */
@@ -276,7 +276,7 @@ final class Listing extends Resource
     }
 
     /**
-     * @param int $listingId
+     * @param int                                $listingId
      * @param \Traum\Entity\ListingPaymentMethod $listingPaymentMethod
      * @return \Traum\Entity\ListingPaymentMethod
      */
@@ -299,5 +299,248 @@ final class Listing extends Resource
         $response = $this->request('DELETE', $uri);
 
         return $response->getStatusCode() === 204;
+    }
+
+    /**
+     * @param int $listingId
+     * @return \Traum\Entity\ListingLeisureActivityCollection
+     */
+    public function getLeisureActivities($listingId)
+    {
+        $uri = sprintf('/listing/%d/leisure-activity', $listingId);
+        $body = $this->executeGet($uri);
+
+        return new Entity\ListingLeisureActivityCollection($body);
+    }
+
+    /**
+     * @param int                                  $listingId
+     * @param \Traum\Entity\ListingLeisureActivity $listingLeisureActivity
+     * @return \Traum\Entity\ListingLeisureActivity
+     */
+    public function postLeisureActivity($listingId, Entity\ListingLeisureActivity $listingLeisureActivity)
+    {
+        $uri = sprintf('/listing/%d/leisure-activity', $listingId);
+        $body = $this->executePost($uri, $listingLeisureActivity, new Transformer\ListingLeisureActivity);
+
+        return new Entity\ListingLeisureActivity($body);
+    }
+
+    /**
+     * @param int $listingId
+     * @return bool
+     * @throws \Traum\Exception\InvalidRequest
+     */
+    public function deleteLeisureActivities($listingId)
+    {
+        $uri = sprintf('/listing/%d/leisure-activity', $listingId);
+        $response = $this->request('DELETE', $uri);
+
+        return $response->getStatusCode() === 204;
+    }
+
+    /**
+     * @param int $listingId
+     * @param int $leisureActivityId
+     * @return \Traum\Entity\ListingLeisureActivity
+     */
+    public function getLeisureActivity($listingId, $leisureActivityId)
+    {
+        $uri = sprintf('/listing/%d/leisure-activity/%d', $listingId, $leisureActivityId);
+        $body = $this->executeGet($uri);
+
+        return new Entity\ListingLeisureActivity($body);
+    }
+
+    /**
+     * @param int $listingId
+     * @param int $leisureActivityId
+     * @return \Traum\Entity\ListingLeisureActivity
+     */
+    public function deleteLeisureActivity($listingId, $leisureActivityId)
+    {
+        $uri = sprintf('/listing/%d/leisure-activity/%d', $listingId, $leisureActivityId);
+        $response = $this->request('DELETE', $uri);
+
+        return $response->getStatusCode() === 204;
+    }
+
+    /**
+     * @param int $listingId
+     * @return \Traum\Entity\ListingLanguageCollection
+     */
+    public function getLanguages($listingId)
+    {
+        $uri = sprintf('/listing/%d/language', $listingId);
+        $body = $this->executeGet($uri);
+
+        return new Entity\ListingLanguageCollection($body);
+    }
+
+    /**
+     * @param int                           $listingId
+     * @param \Traum\Entity\ListingLanguage $listingLanguage
+     * @return \Traum\Entity\ListingLanguage
+     */
+    public function postLanguage($listingId, Entity\ListingLanguage $listingLanguage)
+    {
+        $uri = sprintf('/listing/%d/language', $listingId);
+        $body = $this->executePost($uri, $listingLanguage, new Transformer\ListingLanguage);
+
+        return new Entity\ListingLanguage($body);
+    }
+
+    /**
+     * @param int $listingId
+     * @return bool
+     * @throws \Traum\Exception\InvalidRequest
+     */
+    public function deleteLanguages($listingId)
+    {
+        $uri = sprintf('/listing/%d/language', $listingId);
+        $response = $this->request('DELETE', $uri);
+
+        return $response->getStatusCode() === 204;
+    }
+
+    /**
+     * @param int $listingId
+     * @param int $languageId
+     * @return \Traum\Entity\ListingLanguage
+     */
+    public function getLanguage($listingId, $languageId)
+    {
+        $uri = sprintf('/listing/%d/language/%d', $listingId, $languageId);
+        $body = $this->executeGet($uri);
+
+        return new Entity\ListingLanguage($body);
+    }
+
+    /**
+     * @param int $listingId
+     * @param int $languageId
+     * @return \Traum\Entity\ListingLanguage
+     */
+    public function deleteLanguage($listingId, $languageId)
+    {
+        $uri = sprintf('/listing/%d/language/%d', $listingId, $languageId);
+        $response = $this->request('DELETE', $uri);
+
+        return $response->getStatusCode() === 204;
+    }
+
+    /**
+     * @param int $listingId
+     * @return \Traum\Entity\ListingArrivalCollection
+     */
+    public function getArrivals($listingId)
+    {
+        $uri = sprintf('/listing/%d/arrival', $listingId);
+        $body = $this->executeGet($uri);
+
+        return new Entity\ListingArrivalCollection($body);
+    }
+
+    /**
+     * @param int                          $listingId
+     * @param \Traum\Entity\ListingArrival $listingArrival
+     * @return \Traum\Entity\ListingArrival
+     */
+    public function postArrival($listingId, Entity\ListingArrival $listingArrival)
+    {
+        $uri = sprintf('/listing/%d/arrival', $listingId);
+        $body = $this->executePost($uri, $listingArrival, new Transformer\ListingArrival);
+
+        return new Entity\ListingArrival($body);
+    }
+
+    /**
+     * @param int $listingId
+     * @return bool
+     * @throws \Traum\Exception\InvalidRequest
+     */
+    public function deleteArrivals($listingId)
+    {
+        $uri = sprintf('/listing/%d/arrival', $listingId);
+        $response = $this->request('DELETE', $uri);
+
+        return $response->getStatusCode() === 204;
+    }
+
+    /**
+     * @param int $listingId
+     * @param int $arrivalId
+     * @return \Traum\Entity\ListingArrival
+     */
+    public function getArrival($listingId, $arrivalId)
+    {
+        $uri = sprintf('/listing/%d/arrival/%d', $listingId, $arrivalId);
+        $body = $this->executeGet($uri);
+
+        return new Entity\ListingArrival($body);
+    }
+
+    /**
+     * @param int $listingId
+     * @param int $arrivalId
+     * @return \Traum\Entity\ListingArrival
+     */
+    public function deleteArrival($listingId, $arrivalId)
+    {
+        $uri = sprintf('/listing/%d/arrival/%d', $listingId, $arrivalId);
+        $response = $this->request('DELETE', $uri);
+
+        return $response->getStatusCode() === 204;
+    }
+
+    /**
+     * @param int $listingId
+     * @return \Traum\Entity\ListingSuitabilityCollection
+     */
+    public function getSuitabilities($listingId)
+    {
+        $uri = sprintf('/listing/%d/suitability', $listingId);
+        $body = $this->executeGet($uri);
+
+        return new Entity\ListingSuitabilityCollection($body);
+    }
+
+    /**
+     * @param int                              $listingId
+     * @param \Traum\Entity\ListingSuitability $listingSuitability
+     * @return \Traum\Entity\ListingSuitability
+     */
+    public function postSuitability($listingId, Entity\ListingSuitability $listingSuitability)
+    {
+        $uri = sprintf('/listing/%d/suitability', $listingId);
+        $body = $this->executePost($uri, $listingSuitability, new Transformer\ListingSuitability);
+
+        return new Entity\ListingSuitability($body);
+    }
+
+    /**
+     * @param int                              $listingId
+     * @param \Traum\Entity\ListingSuitability $listingSuitability
+     * @return \Traum\Entity\ListingSuitability
+     */
+    public function patchSuitability($listingId, Entity\ListingSuitability $listingSuitability)
+    {
+        $uri = sprintf('/listing/%d/suitability', $listingId);
+        $body = $this->executePatch($uri, $listingSuitability, new Transformer\ListingSuitability);
+
+        return new Entity\ListingSuitability($body);
+    }
+
+    /**
+     * @param int $listingId
+     * @param int $suitabilityId
+     * @return \Traum\Entity\ListingSuitability
+     */
+    public function getSuitabilitiy($listingId, $suitabilityId)
+    {
+        $uri = sprintf('/listing/%d/suitability/%d', $listingId, $suitabilityId);
+        $body = $this->executeGet($uri);
+
+        return new Entity\ListingSuitability($body);
     }
 }
