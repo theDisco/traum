@@ -33,8 +33,8 @@ final class Client
     {
         $clientConfig = [
             'base_uri' => 'https://clientapi.traum-ferienwohnungen.de',
-            'headers' => [
-                'Accept' => 'application/json',
+            'headers'  => [
+                'Accept'       => 'application/json',
                 'Content-Type' => 'application/json',
             ]
         ];
@@ -112,6 +112,14 @@ final class Client
     public function createContactResource()
     {
         return new Resource\Contact($this->httpClient);
+    }
+
+    /**
+     * @return \Traum\Resource\TravelTime
+     */
+    public function createTravelTimeResource()
+    {
+        return new Resource\TravelTime($this->httpClient);
     }
 
     /**
