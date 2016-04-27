@@ -37,6 +37,14 @@ abstract class Transformer
     }
 
     /**
+     * @return void
+     */
+    protected function resetFields()
+    {
+        $this->fields = [];
+    }
+
+    /**
      * @param string $value
      * @param bool|int|string|double $type
      * @return bool|int|string|double

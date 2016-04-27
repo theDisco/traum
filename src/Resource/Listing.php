@@ -519,6 +519,23 @@ final class Listing extends Resource
     }
 
     /**
+     * @param int $listingId
+     * @param \Traum\Entity\ListingSuitabilityCollection $listingSuitabilityCollection
+     * @return \Traum\Entity\ListingSuitabilityCollection
+     */
+    public function postSuitabilities($listingId, Entity\ListingSuitabilityCollection $listingSuitabilityCollection)
+    {
+        $uri = sprintf('/listing/%d/suitability', $listingId);
+        $body = $this->executePostForCollection(
+            $uri,
+            $listingSuitabilityCollection,
+            new Transformer\ListingSuitabilityCollection
+        );
+
+        return new Entity\ListingSuitabilityCollection($body);
+    }
+
+    /**
      * @param int                              $listingId
      * @param \Traum\Entity\ListingSuitability $listingSuitability
      * @return \Traum\Entity\ListingSuitability

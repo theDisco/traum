@@ -13,9 +13,22 @@ abstract class Collection implements \Iterator
 
     private $pointer = 0;
 
-    public function __construct(array $data)
+    public function __construct(array $data, $embedded = true)
     {
+        if (!$embedded) {
+            $data = [
+                '_embedded' => [
+                    $this->collection() => $data
+                ]
+            ];
+        }
+
         $this->data = $data;
+    }
+
+    public static function fromArray(array $data)
+    {
+        return new static($data, false);
     }
 
     public function current()

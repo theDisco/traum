@@ -9,7 +9,6 @@ namespace Traum\Enum;
  */
 interface Suitability
 {
-    /* suitability_id */
     const ALLERGY_SUFFERERS = 901;
     const HANDICAPPED_PERSONS = 902;
     const NON_SMOKERS = 903;
@@ -23,9 +22,4 @@ interface Suitability
     const LONG_TERM_VACATIONS = 918;
     const BARRIER_FREE = 919;
     const ASSEMBLERS = 920;
-
-    /* suitability_status_id */
-    const ALLOWED = 1;
-    const NOT_ALLOWED = 2;
-    const ON_REQUEST = 3;
 }

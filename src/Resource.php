@@ -48,6 +48,18 @@ abstract class Resource
     }
 
     /**
+     * @param \Traum\Collection $collection
+     * @param Transformer $transformer
+     * @return \League\Fractal\Scope
+     */
+    protected function transformCollection(Collection $collection, Transformer $transformer)
+    {
+        $resource = new Fractal\Resource\Collection($collection, $transformer);
+
+        return $this->getFractalManager()->createData($resource);
+    }
+
+    /**
      * @return Fractal\Manager
      */
     private function getFractalManager()
@@ -106,6 +118,17 @@ abstract class Resource
 
     /**
      * @param string $uri
+     * @param \Traum\Collection $collection
+     * @param \Traum\Transformer $transformer
+     * @return array
+     */
+    protected function executePostForCollection($uri, Collection $collection, Transformer $transformer)
+    {
+        return $this->executeWriteForCollection('POST', $uri, $collection, $transformer);
+    }
+
+    /**
+     * @param string $uri
      * @param \Traum\Entity $entity
      * @param \Traum\Transformer $transformer
      * @return array
@@ -139,6 +162,23 @@ abstract class Resource
     private function executeWrite($method, $uri, Entity $entity, Transformer $transformer)
     {
         $data = $this->transformEntity($entity, $transformer);
+        $response = $this->request($method, $uri, [], $data->toJson());
+        $body = $response->getBody()->getContents();
+
+        return json_decode($body, JSON_OBJECT_AS_ARRAY);
+    }
+
+    /**
+     * @param string $method
+     * @param string $uri
+     * @param \Traum\Collection $collection
+     * @param Transformer $transformer
+     * @return array
+     * @throws \Traum\Exception\InvalidRequest
+     */
+    private function executeWriteForCollection($method, $uri, Collection $collection, Transformer $transformer)
+    {
+        $data = $this->transformCollection($collection, $transformer);
         $response = $this->request($method, $uri, [], $data->toJson());
         $body = $response->getBody()->getContents();
 
