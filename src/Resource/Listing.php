@@ -328,6 +328,25 @@ final class Listing extends Resource
 
     /**
      * @param int $listingId
+     * @param \Traum\Entity\ListingLeisureActivityCollection $listingLeisureActivityCollection
+     * @return \Traum\Entity\ListingLeisureActivityCollection
+     */
+    public function postLeisureActivities(
+        $listingId,
+        Entity\ListingLeisureActivityCollection $listingLeisureActivityCollection
+    ) {
+        $uri = sprintf('/listing/%d/leisure-activity', $listingId);
+        $body = $this->executePostForCollection(
+            $uri,
+            $listingLeisureActivityCollection,
+            new Transformer\ListingLeisureActivity
+        );
+
+        return new Entity\ListingLeisureActivityCollection($body);
+    }
+
+    /**
+     * @param int $listingId
      * @return bool
      * @throws \Traum\Exception\InvalidRequest
      */
