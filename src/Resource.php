@@ -129,6 +129,17 @@ abstract class Resource
 
     /**
      * @param string $uri
+     * @param \Traum\Collection $collection
+     * @param \Traum\Transformer $transformer
+     * @return array
+     */
+    protected function executePatchForCollection($uri, Collection $collection, Transformer $transformer)
+    {
+        return $this->executeWriteForCollection('PATCH', $uri, $collection, $transformer);
+    }
+
+    /**
+     * @param string $uri
      * @param \Traum\Entity $entity
      * @param \Traum\Transformer $transformer
      * @return array

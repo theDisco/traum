@@ -550,6 +550,23 @@ final class Listing extends Resource
 
     /**
      * @param int $listingId
+     * @param \Traum\Entity\ListingSuitabilityCollection $listingSuitabilityCollection
+     * @return \Traum\Entity\ListingSuitability
+     */
+    public function patchSuitabilities($listingId, Entity\ListingSuitabilityCollection $listingSuitabilityCollection)
+    {
+        $uri = sprintf('/listing/%d/suitability', $listingId);
+        $body = $this->executePatchForCollection(
+            $uri,
+            $listingSuitabilityCollection,
+            new Transformer\ListingSuitabilityForPatch
+        );
+
+        return new Entity\ListingSuitabilityCollection($body);
+    }
+
+    /**
+     * @param int $listingId
      * @param int $suitabilityId
      * @return \Traum\Entity\ListingSuitability
      */
