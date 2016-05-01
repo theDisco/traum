@@ -27,6 +27,12 @@ function compare(\Traum\Entity $entity, $transport, $assertion)
     $assertion->assertEquals($entity->getRawData(), $request);
 }
 
+function compareCollection(\Traum\Collection $collection, $transport, $assertion)
+{
+    $request = json_decode((string) $transport->getBody(), JSON_OBJECT_AS_ARRAY);
+    $assertion->assertEquals($collection->getData(), $request);
+}
+
 function fixture($name)
 {
     $content = file_get_contents(__DIR__ . '/Fixtures/' . $name . '.json');

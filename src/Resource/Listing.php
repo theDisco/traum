@@ -529,7 +529,7 @@ final class Listing extends Resource
         $body = $this->executePostForCollection(
             $uri,
             $listingSuitabilityCollection,
-            new Transformer\ListingSuitabilityCollection
+            new Transformer\ListingSuitability
         );
 
         return new Entity\ListingSuitabilityCollection($body);

@@ -31,6 +31,11 @@ abstract class Collection implements \Iterator
         return new static($data, false);
     }
 
+    public function getData()
+    {
+        return $this->data;
+    }
+
     public function current()
     {
         $data = $this->data['_embedded'][$this->collection()][$this->pointer];

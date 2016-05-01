@@ -217,21 +217,19 @@ class ListingTest extends \PHPUnit_Framework_TestCase
         $client = createClient('post_listing_suitabilities', $history);
 
         $suitability = [
-                    [
-                        Entity\ListingSuitability::SUITABILITY_ID        => Enum\Suitability::NON_SMOKERS,
-                        Entity\ListingSuitability::SUITABILITY_STATUS_ID => Enum\SuitabilityStatus::NOT_ALLOWED
-                    ],
-                    [
-                        Entity\ListingSuitability::SUITABILITY_ID        => Enum\Suitability::FAMILIES,
-                        Entity\ListingSuitability::SUITABILITY_STATUS_ID => Enum\SuitabilityStatus::ALLOWED
-                    ],
-
-                    [
-                        Entity\ListingSuitability::SUITABILITY_ID        => Enum\Suitability::ALLERGY_SUFFERERS,
-                        Entity\ListingSuitability::SUITABILITY_STATUS_ID => Enum\SuitabilityStatus::ON_REQUEST
-                    ],
-
-                ];
+            [
+                Entity\ListingSuitability::SUITABILITY_ID        => Enum\Suitability::NON_SMOKERS,
+                Entity\ListingSuitability::SUITABILITY_STATUS_ID => Enum\SuitabilityStatus::NOT_ALLOWED
+            ],
+            [
+                Entity\ListingSuitability::SUITABILITY_ID        => Enum\Suitability::FAMILIES,
+                Entity\ListingSuitability::SUITABILITY_STATUS_ID => Enum\SuitabilityStatus::ALLOWED
+            ],
+            [
+                Entity\ListingSuitability::SUITABILITY_ID        => Enum\Suitability::ALLERGY_SUFFERERS,
+                Entity\ListingSuitability::SUITABILITY_STATUS_ID => Enum\SuitabilityStatus::ON_REQUEST
+            ],
+        ];
 
         $collection = Entity\ListingSuitabilityCollection::fromArray($suitability);
 
@@ -240,7 +238,7 @@ class ListingTest extends \PHPUnit_Framework_TestCase
 
         $this->assertEquals('POST', $mock['request']->getMethod());
         $this->assertEquals('/listing/1/suitability', $mock['request']->getUri()->getPath());
-        compare($collection, $mock['request'], $this);
-        compare($response, $mock['response'], $this);
+
+        compareCollection($response, $mock['response'], $this);
     }
 }
