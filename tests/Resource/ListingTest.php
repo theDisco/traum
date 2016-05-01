@@ -1,5 +1,9 @@
 <?php
 
+use Traum\Entity;
+use Traum\Enum;
+use Traum\Transformer;
+
 class ListingTest extends \PHPUnit_Framework_TestCase
 {
     public function testGetListing()
@@ -204,6 +208,39 @@ class ListingTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('PATCH', $mock['request']->getMethod());
         $this->assertEquals('/listing/12/picture/34/picture-title/56', $mock['request']->getUri()->getPath());
         compare($entity, $mock['request'], $this);
+        compare($response, $mock['response'], $this);
+    }
+
+    public function testPostListingSuitabilities()
+    {
+        $history = [];
+        $client = createClient('post_listing_suitabilities', $history);
+
+        $suitability = [
+                    [
+                        Entity\ListingSuitability::SUITABILITY_ID        => Enum\Suitability::NON_SMOKERS,
+                        Entity\ListingSuitability::SUITABILITY_STATUS_ID => Enum\SuitabilityStatus::NOT_ALLOWED
+                    ],
+                    [
+                        Entity\ListingSuitability::SUITABILITY_ID        => Enum\Suitability::FAMILIES,
+                        Entity\ListingSuitability::SUITABILITY_STATUS_ID => Enum\SuitabilityStatus::ALLOWED
+                    ],
+
+                    [
+                        Entity\ListingSuitability::SUITABILITY_ID        => Enum\Suitability::ALLERGY_SUFFERERS,
+                        Entity\ListingSuitability::SUITABILITY_STATUS_ID => Enum\SuitabilityStatus::ON_REQUEST
+                    ],
+
+                ];
+
+        $collection = Entity\ListingSuitabilityCollection::fromArray($suitability);
+
+        $response = $client->createListingResource()->postSuitabilities(1, $collection);
+        $mock = array_shift($history);
+
+        $this->assertEquals('POST', $mock['request']->getMethod());
+        $this->assertEquals('/listing/1/suitability', $mock['request']->getUri()->getPath());
+        compare($collection, $mock['request'], $this);
         compare($response, $mock['response'], $this);
     }
 }
