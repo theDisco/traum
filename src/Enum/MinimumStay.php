@@ -9,6 +9,12 @@ namespace Traum\Enum;
  */
 interface MinimumStay
 {
+    const ONE_NIGHT = 1;
+    const TWO_NIGHTS = 2;
+    const THREE_NIGHTS = 3;
+    const FOUR_NIGHTS = 4;
+    const FIVE_NIGHTS = 5;
+    const SIX_NIGHTS = 6;
     const SEVEN_NIGHTS = 7;
     const EIGHT_NIGHTS = 8;
     const NINE_NIGHTS = 9;
