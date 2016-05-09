@@ -206,7 +206,7 @@ final class Listing extends Resource
     public function postPriceTable($listingId, Entity\ListingPriceTable $listingPriceTable)
     {
         $uri = sprintf('/listing/%d/price-table', $listingId);
-        $body = $this->executePatch($uri, $listingPriceTable, new Transformer\ListingPriceTable);
+        $body = $this->executePost($uri, $listingPriceTable, new Transformer\ListingPriceTable);
 
         return new Entity\ListingPriceTable($body);
     }
