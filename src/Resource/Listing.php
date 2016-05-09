@@ -175,6 +175,83 @@ final class Listing extends Resource
 
     /**
      * @param int $listingId
+     * @return \Traum\Entity\ListingPriceTableCollection
+     */
+    public function getPriceTables($listingId)
+    {
+        $uri = sprintf('/listing/%d/price-table', $listingId);
+        $body = $this->executeGet($uri);
+
+        return new Entity\ListingPriceTableCollection($body);
+    }
+
+    /**
+     * @param int                                       $listingId
+     * @param \Traum\Entity\ListingPriceTableCollection $listingPriceTableCollection
+     * @return \Traum\Entity\ListingPriceTableCollection
+     */
+    public function postPriceTables($listingId, Entity\ListingPriceTableCollection $listingPriceTableCollection)
+    {
+        $uri = sprintf('/listing/%d/price-table', $listingId);
+        $body = $this->executePostForCollection($uri, $listingPriceTableCollection, new Transformer\ListingPriceTable);
+
+        return new Entity\ListingPriceTableCollection($body);
+    }
+
+    /**
+     * @param int                             $listingId
+     * @param \Traum\Entity\ListingPriceTable $listingPriceTable
+     * @return \Traum\Entity\ListingPriceTable
+     */
+    public function postPriceTable($listingId, Entity\ListingPriceTable $listingPriceTable)
+    {
+        $uri = sprintf('/listing/%d/price-table', $listingId);
+        $body = $this->executePatch($uri, $listingPriceTable, new Transformer\ListingPriceTable);
+
+        return new Entity\ListingPriceTable($body);
+    }
+
+    /**
+     * @param int $listingId
+     * @return bool
+     * @throws \Traum\Exception\InvalidRequest
+     */
+    public function deletePriceTables($listingId)
+    {
+        $uri = sprintf('/listing/%d/price-table', $listingId);
+        $response = $this->request('DELETE', $uri);
+
+        return $response->getStatusCode() === 204;
+    }
+
+    /**
+     * @param int                                       $listingId
+     * @param \Traum\Entity\ListingPriceTableCollection $listingPriceTableCollection
+     * @return \Traum\Entity\ListingPriceTableCollection
+     */
+    public function patchPriceTables($listingId, Entity\ListingPriceTableCollection $listingPriceTableCollection)
+    {
+        $uri = sprintf('/listing/%d/price-table', $listingId);
+        $body = $this->executePatchForCollection($uri, $listingPriceTableCollection, new Transformer\ListingPriceTable);
+
+        return new Entity\ListingPriceTableCollection($body);
+    }
+
+    /**
+     * @param int                             $listingId
+     * @param \Traum\Entity\ListingPriceTable $listingPriceTable
+     * @return \Traum\Entity\ListingPriceTable
+     */
+    public function patchPriceTable($listingId, Entity\ListingPriceTable $listingPriceTable)
+    {
+        $uri = sprintf('/listing/%d/price-table', $listingId);
+        $body = $this->executePatch($uri, $listingPriceTable, new Transformer\ListingPriceTable);
+
+        return new Entity\ListingPriceTableCollection($body);
+    }
+
+    /**
+     * @param int $listingId
      * @return \Traum\Entity\ListingWeekPriceTableCollection
      */
     public function getWeekPriceTables($listingId)
@@ -327,7 +404,7 @@ final class Listing extends Resource
     }
 
     /**
-     * @param int $listingId
+     * @param int                                            $listingId
      * @param \Traum\Entity\ListingLeisureActivityCollection $listingLeisureActivityCollection
      * @return \Traum\Entity\ListingLeisureActivityCollection
      */
@@ -538,7 +615,7 @@ final class Listing extends Resource
     }
 
     /**
-     * @param int $listingId
+     * @param int                                        $listingId
      * @param \Traum\Entity\ListingSuitabilityCollection $listingSuitabilityCollection
      * @return \Traum\Entity\ListingSuitabilityCollection
      */
@@ -568,7 +645,7 @@ final class Listing extends Resource
     }
 
     /**
-     * @param int $listingId
+     * @param int                                        $listingId
      * @param \Traum\Entity\ListingSuitabilityCollection $listingSuitabilityCollection
      * @return \Traum\Entity\ListingSuitability
      */
@@ -589,7 +666,7 @@ final class Listing extends Resource
      * @param int $suitabilityId
      * @return \Traum\Entity\ListingSuitability
      */
-    public function getSuitabilitiy($listingId, $suitabilityId)
+    public function getSuitability($listingId, $suitabilityId)
     {
         $uri = sprintf('/listing/%d/suitability/%d', $listingId, $suitabilityId);
         $body = $this->executeGet($uri);
