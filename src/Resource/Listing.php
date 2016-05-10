@@ -591,6 +591,19 @@ final class Listing extends Resource
 
     /**
      * @param int $listingId
+     * @param int $suitabilityId
+     * @return \Traum\Entity\ListingSuitability
+     */
+    public function getSuitability($listingId, $suitabilityId)
+    {
+        $uri = sprintf('/listing/%d/suitability/%d', $listingId, $suitabilityId);
+        $body = $this->executeGet($uri);
+
+        return new Entity\ListingSuitability($body);
+    }
+
+    /**
+     * @param int $listingId
      * @return \Traum\Entity\ListingSuitabilityCollection
      */
     public function getSuitabilities($listingId)
@@ -663,14 +676,58 @@ final class Listing extends Resource
 
     /**
      * @param int $listingId
-     * @param int $suitabilityId
-     * @return \Traum\Entity\ListingSuitability
+     * @return \Traum\Entity\ListingAdditionalChargeCollection
      */
-    public function getSuitability($listingId, $suitabilityId)
+    public function getAdditionalCharges($listingId)
     {
-        $uri = sprintf('/listing/%d/suitability/%d', $listingId, $suitabilityId);
+        $uri = sprintf('/listing/%d/additional-charge', $listingId);
         $body = $this->executeGet($uri);
 
-        return new Entity\ListingSuitability($body);
+        return new Entity\ListingAdditionalChargeCollection($body);
+    }
+
+    /**
+     * @param int                                   $listingId
+     * @param \Traum\Entity\ListingAdditionalCharge $listingAdditionalCharge
+     * @return \Traum\Entity\ListingAdditionalCharge
+     */
+    public function postAdditionalCharge($listingId, Entity\ListingAdditionalCharge $listingAdditionalCharge)
+    {
+        $uri = sprintf('/listing/%d/additional-charge', $listingId);
+        $body = $this->executePost($uri, $listingAdditionalCharge, new Transformer\ListingAdditionalCharge);
+
+        return new Entity\ListingAdditionalCharge($body);
+    }
+
+    /**
+     * @param int                                             $listingId
+     * @param \Traum\Entity\ListingAdditionalChargeCollection $listingAdditionalChargeCollection
+     * @return \Traum\Entity\ListingAdditionalChargeCollection
+     */
+    public function postAdditionalCharges(
+        $listingId,
+        Entity\ListingAdditionalChargeCollection $listingAdditionalChargeCollection
+    ) {
+        $uri = sprintf('/listing/%d/additional-charge', $listingId);
+        $body = $this->executePostForCollection(
+            $uri,
+            $listingAdditionalChargeCollection,
+            new Transformer\ListingAdditionalCharge
+        );
+
+        return new Entity\ListingAdditionalChargeCollection($body);
+    }
+
+    /**
+     * @param int $listingId
+     * @return bool
+     * @throws \Traum\Exception\InvalidRequest
+     */
+    public function deleteAdditionalCharges($listingId)
+    {
+        $uri = sprintf('/listing/%d/additional-charge', $listingId);
+        $response = $this->request('DELETE', $uri);
+
+        return $response->getStatusCode() === 204;
     }
 }
