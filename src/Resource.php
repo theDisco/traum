@@ -190,7 +190,7 @@ abstract class Resource
     private function executeWriteForCollection($method, $uri, Collection $collection, Transformer $transformer)
     {
         $data = $this->transformCollection($collection, $transformer);
-        $response = $this->request($method, $uri, [], $data->toJson());
+        $response = $this->request($method, $uri, [], json_encode($data->toArray()['data']));
         $body = $response->getBody()->getContents();
 
         return json_decode($body, JSON_OBJECT_AS_ARRAY);
