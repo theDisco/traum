@@ -6,7 +6,7 @@ use Traum\Entity;
 use Traum\Transformer;
 
 /**
- * Class ListingSuitability
+ * Class ListingSuitabilityForPatch
  * @package Traum\Transformer
  * @author Wojtek Gancarczyk <wojtek@aferalabs.com>
  */

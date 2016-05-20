@@ -730,4 +730,87 @@ final class Listing extends Resource
 
         return $response->getStatusCode() === 204;
     }
+
+    /**
+     * @param int $listingId
+     * @return \Traum\Entity\ListingRoomCollection
+     */
+    public function getRooms($listingId)
+    {
+        $uri = sprintf('/listing/%d/room', $listingId);
+        $body = $this->executeGet($uri);
+
+        return new Entity\ListingRoomCollection($body);
+    }
+
+    /**
+     * @param int                                 $listingId
+     * @param \Traum\Entity\ListingRoomCollection $listingRoomCollection
+     * @return \Traum\Entity\ListingRoomCollection
+     */
+    public function postRooms(
+        $listingId,
+        Entity\ListingRoomCollection $listingRoomCollection
+    ) {
+        $uri = sprintf('/listing/%d/room', $listingId);
+        $body = $this->executePostForCollection(
+            $uri,
+            $listingRoomCollection,
+            new Transformer\ListingRoom
+        );
+
+        return new Entity\ListingRoomCollection($body);
+    }
+
+    /**
+     * @param int $listingId
+     * @return bool
+     * @throws \Traum\Exception\InvalidRequest
+     */
+    public function deleteRooms($listingId)
+    {
+        $uri = sprintf('/listing/%d/room', $listingId);
+        $response = $this->request('DELETE', $uri);
+
+        return $response->getStatusCode() === 204;
+    }
+
+    /**
+     * @param int $listingId
+     * @param int $roomId
+     * @return \Traum\Entity\ListingRoom
+     */
+    public function getRoom($listingId, $roomId)
+    {
+        $uri = sprintf('/listing/%d/room/%d', $listingId, $roomId);
+        $body = $this->executeGet($uri);
+
+        return new Entity\ListingRoom($body);
+    }
+
+    /**
+     * @param int $listingId
+     * @param int $roomId
+     * @return \Traum\Entity\ListingRoom
+     */
+    public function deleteRoom($listingId, $roomId)
+    {
+        $uri = sprintf('/listing/%d/room/%d', $listingId, $roomId);
+        $response = $this->request('DELETE', $uri);
+
+        return $response->getStatusCode() === 204;
+    }
+
+    /**
+     * @param int                       $listingId
+     * @param \Traum\Entity\ListingRoom $listingRoom
+     * @return \Traum\Entity\ListingRoom
+     */
+    public function patchRoom($listingId, Entity\ListingRoom $listingRoom)
+    {
+        $uri = sprintf('/listing/%d/room/%d', $listingId, $listingRoom->getId());
+        $body = $this->executePatch($uri, $listingRoom, new Transformer\ListingRoom);
+
+        return new Entity\ListingRoom($body);
+    }
 }
