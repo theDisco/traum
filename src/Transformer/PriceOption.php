@@ -18,19 +18,33 @@ final class PriceOption extends Transformer
      */
     public function transform(Entity\PriceOption $priceOption)
     {
-        $this->addField(Entity\PriceOption::PRICE_SCOPE_ID, $priceOption->getPriceScopeId(), 'int');
-        $this->addField(Entity\PriceOption::PERSON_SELECTOR_ID, $priceOption->getPersonSelectorId(), 'int');
+        $this->addField(
+            Entity\PriceOption::PRICE_SCOPE_ID,
+            $priceOption->getPriceScopeId(),
+            'int'
+        );
+
+        $this->addField(
+            Entity\PriceOption::PERSON_SELECTOR_ID,
+            $priceOption->getPersonSelectorId(),
+            'int'
+        );
+
         $this->addField(
             Entity\PriceOption::EXTRA_CHARGE_PERSON_NIGHT,
             $priceOption->getExtraChargePersonNight(),
-            'int'
+            'double'
         );
         $this->addField(
             Entity\PriceOption::EXTRA_CHARGE_PERSON_WEEK,
             $priceOption->getExtraChargePersonWeek(),
-            'int'
+            'double'
         );
-        $this->addField(Entity\PriceOption::CURRENCY_CODE, $priceOption->getCurrencyCode(), 'string');
+        $this->addField(
+            Entity\PriceOption::CURRENCY_CODE,
+            $priceOption->getCurrencyCode(),
+            'string'
+        );
 
         return $this->getFields();
     }

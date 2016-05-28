@@ -39,7 +39,7 @@ final class ListingAdditionalCharge extends Transformer
         $this->addField(
             Entity\ListingAdditionalCharge::PRICE,
             $listingAdditionalCharge->getPrice(),
-            'int'
+            'double'
         );
 
         return $this->getFields();
