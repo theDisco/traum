@@ -99,6 +99,14 @@ final class Client
     }
 
     /**
+     * @return \Traum\Resource\PaymentOption
+     */
+    public function createPaymentOptionResource()
+    {
+        return new Resource\PaymentOption($this->httpClient);
+    }
+
+    /**
      * @return \Traum\Resource\Address
      */
     public function createAddressResource()
