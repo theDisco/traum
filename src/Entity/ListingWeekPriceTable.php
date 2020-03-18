@@ -6,8 +6,9 @@ use Traum\Entity;
 
 /**
  * Class ListingWeekPriceTable
+ *
  * @package Traum\Entity
- * @author Wojtek Gancarczyk <wojtek@aferalabs.com>
+ * @author  Wojtek Gancarczyk <wojtek@aferalabs.com>
  */
 class ListingWeekPriceTable extends Entity
 {
@@ -28,7 +29,7 @@ class ListingWeekPriceTable extends Entity
     }
 
     /**
-     * @param int $id
+     * @param  int $id
      * @return void
      */
     public function setId($id)
@@ -45,7 +46,7 @@ class ListingWeekPriceTable extends Entity
     }
 
     /**
-     * @param int $seasonId
+     * @param  int $seasonId
      * @return void
      */
     public function setSeasonId($seasonId)
@@ -62,7 +63,7 @@ class ListingWeekPriceTable extends Entity
     }
 
     /**
-     * @param string $from
+     * @param  string $from
      * @return void
      */
     public function setFrom($from)
@@ -79,7 +80,7 @@ class ListingWeekPriceTable extends Entity
     }
 
     /**
-     * @param string $to
+     * @param  string $to
      * @return void
      */
     public function setTo($to)
@@ -96,7 +97,7 @@ class ListingWeekPriceTable extends Entity
     }
 
     /**
-     * @param double $pricePerWeek
+     * @param  double $pricePerWeek
      * @return void
      */
     public function setPricePerWeek($pricePerWeek)
@@ -113,7 +114,7 @@ class ListingWeekPriceTable extends Entity
     }
 
     /**
-     * @param double $pricePerFollowingWeek
+     * @param  double $pricePerFollowingWeek
      * @return void
      */
     public function setPricePerFollowingWeek($pricePerFollowingWeek)
@@ -130,7 +131,7 @@ class ListingWeekPriceTable extends Entity
     }
 
     /**
-     * @param int|double $minimumStayId
+     * @param  int|double $minimumStayId
      * @return void
      */
     public function setMinimumStayId($minimumStayId)

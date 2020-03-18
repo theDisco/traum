@@ -6,8 +6,9 @@ use Traum\Entity;
 
 /**
  * Class Register
+ *
  * @package Traum\Entity
- * @author Wojtek Gancarczyk <wojtek@aferalabs.com>
+ * @author  Wojtek Gancarczyk <wojtek@aferalabs.com>
  */
 final class PriceOption extends Entity
 {
@@ -27,7 +28,7 @@ final class PriceOption extends Entity
     }
 
     /**
-     * @param int $id
+     * @param  int $id
      * @return void
      */
     public function setId($id)
@@ -44,7 +45,7 @@ final class PriceOption extends Entity
     }
 
     /**
-     * @param int $priceScopeId
+     * @param  int $priceScopeId
      * @return void
      */
     public function setPriceScopeId($priceScopeId)
@@ -61,7 +62,7 @@ final class PriceOption extends Entity
     }
 
     /**
-     * @param int $personSelectorId
+     * @param  int $personSelectorId
      * @return void
      */
     public function setPersonSelectorId($personSelectorId)
@@ -78,7 +79,7 @@ final class PriceOption extends Entity
     }
 
     /**
-     * @param int $extraChargePersonNight
+     * @param  int $extraChargePersonNight
      * @return void
      */
     public function setExtraChargePersonNight($extraChargePersonNight)
@@ -95,7 +96,7 @@ final class PriceOption extends Entity
     }
 
     /**
-     * @param int $extraChargePersonWeek
+     * @param  int $extraChargePersonWeek
      * @return void
      */
     public function setExtraChargePersonWeek($extraChargePersonWeek)
@@ -112,7 +113,7 @@ final class PriceOption extends Entity
     }
 
     /**
-     * @param string $currencyCode
+     * @param  string $currencyCode
      * @return void
      */
     public function setCurrencyCode($currencyCode)

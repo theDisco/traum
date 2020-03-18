@@ -7,13 +7,15 @@ use Traum\Transformer;
 
 /**
  * Class ListingWeekPriceTable
+ *
  * @package Traum\Transformer
- * @author Wojtek Gancarczyk <wojtek@aferalabs.com>
+ * @author  Wojtek Gancarczyk <wojtek@aferalabs.com>
  */
 final class ListingWeekPriceTable extends Transformer
 {
     /**
      * @param \Traum\Entity\ListingWeekPriceTable $listingWeekPriceTable
+     *
      * @return array
      */
     public function transform(Entity\ListingWeekPriceTable $listingWeekPriceTable)

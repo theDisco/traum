@@ -6,8 +6,9 @@ use Traum\Entity;
 
 /**
  * Class Address
+ *
  * @package Traum\Entity
- * @author Wojtek Gancarczyk <wojtek@aferalabs.com>
+ * @author  Wojtek Gancarczyk <wojtek@aferalabs.com>
  */
 final class Contact extends Entity
 {
@@ -35,7 +36,7 @@ final class Contact extends Entity
     }
 
     /**
-     * @param int $id
+     * @param  int $id
      * @return void
      */
     public function setId($id)
@@ -52,7 +53,7 @@ final class Contact extends Entity
     }
 
     /**
-     * @param int $salutationId
+     * @param  int $salutationId
      * @return void
      */
     public function setSalutationId($salutationId)
@@ -69,7 +70,7 @@ final class Contact extends Entity
     }
 
     /**
-     * @param int $operatorId
+     * @param  int $operatorId
      * @return void
      */
     public function setOperatorId($operatorId)
@@ -86,7 +87,7 @@ final class Contact extends Entity
     }
 
     /**
-     * @param string $firstName
+     * @param  string $firstName
      * @return void
      */
     public function setFirstName($firstName)
@@ -103,7 +104,7 @@ final class Contact extends Entity
     }
 
     /**
-     * @param string $lastName
+     * @param  string $lastName
      * @return void
      */
     public function setLastName($lastName)
@@ -120,7 +121,7 @@ final class Contact extends Entity
     }
 
     /**
-     * @param string $company
+     * @param  string $company
      * @return void
      */
     public function setCompany($company)
@@ -137,7 +138,7 @@ final class Contact extends Entity
     }
 
     /**
-     * @param string $phone
+     * @param  string $phone
      * @return void
      */
     public function setPhone($phone)
@@ -154,7 +155,7 @@ final class Contact extends Entity
     }
 
     /**
-     * @param string $alternativePhone
+     * @param  string $alternativePhone
      * @return void
      */
     public function setAlternativePhone($alternativePhone)
@@ -171,7 +172,7 @@ final class Contact extends Entity
     }
 
     /**
-     * @param string $mobile
+     * @param  string $mobile
      * @return void
      */
     public function setMobile($mobile)
@@ -188,7 +189,7 @@ final class Contact extends Entity
     }
 
     /**
-     * @param string $fax
+     * @param  string $fax
      * @return void
      */
     public function setFax($fax)
@@ -205,7 +206,7 @@ final class Contact extends Entity
     }
 
     /**
-     * @param string $email
+     * @param  string $email
      * @return void
      */
     public function setEmail($email)
@@ -222,7 +223,7 @@ final class Contact extends Entity
     }
 
     /**
-     * @param string $website
+     * @param  string $website
      * @return void
      */
     public function setWebsite($website)
@@ -239,7 +240,7 @@ final class Contact extends Entity
     }
 
     /**
-     * @param string $sms
+     * @param  string $sms
      * @return void
      */
     public function setSms($sms)
@@ -256,7 +257,7 @@ final class Contact extends Entity
     }
 
     /**
-     * @param bool $smsService
+     * @param  bool $smsService
      * @return void
      */
     public function setSmsService($smsService)

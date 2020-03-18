@@ -6,8 +6,9 @@ use Traum\Entity;
 
 /**
  * Class ListingPriceTable
+ *
  * @package Traum\Entity
- * @author Oskar Golde <info@oskargolde.de>
+ * @author  Oskar Golde <info@oskargolde.de>
  */
 class ListingPriceTable extends Entity
 {
@@ -29,7 +30,7 @@ class ListingPriceTable extends Entity
     }
 
     /**
-     * @param int $id
+     * @param  int $id
      * @return void
      */
     public function setId($id)
@@ -46,7 +47,7 @@ class ListingPriceTable extends Entity
     }
 
     /**
-     * @param int $seasonId
+     * @param  int $seasonId
      * @return void
      */
     public function setSeasonId($seasonId)
@@ -63,7 +64,7 @@ class ListingPriceTable extends Entity
     }
 
     /**
-     * @param string $from
+     * @param  string $from
      * @return void
      */
     public function setFrom($from)
@@ -80,7 +81,7 @@ class ListingPriceTable extends Entity
     }
 
     /**
-     * @param string $to
+     * @param  string $to
      * @return void
      */
     public function setTo($to)
@@ -97,7 +98,7 @@ class ListingPriceTable extends Entity
     }
 
     /**
-     * @param double $pricePerDay
+     * @param  double $pricePerDay
      * @return void
      */
     public function setPricePerDay($pricePerDay)
@@ -114,7 +115,7 @@ class ListingPriceTable extends Entity
     }
 
     /**
-     * @param double $pricePerWeek
+     * @param  double $pricePerWeek
      * @return void
      */
     public function setPricePerWeek($pricePerWeek)
@@ -131,7 +132,7 @@ class ListingPriceTable extends Entity
     }
 
     /**
-     * @param double $pricePerExtraNight
+     * @param  double $pricePerExtraNight
      * @return void
      */
     public function setPricePerExtraNight($pricePerExtraNight)
@@ -148,7 +149,7 @@ class ListingPriceTable extends Entity
     }
 
     /**
-     * @param int|double $minimumStayId
+     * @param  int|double $minimumStayId
      * @return void
      */
     public function setMinimumStayId($minimumStayId)

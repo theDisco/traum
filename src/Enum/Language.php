@@ -4,8 +4,9 @@ namespace Traum\Enum;
 
 /**
  * Interface Language
+ *
  * @package Traum\Enum
- * @author Wojtek Gancarczyk <wojtek@aferalabs.com>
+ * @author  Wojtek Gancarczyk <wojtek@aferalabs.com>
  */
 interface Language
 {

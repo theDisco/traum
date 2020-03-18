@@ -7,8 +7,9 @@ use Traum\Entity;
 
 /**
  * Class ListingLeisureActivityCollection
+ *
  * @package Traum\Entity
- * @author Oskar Golde <info@oskargolde.de>
+ * @author  Oskar Golde <info@oskargolde.de>
  */
 class ListingLeisureActivityCollection extends Collection
 {
@@ -21,7 +22,7 @@ class ListingLeisureActivityCollection extends Collection
     }
 
     /**
-     * @param array $data
+     * @param  array $data
      * @return \Traum\Entity\ListingLeisureActivity
      */
     protected function createEntity(array $data)

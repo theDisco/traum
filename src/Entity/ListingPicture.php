@@ -6,8 +6,9 @@ use Traum\Entity;
 
 /**
  * Class ListingPicture
+ *
  * @package Traum\Entity
- * @author Wojtek Gancarczyk <wojtek@aferalabs.com>
+ * @author  Wojtek Gancarczyk <wojtek@aferalabs.com>
  */
 final class ListingPicture extends Entity
 {
@@ -26,7 +27,7 @@ final class ListingPicture extends Entity
     }
 
     /**
-     * @param int $id
+     * @param  int $id
      * @return void
      */
     public function setId($id)
@@ -43,7 +44,7 @@ final class ListingPicture extends Entity
     }
 
     /**
-     * @param string $url
+     * @param  string $url
      * @return void
      */
     public function setUrl($url)
@@ -60,7 +61,7 @@ final class ListingPicture extends Entity
     }
 
     /**
-     * @param int $categoryId
+     * @param  int $categoryId
      * @return void
      */
     public function setCategoryId($categoryId)
@@ -77,7 +78,7 @@ final class ListingPicture extends Entity
     }
 
     /**
-     * @param bool $isSummerPicture
+     * @param  bool $isSummerPicture
      * @return void
      */
     public function setIsSummerPicture($isSummerPicture)
@@ -94,7 +95,7 @@ final class ListingPicture extends Entity
     }
 
     /**
-     * @param bool $isWinterPicture
+     * @param  bool $isWinterPicture
      * @return void
      */
     public function setIsWinterPicture($isWinterPicture)

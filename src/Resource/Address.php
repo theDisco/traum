@@ -8,13 +8,14 @@ use Traum\Transformer;
 
 /**
  * Class Address
+ *
  * @package Traum\Resource
- * @author Wojtek Gancarczyk <wojtek@aferalabs.com>
+ * @author  Wojtek Gancarczyk <wojtek@aferalabs.com>
  */
 final class Address extends Resource
 {
     /**
-     * @param int $listingId
+     * @param  int $listingId
      * @return \Traum\Entity\Address
      * @throws \Traum\Exception\InvalidRequest
      */
@@ -27,8 +28,8 @@ final class Address extends Resource
     }
 
     /**
-     * @param int $listingId
-     * @param \Traum\Entity\Address $address
+     * @param  int                   $listingId
+     * @param  \Traum\Entity\Address $address
      * @return \Traum\Entity\Address
      * @throws \Traum\Exception\InvalidRequest
      */

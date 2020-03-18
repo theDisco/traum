@@ -7,8 +7,9 @@ use Traum\Entity;
 
 /**
  * Class ListingLanguageCollection
+ *
  * @package Traum\Entity
- * @author Oskar Golde <info@oskargolde.de>
+ * @author  Oskar Golde <info@oskargolde.de>
  */
 class ListingLanguageCollection extends Collection
 {
@@ -21,7 +22,7 @@ class ListingLanguageCollection extends Collection
     }
 
     /**
-     * @param array $data
+     * @param  array $data
      * @return \Traum\Entity\ListingLanguage
      */
     protected function createEntity(array $data)

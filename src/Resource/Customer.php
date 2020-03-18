@@ -8,13 +8,15 @@ use Traum\Transformer;
 
 /**
  * Class Customer
+ *
  * @package Traum\Resource
- * @author Wojtek Gancarczyk <wojtek@aferalabs.com>
+ * @author  Wojtek Gancarczyk <wojtek@aferalabs.com>
  */
 final class Customer extends Resource
 {
     /**
-     * @return \Traum\Entity\CustomerCollection|\Traum\Entity\Customer[]
+     * @return \Traum\Entity\CustomerCollection|\Traum\Entity\Customer[]     *
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @throws \Traum\Exception\InvalidRequest
      */
     public function collection()
@@ -29,6 +31,7 @@ final class Customer extends Resource
     /**
      * @param \Traum\Entity\Customer $customer
      * @return \Traum\Entity\Customer
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @throws \Traum\Exception\InvalidRequest
      */
     public function post(Entity\Customer $customer)
@@ -44,6 +47,7 @@ final class Customer extends Resource
     /**
      * @param int $customerId
      * @return \Traum\Entity\CustomerListingCollection|\Traum\Entity\CustomerListing[]
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @throws \Traum\Exception\InvalidRequest
      */
     public function getListings($customerId)
@@ -59,6 +63,8 @@ final class Customer extends Resource
      * @param int $customerId
      * @param \Traum\Entity\CustomerListing $listing
      * @return \Traum\Entity\CustomerListing
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws \Traum\Exception\InvalidRequest
      */
     public function postListing($customerId, Entity\CustomerListing $listing)
     {
@@ -74,6 +80,7 @@ final class Customer extends Resource
      * @param int $customerId
      * @param int $listingId
      * @return \Traum\Entity\CustomerListing
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @throws \Traum\Exception\InvalidRequest
      */
     public function getListing($customerId, $listingId)
@@ -89,6 +96,7 @@ final class Customer extends Resource
      * @param int $customerId
      * @param \Traum\Entity\CustomerListing $listing
      * @return \Traum\Entity\CustomerListing
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @throws \Traum\Exception\InvalidRequest
      */
     public function patchListing($customerId, Entity\CustomerListing $listing)

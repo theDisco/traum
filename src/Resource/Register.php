@@ -8,14 +8,16 @@ use Traum\Transformer;
 
 /**
  * Class Register
+ *
  * @package Traum\Resource
- * @author Wojtek Gancarczyk <wojtek@aferalabs.com>
+ * @author  Wojtek Gancarczyk <wojtek@aferalabs.com>
  */
 final class Register extends Resource
 {
     /**
      * @param \Traum\Entity\Register $register
      * @return \Traum\Entity\Register
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @throws \Traum\Exception\InvalidRequest
      */
     public function post(Entity\Register $register)

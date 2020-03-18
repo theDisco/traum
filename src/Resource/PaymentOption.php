@@ -8,13 +8,14 @@ use Traum\Transformer;
 
 /**
  * Class PaymentOption
+ *
  * @package Traum\Resource
- * @author Oskar Golde <info@oskargolde.de>
+ * @author  Oskar Golde <info@oskargolde.de>
  */
 final class PaymentOption extends Resource
 {
     /**
-     * @param int $listingId
+     * @param  int $listingId
      * @return \Traum\Entity\PaymentOption
      * @throws \Traum\Exception\InvalidRequest
      */
@@ -27,8 +28,8 @@ final class PaymentOption extends Resource
     }
 
     /**
-     * @param int                         $listingId
-     * @param \Traum\Entity\PaymentOption $paymentOption
+     * @param  int                         $listingId
+     * @param  \Traum\Entity\PaymentOption $paymentOption
      * @return \Traum\Entity\PaymentOption
      * @throws \Traum\Exception\InvalidRequest
      */

@@ -7,8 +7,9 @@ use Traum\Entity;
 
 /**
  * Class ListingPaymentMethodCollection
+ *
  * @package Traum\Entity
- * @author Wojtek Gancarczyk <wojtek@aferalabs.com>
+ * @author  Wojtek Gancarczyk <wojtek@aferalabs.com>
  */
 final class ListingPaymentMethodCollection extends Collection
 {
@@ -21,7 +22,7 @@ final class ListingPaymentMethodCollection extends Collection
     }
 
     /**
-     * @param array $data
+     * @param  array $data
      * @return \Traum\Entity\ListingPaymentMethod
      */
     protected function createEntity(array $data)

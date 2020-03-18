@@ -7,13 +7,15 @@ use Traum\Transformer;
 
 /**
  * Class ListingRoomForPatch
+ *
  * @package Traum\Transformer
- * @author Oskar Golde <info@oskargolde.de>
+ * @author  Oskar Golde <info@oskargolde.de>
  */
 final class ListingRoomForPatch extends Transformer
 {
     /**
      * @param \Traum\Entity\ListingRoom $listingRoom
+     *
      * @return array
      */
     public function transform(Entity\ListingRoom $listingRoom)

@@ -6,8 +6,9 @@ use Psr\Http\Message\ResponseInterface;
 
 /**
  * Class InvalidRequest
+ *
  * @package Traum\Exception
- * @author Wojtek Gancarczyk <wojtek@aferalabs.com>
+ * @author  Wojtek Gancarczyk <wojtek@aferalabs.com>
  */
 final class InvalidRequest extends \Exception
 {
@@ -17,7 +18,7 @@ final class InvalidRequest extends \Exception
     private $content;
 
     /**
-     * @param ResponseInterface $response
+     * @param  ResponseInterface $response
      * @return InvalidRequest
      */
     public static function create(ResponseInterface $response)
@@ -30,7 +31,7 @@ final class InvalidRequest extends \Exception
     }
 
     /**
-     * @param \stdClass $content
+     * @param  \stdClass $content
      * @return void
      */
     public function setContent(\stdClass $content)
@@ -47,7 +48,7 @@ final class InvalidRequest extends \Exception
     }
 
     /**
-     * @param \stdClass $content
+     * @param  \stdClass $content
      * @return string
      */
     private static function constructMessage(\stdClass $content)

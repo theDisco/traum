@@ -7,13 +7,15 @@ use Traum\Transformer;
 
 /**
  * Class ListingAdditionalCharge
+ *
  * @package Traum\Transformer
- * @author Oskar Golde <info@oskargolde.de>
+ * @author  Oskar Golde <info@oskargolde.de>
  */
 final class ListingAdditionalCharge extends Transformer
 {
     /**
      * @param \Traum\Entity\ListingAdditionalCharge $listingAdditionalCharge
+     *
      * @return array
      */
     public function transform(Entity\ListingAdditionalCharge $listingAdditionalCharge)

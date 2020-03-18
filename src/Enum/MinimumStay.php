@@ -4,8 +4,9 @@ namespace Traum\Enum;
 
 /**
  * Interface MinimumStay
+ *
  * @package Traum\Enum
- * @author Wojtek Gancarczyk <wojtek@aferalabs.com>
+ * @author  Wojtek Gancarczyk <wojtek@aferalabs.com>
  */
 interface MinimumStay
 {

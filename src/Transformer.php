@@ -2,12 +2,15 @@
 
 namespace Traum;
 
+use League\Fractal\TransformerAbstract;
+
 /**
  * Class Transformer
+ *
  * @package Traum
- * @author Wojtek Gancarczyk <wojtek@aferalabs.com>
+ * @author  Wojtek Gancarczyk <wojtek@aferalabs.com>
  */
-abstract class Transformer
+abstract class Transformer extends TransformerAbstract
 {
     /**
      * @var array
@@ -15,9 +18,9 @@ abstract class Transformer
     private $fields;
 
     /**
-     * @param string $name
+     * @param string                      $name
      * @param bool|int|string|double|null $value
-     * @param string $type
+     * @param string                      $type
      */
     protected function addField($name, $value, $type)
     {
@@ -45,20 +48,21 @@ abstract class Transformer
     }
 
     /**
-     * @param string $value
+     * @param string                 $value
      * @param bool|int|string|double $type
+     * 
      * @return bool|int|string|double
      */
     private function normalize($value, $type)
     {
         if ($type == 'int') {
-            return (int) $value;
+            return (int)$value;
         } elseif ($type == 'string') {
-            return (string) $value;
+            return (string)$value;
         } elseif ($type == 'bool') {
-            return (bool) $value;
+            return (bool)$value;
         } elseif ($type == 'double') {
-            return (double) $value;
+            return (double)$value;
         }
 
         throw new \RuntimeException("Unrecognized type `$type`");

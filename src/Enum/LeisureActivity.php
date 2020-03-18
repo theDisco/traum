@@ -4,8 +4,9 @@ namespace Traum\Enum;
 
 /**
  * Interface Language
+ *
  * @package Traum\Enum
- * @author Oskar Golde <info@oskargolde.de>
+ * @author  Oskar Golde <info@oskargolde.de>
  */
 interface LeisureActivity
 {

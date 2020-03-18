@@ -7,13 +7,15 @@ use Traum\Entity;
 
 /**
  * Class ListingText
+ *
  * @package Traum\Transformer
- * @author Wojtek Gancarczyk <wojtek@aferalabs.com>
+ * @author  Wojtek Gancarczyk <wojtek@aferalabs.com>
  */
 final class ListingText extends Transformer
 {
     /**
      * @param \Traum\Entity\ListingText $text
+     *
      * @return array
      */
     public function transform(Entity\ListingText $text)

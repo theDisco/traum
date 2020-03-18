@@ -8,8 +8,9 @@ use Traum\Enum;
 
 /**
  * Class Picture
+ *
  * @package Traum\Service
- * @author Wojtek Gancarczyk <wojtek@aferalabs.com>
+ * @author  Wojtek Gancarczyk <wojtek@aferalabs.com>
  */
 class Picture
 {
@@ -20,6 +21,7 @@ class Picture
 
     /**
      * Picture constructor.
+     *
      * @param \Traum\Client $client
      */
     public function __construct(Client $client)
@@ -44,8 +46,8 @@ class Picture
      * ]
      * </code>
      *
-     * @param int $listingId
-     * @param array $pictures
+     * @param  int   $listingId
+     * @param  array $pictures
      * @return void
      */
     public function addPictures($listingId, array $pictures)
@@ -65,10 +67,10 @@ class Picture
      * ]
      * </code>
      *
-     * @param int $listingId
-     * @param string $pictureUrl
-     * @param int $categoryId
-     * @param array $titles
+     * @param  int    $listingId
+     * @param  string $pictureUrl
+     * @param  int    $categoryId
+     * @param  array  $titles
      * @return bool
      */
     public function addPicture($listingId, $pictureUrl, $categoryId, array $titles)

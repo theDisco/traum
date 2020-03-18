@@ -7,8 +7,9 @@ use Traum\Entity;
 
 /**
  * Class CustomerListingCollection
+ *
  * @package Traum\Entity
- * @author Wojtek Gancarczyk <wojtek@aferalabs.com>
+ * @author  Wojtek Gancarczyk <wojtek@aferalabs.com>
  */
 final class CustomerListingCollection extends Collection
 {
@@ -21,7 +22,7 @@ final class CustomerListingCollection extends Collection
     }
 
     /**
-     * @param array $data
+     * @param  array $data
      * @return \Traum\Entity\CustomerListing
      */
     protected function createEntity(array $data)

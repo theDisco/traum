@@ -1,7 +1,16 @@
 <?php
 
-class CustomerTest extends \PHPUnit_Framework_TestCase
+use \PHPUnit\Framework\TestCase;
+
+/**
+ * Class CustomerTest
+ */
+class CustomerTest extends TestCase
 {
+    /**
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws \Traum\Exception\InvalidRequest
+     */
     public function testCustomerCollection()
     {
         $history = [];
@@ -18,6 +27,10 @@ class CustomerTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($expected, $response->current());
     }
 
+    /**
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws \Traum\Exception\InvalidRequest
+     */
     public function testCustomerListings()
     {
         $history = [];

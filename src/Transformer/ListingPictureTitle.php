@@ -7,13 +7,14 @@ use Traum\Entity;
 
 /**
  * Class ListingPictureTitle
+ *
  * @package Traum\Transformer
- * @author Wojtek Gancarczyk <wojtek@aferalabs.com>
+ * @author  Wojtek Gancarczyk <wojtek@aferalabs.com>
  */
 class ListingPictureTitle extends Transformer
 {
     /**
-     * @param \Traum\Entity\ListingPictureTitle $pictureTitle
+     * @param  \Traum\Entity\ListingPictureTitle $pictureTitle
      * @return array
      */
     public function transform(Entity\ListingPictureTitle $pictureTitle)

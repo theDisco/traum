@@ -6,8 +6,9 @@ use Traum\Entity;
 
 /**
  * Class ListingLeisureActivity
+ *
  * @package Traum\Entity
- * @author Oskar Golde <info@oskargolde.de>
+ * @author  Oskar Golde <info@oskargolde.de>
  */
 class ListingLeisureActivity extends Entity
 {
@@ -23,7 +24,7 @@ class ListingLeisureActivity extends Entity
     }
 
     /**
-     * @param int $id
+     * @param  int $id
      * @return void
      */
     public function setId($id)
@@ -40,7 +41,7 @@ class ListingLeisureActivity extends Entity
     }
 
     /**
-     * @param int $leisureActivityId
+     * @param  int $leisureActivityId
      * @return void
      */
     public function setLeisureActivityId($leisureActivityId)

@@ -6,8 +6,9 @@ use Traum\Entity;
 
 /**
  * Class Address
+ *
  * @package Traum\Entity
- * @author Wojtek Gancarczyk <wojtek@aferalabs.com>
+ * @author  Wojtek Gancarczyk <wojtek@aferalabs.com>
  */
 final class Address extends Entity
 {
@@ -28,7 +29,7 @@ final class Address extends Entity
     }
 
     /**
-     * @param int $id
+     * @param  int $id
      * @return void
      */
     public function setId($id)
@@ -45,7 +46,7 @@ final class Address extends Entity
     }
 
     /**
-     * @param string $street
+     * @param  string $street
      * @return void
      */
     public function setStreet($street)
@@ -61,7 +62,7 @@ final class Address extends Entity
     }
 
     /**
-     * @param string $zip
+     * @param  string $zip
      * @return void
      */
     public function setZip($zip)
@@ -78,7 +79,7 @@ final class Address extends Entity
     }
 
     /**
-     * @param string $city
+     * @param  string $city
      * @return void
      */
     public function setCity($city)
@@ -95,7 +96,7 @@ final class Address extends Entity
     }
 
     /**
-     * @param double $longitude
+     * @param  double $longitude
      * @return void
      */
     public function setLongitude($longitude)
@@ -112,7 +113,7 @@ final class Address extends Entity
     }
 
     /**
-     * @param double $latitude
+     * @param  double $latitude
      * @return void
      */
     public function setLatitude($latitude)
@@ -129,7 +130,7 @@ final class Address extends Entity
     }
 
     /**
-     * @param bool $hideExactPosition
+     * @param  bool $hideExactPosition
      * @return void
      */
     public function setHideExactPosition($hideExactPosition)

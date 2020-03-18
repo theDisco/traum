@@ -6,8 +6,9 @@ use Traum\Entity;
 
 /**
  * Class Vat
+ *
  * @package Traum\Entity
- * @author Wojtek Gancarczyk <wojtek@aferalabs.com>
+ * @author  Wojtek Gancarczyk <wojtek@aferalabs.com>
  */
 final class Vat extends Entity
 {
@@ -22,7 +23,7 @@ final class Vat extends Entity
     }
 
     /**
-     * @param bool $flag
+     * @param  bool $flag
      * @return void
      */
     public function setEnableVat($flag)

@@ -6,8 +6,9 @@ use Traum\Entity;
 
 /**
  * Class ListingRoom
+ *
  * @package Traum\Entity
- * @author Oskar Golde <info@oskargolde.de>
+ * @author  Oskar Golde <info@oskargolde.de>
  */
 class ListingRoom extends Entity
 {
@@ -26,7 +27,7 @@ class ListingRoom extends Entity
     }
 
     /**
-     * @param int $id
+     * @param  int $id
      * @return void
      */
     public function setId($id)
@@ -43,7 +44,7 @@ class ListingRoom extends Entity
     }
 
     /**
-     * @param int $id
+     * @param  int $id
      * @return void
      */
     public function setRoomTypeId($id)
@@ -60,7 +61,7 @@ class ListingRoom extends Entity
     }
 
     /**
-     * @param int $id
+     * @param  int $id
      * @return void
      */
     public function setListingFloorId($id)
@@ -77,7 +78,7 @@ class ListingRoom extends Entity
     }
 
     /**
-     * @param int $value
+     * @param  int $value
      * @return void
      */
     public function setArea($value)
@@ -94,7 +95,7 @@ class ListingRoom extends Entity
     }
 
     /**
-     * @param int $value
+     * @param  int $value
      * @return void
      */
     public function setRoomQuantity($value)

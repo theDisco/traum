@@ -6,8 +6,9 @@ use GuzzleHttp\Client as HttpClient;
 
 /**
  * Class Client
+ *
  * @package Traum
- * @author Wojtek Gancarczyk <wojtek@aferalabs.com>
+ * @author  Wojtek Gancarczyk <wojtek@aferalabs.com>
  */
 final class Client
 {
@@ -18,6 +19,7 @@ final class Client
 
     /**
      * Client constructor.
+     *
      * @param HttpClient $httpClient
      */
     public function __construct(HttpClient $httpClient)
@@ -27,6 +29,7 @@ final class Client
 
     /**
      * @param array $config
+     *
      * @return \Traum\Client
      */
     public static function create(array $config = [])

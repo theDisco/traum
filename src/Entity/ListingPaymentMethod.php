@@ -6,8 +6,9 @@ use Traum\Entity;
 
 /**
  * Class ListingPaymentMethod
+ *
  * @package Traum\Entity
- * @author Wojtek Gancarczyk <wojtek@aferalabs.com>
+ * @author  Wojtek Gancarczyk <wojtek@aferalabs.com>
  */
 final class ListingPaymentMethod extends Entity
 {
@@ -23,7 +24,7 @@ final class ListingPaymentMethod extends Entity
     }
 
     /**
-     * @param int $id
+     * @param  int $id
      * @return void
      */
     public function setId($id)
@@ -40,7 +41,7 @@ final class ListingPaymentMethod extends Entity
     }
 
     /**
-     * @param int $paymentMethodId
+     * @param  int $paymentMethodId
      * @return void
      */
     public function setPaymentMethodId($paymentMethodId)

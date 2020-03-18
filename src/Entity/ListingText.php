@@ -6,8 +6,9 @@ use Traum\Entity;
 
 /**
  * Class ListingText
+ *
  * @package Traum\Entity
- * @author Wojtek Gancarczyk <wojtek@aferalabs.com>
+ * @author  Wojtek Gancarczyk <wojtek@aferalabs.com>
  */
 final class ListingText extends Entity
 {
@@ -25,7 +26,7 @@ final class ListingText extends Entity
     }
 
     /**
-     * @param int $id
+     * @param  int $id
      * @return void
      */
     public function setId($id)
@@ -42,7 +43,7 @@ final class ListingText extends Entity
     }
 
     /**
-     * @param string $language
+     * @param  string $language
      * @return void
      */
     public function setLanguage($language)
@@ -59,7 +60,7 @@ final class ListingText extends Entity
     }
 
     /**
-     * @param int $textTypeId
+     * @param  int $textTypeId
      * @return void
      */
     public function setTextTypeId($textTypeId)
@@ -76,7 +77,7 @@ final class ListingText extends Entity
     }
 
     /**
-     * @param string $text
+     * @param  string $text
      * @return void
      */
     public function setText($text)

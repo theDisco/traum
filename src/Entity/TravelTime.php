@@ -6,8 +6,9 @@ use Traum\Entity;
 
 /**
  * Class TravelTime
+ *
  * @package Traum\Entity
- * @author Oskar Golde <info@oskargolde.de>
+ * @author  Oskar Golde <info@oskargolde.de>
  */
 final class TravelTime extends Entity
 {
@@ -24,7 +25,7 @@ final class TravelTime extends Entity
     }
 
     /**
-     * @param int $id
+     * @param  int $id
      * @return void
      */
     public function setId($id)
@@ -41,7 +42,7 @@ final class TravelTime extends Entity
     }
 
     /**
-     * @param int $hourIdArrival
+     * @param  int $hourIdArrival
      * @return void
      */
     public function setHourIdArrival($hourIdArrival)
@@ -58,7 +59,7 @@ final class TravelTime extends Entity
     }
 
     /**
-     * @param int $hourIdDeparture
+     * @param  int $hourIdDeparture
      * @return void
      */
     public function setHourIdDeparture($hourIdDeparture)

@@ -8,13 +8,14 @@ use Traum\Transformer;
 
 /**
  * Class TravelTime
+ *
  * @package Traum\Resource
- * @author Oskar Golde <info@oskargolde.de>
+ * @author  Oskar Golde <info@oskargolde.de>
  */
 final class TravelTime extends Resource
 {
     /**
-     * @param int $listingId
+     * @param  int $listingId
      * @return \Traum\Entity\TravelTime
      * @throws \Traum\Exception\InvalidRequest
      */
@@ -27,8 +28,8 @@ final class TravelTime extends Resource
     }
 
     /**
-     * @param int                      $listingId
-     * @param \Traum\Entity\TravelTime $travelTime
+     * @param  int                      $listingId
+     * @param  \Traum\Entity\TravelTime $travelTime
      * @return \Traum\Entity\TravelTime
      * @throws \Traum\Exception\InvalidRequest
      */

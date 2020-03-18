@@ -6,8 +6,9 @@ use Traum\Entity;
 
 /**
  * Class ListingArrival
+ *
  * @package Traum\Entity
- * @author Oskar Golde <info@oskargolde.de>
+ * @author  Oskar Golde <info@oskargolde.de>
  */
 class ListingArrival extends Entity
 {
@@ -23,7 +24,7 @@ class ListingArrival extends Entity
     }
 
     /**
-     * @param int $id
+     * @param  int $id
      * @return void
      */
     public function setId($id)
@@ -40,7 +41,7 @@ class ListingArrival extends Entity
     }
 
     /**
-     * @param int $dayId
+     * @param  int $dayId
      * @return void
      */
     public function setDayId($dayId)

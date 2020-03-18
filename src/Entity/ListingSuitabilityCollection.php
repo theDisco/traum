@@ -7,8 +7,9 @@ use Traum\Entity;
 
 /**
  * Class ListingSuitabilityCollection
+ *
  * @package Traum\Entity
- * @author Oskar Golde <info@oskargolde.de>
+ * @author  Oskar Golde <info@oskargolde.de>
  */
 class ListingSuitabilityCollection extends Collection
 {
@@ -21,7 +22,7 @@ class ListingSuitabilityCollection extends Collection
     }
 
     /**
-     * @param array $data
+     * @param  array $data
      * @return \Traum\Entity\ListingSuitability
      */
     protected function createEntity(array $data)

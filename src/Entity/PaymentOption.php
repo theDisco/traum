@@ -6,8 +6,9 @@ use Traum\Entity;
 
 /**
  * Class PaymentOption
+ *
  * @package Traum\Entity
- * @author Oskar Golde <info@oskargolde.de>
+ * @author  Oskar Golde <info@oskargolde.de>
  */
 final class PaymentOption extends Entity
 {
@@ -28,7 +29,7 @@ final class PaymentOption extends Entity
     }
 
     /**
-     * @param int $id
+     * @param  int $id
      * @return void
      */
     public function setId($id)
@@ -45,7 +46,7 @@ final class PaymentOption extends Entity
     }
 
     /**
-     * @param int $value
+     * @param  int $value
      * @return void
      */
     public function setPaymentMethodId($value)
@@ -62,7 +63,7 @@ final class PaymentOption extends Entity
     }
 
     /**
-     * @param int $value
+     * @param  int $value
      * @return void
      */
     public function setDeposit($value)
@@ -79,7 +80,7 @@ final class PaymentOption extends Entity
     }
 
     /**
-     * @param int $value
+     * @param  int $value
      * @return void
      */
     public function setPrepaymentTypeId($value)
@@ -96,7 +97,7 @@ final class PaymentOption extends Entity
     }
 
     /**
-     * @param int $value
+     * @param  int $value
      * @return void
      */
     public function setPrepayment($value)
@@ -113,7 +114,7 @@ final class PaymentOption extends Entity
     }
 
     /**
-     * @param int $value
+     * @param  int $value
      * @return void
      */
     public function setFinalPaymentId($value)
@@ -130,7 +131,7 @@ final class PaymentOption extends Entity
     }
 
     /**
-     * @param int $value
+     * @param  int $value
      * @return void
      */
     public function setDepositId($value)

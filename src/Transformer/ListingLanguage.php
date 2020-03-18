@@ -7,13 +7,15 @@ use Traum\Transformer;
 
 /**
  * Class ListingLanguage
+ *
  * @package Traum\Transformer
- * @author Oskar Golde <info@oskargolde.de>
+ * @author  Oskar Golde <info@oskargolde.de>
  */
 final class ListingLanguage extends Transformer
 {
     /**
      * @param \Traum\Entity\ListingLanguage $listingLanguage
+     *
      * @return array
      */
     public function transform(Entity\ListingLanguage $listingLanguage)

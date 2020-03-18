@@ -4,8 +4,9 @@ namespace Traum\Enum;
 
 /**
  * Interface Season
+ *
  * @package Traum\Enum
- * @author Wojtek Gancarczyk <wojtek@aferalabs.com>
+ * @author  Wojtek Gancarczyk <wojtek@aferalabs.com>
  */
 interface Season
 {
