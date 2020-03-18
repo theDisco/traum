@@ -50,7 +50,7 @@ abstract class Transformer extends TransformerAbstract
     /**
      * @param string                 $value
      * @param bool|int|string|double $type
-     * 
+     *
      * @return bool|int|string|double
      */
     private function normalize($value, $type)
