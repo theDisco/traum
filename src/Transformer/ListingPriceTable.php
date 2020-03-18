@@ -7,13 +7,14 @@ use Traum\Transformer;
 
 /**
  * Class ListingPriceTable
+ *
  * @package Traum\Transformer
- * @author Oskar Golde <info@oskargolde.de>
+ * @author  Oskar Golde <info@oskargolde.de>
  */
 final class ListingPriceTable extends Transformer
 {
     /**
-     * @param \Traum\Entity\ListingPriceTable $listingPriceTable
+     * @param  \Traum\Entity\ListingPriceTable $listingPriceTable
      * @return array
      */
     public function transform(Entity\ListingPriceTable $listingPriceTable)

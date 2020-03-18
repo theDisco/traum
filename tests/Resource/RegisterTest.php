@@ -1,6 +1,11 @@
 <?php
 
-class RegisterTest extends \PHPUnit_Framework_TestCase
+use \PHPUnit\Framework\TestCase;
+
+/**
+ * Class RegisterTest
+ */
+class RegisterTest extends TestCase
 {
     /**
      * @dataProvider createEntity
@@ -40,6 +45,9 @@ class RegisterTest extends \PHPUnit_Framework_TestCase
         }
     }
 
+    /**
+     * @return array
+     */
     public function createEntity()
     {
         return [

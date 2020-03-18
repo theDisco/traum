@@ -7,13 +7,15 @@ use Traum\Entity;
 
 /**
  * Class CustomerListing
+ *
  * @package Traum\Transformer
- * @author Wojtek Gancarczyk <wojtek@aferalabs.com>
+ * @author  Wojtek Gancarczyk <wojtek@aferalabs.com>
  */
 final class CustomerListing extends Transformer
 {
     /**
      * @param \Traum\Entity\CustomerListing $listing
+     *
      * @return array
      */
     public function transform(Entity\CustomerListing $listing)

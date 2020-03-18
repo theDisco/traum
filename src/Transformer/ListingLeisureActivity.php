@@ -7,13 +7,15 @@ use Traum\Transformer;
 
 /**
  * Class ListingLeisureActivity
+ *
  * @package Traum\Transformer
- * @author Oskar Golde <info@oskargolde.de>
+ * @author  Oskar Golde <info@oskargolde.de>
  */
 final class ListingLeisureActivity extends Transformer
 {
     /**
      * @param \Traum\Entity\ListingLeisureActivity $listingLeisureActivity
+     *
      * @return array
      */
     public function transform(Entity\ListingLeisureActivity $listingLeisureActivity)

@@ -1,6 +1,6 @@
 # Traum
 
-[![Build Status](https://travis-ci.org/theDisco/traum.svg?branch=master)](https://travis-ci.org/theDisco/traum)
+[![Build Status](https://travis-ci.org/CreativeNative/traum.svg?branch=master)](https://travis-ci.org/CreativeNative/traum)
 
 Traum is an API client for clientapi.traum-ferienwohnungen.de.
 

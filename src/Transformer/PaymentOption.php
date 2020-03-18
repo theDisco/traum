@@ -7,13 +7,15 @@ use Traum\Entity;
 
 /**
  * Class PaymentOption
+ *
  * @package Traum\Transformer
- * @author Oskar Golde <info@oskargolde.de>
+ * @author  Oskar Golde <info@oskargolde.de>
  */
 final class PaymentOption extends Transformer
 {
     /**
      * @param \Traum\Entity\PaymentOption $paymentOption
+     *
      * @return array
      */
     public function transform(Entity\PaymentOption $paymentOption)

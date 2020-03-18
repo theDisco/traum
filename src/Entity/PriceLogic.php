@@ -6,8 +6,9 @@ use Traum\Entity;
 
 /**
  * Class PriceLogic
+ *
  * @package Traum\Entity
- * @author Wojtek Gancarczyk <wojtek@aferalabs.com>
+ * @author  Wojtek Gancarczyk <wojtek@aferalabs.com>
  */
 final class PriceLogic extends Entity
 {
@@ -23,7 +24,7 @@ final class PriceLogic extends Entity
     }
 
     /**
-     * @param int $id
+     * @param  int $id
      * @return void
      */
     public function setId($id)
@@ -40,7 +41,7 @@ final class PriceLogic extends Entity
     }
 
     /**
-     * @param int $id
+     * @param  int $id
      * @return void
      */
     public function setPriceLogicId($id)

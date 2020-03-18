@@ -3,9 +3,16 @@
 use Traum\Entity;
 use Traum\Enum;
 use Traum\Transformer;
+use \PHPUnit\Framework\TestCase;
 
-class ListingTest extends \PHPUnit_Framework_TestCase
+/**
+ * Class ListingTest
+ */
+class ListingTest extends TestCase
 {
+    /**
+     * @throws \Traum\Exception\InvalidRequest
+     */
     public function testGetListing()
     {
         $history = [];
@@ -18,6 +25,9 @@ class ListingTest extends \PHPUnit_Framework_TestCase
         compare($response, $mock['response'], $this);
     }
 
+    /**
+     * @throws \Traum\Exception\InvalidRequest
+     */
     public function testPatchListing()
     {
         $history = [];
@@ -43,6 +53,9 @@ class ListingTest extends \PHPUnit_Framework_TestCase
         compare($response, $mock['response'], $this);
     }
 
+    /**
+     * @throws \Traum\Exception\InvalidRequest
+     */
     public function testGetListingTexts()
     {
         $history = [];
@@ -59,6 +72,9 @@ class ListingTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($expected, $response->current());
     }
 
+    /**
+     * @throws \Traum\Exception\InvalidRequest
+     */
     public function testPostListingText()
     {
         $history = [];
@@ -79,6 +95,9 @@ class ListingTest extends \PHPUnit_Framework_TestCase
         compare($response, $mock['response'], $this);
     }
 
+    /**
+     * @throws \Traum\Exception\InvalidRequest
+     */
     public function testPatchListingText()
     {
         $history = [];
@@ -101,6 +120,9 @@ class ListingTest extends \PHPUnit_Framework_TestCase
         compare($response, $mock['response'], $this);
     }
 
+    /**
+     * @throws \Traum\Exception\InvalidRequest
+     */
     public function testDeleteListingText()
     {
         $history = [];
@@ -114,6 +136,9 @@ class ListingTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue($response);
     }
 
+    /**
+     *
+     */
     public function testGetListingPictures()
     {
         $history = [];
@@ -130,6 +155,9 @@ class ListingTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($expected, $response->current());
     }
 
+    /**
+     *
+     */
     public function testPostListingPicture()
     {
         $history = [];
@@ -151,6 +179,9 @@ class ListingTest extends \PHPUnit_Framework_TestCase
         compare($response, $mock['response'], $this);
     }
 
+    /**
+     * @throws \Traum\Exception\InvalidRequest
+     */
     public function testDeleteListingPictures()
     {
         $history = [];
@@ -163,6 +194,9 @@ class ListingTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue($response);
     }
 
+    /**
+     *
+     */
     public function testGetListingPictureTitles()
     {
         $history = [];
@@ -179,6 +213,9 @@ class ListingTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($expected, $response->current());
     }
 
+    /**
+     *
+     */
     public function testGetListingPictureTitle()
     {
         $history = [];
@@ -191,6 +228,9 @@ class ListingTest extends \PHPUnit_Framework_TestCase
         compare($response, $mock['response'], $this);
     }
 
+    /**
+     *
+     */
     public function testPatchGetListingPictureTitle()
     {
         $history = [];
@@ -211,6 +251,9 @@ class ListingTest extends \PHPUnit_Framework_TestCase
         compare($response, $mock['response'], $this);
     }
 
+    /**
+     *
+     */
     public function testPostListingSuitabilities()
     {
         $history = [];

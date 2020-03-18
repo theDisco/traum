@@ -4,8 +4,9 @@ namespace Traum\Enum;
 
 /**
  * Interface Arrival
+ *
  * @package Traum\Enum
- * @author Oskar Golde <info@oskargolde.de>
+ * @author  Oskar Golde <info@oskargolde.de>
  */
 interface Arrival
 {

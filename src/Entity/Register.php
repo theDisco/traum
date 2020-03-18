@@ -6,8 +6,9 @@ use Traum\Entity;
 
 /**
  * Class Register
+ *
  * @package Traum\Entity
- * @author Wojtek Gancarczyk <wojtek@aferalabs.com>
+ * @author  Wojtek Gancarczyk <wojtek@aferalabs.com>
  */
 final class Register extends Entity
 {
@@ -28,7 +29,7 @@ final class Register extends Entity
     }
 
     /**
-     * @param int $id
+     * @param  int $id
      * @return void
      */
     public function setId($id)
@@ -45,7 +46,7 @@ final class Register extends Entity
     }
 
     /**
-     * @param string $firstName
+     * @param  string $firstName
      * @return void
      */
     public function setFirstName($firstName)
@@ -62,7 +63,7 @@ final class Register extends Entity
     }
 
     /**
-     * @param string $lastName
+     * @param  string $lastName
      * @return void
      */
     public function setLastName($lastName)
@@ -79,7 +80,7 @@ final class Register extends Entity
     }
 
     /**
-     * @param string $company
+     * @param  string $company
      * @return void
      */
     public function setCompany($company)
@@ -96,7 +97,7 @@ final class Register extends Entity
     }
 
     /**
-     * @param string $email
+     * @param  string $email
      * @return void
      */
     public function setEmail($email)
@@ -113,7 +114,7 @@ final class Register extends Entity
     }
 
     /**
-     * @param int $salutationId
+     * @param  int $salutationId
      * @return void
      */
     public function setSalutationId($salutationId)
@@ -130,7 +131,7 @@ final class Register extends Entity
     }
 
     /**
-     * @param string $password
+     * @param  string $password
      * @return void
      */
     public function setPassword($password)

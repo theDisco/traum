@@ -8,13 +8,14 @@ use Traum\Transformer;
 
 /**
  * Class Contact
+ *
  * @package Traum\Resource
- * @author Wojtek Gancarczyk <wojtek@aferalabs.com>
+ * @author  Wojtek Gancarczyk <wojtek@aferalabs.com>
  */
 final class Contact extends Resource
 {
     /**
-     * @param int $listingId
+     * @param  int $listingId
      * @return \Traum\Entity\Contact
      * @throws \Traum\Exception\InvalidRequest
      */
@@ -27,8 +28,8 @@ final class Contact extends Resource
     }
 
     /**
-     * @param int $listingId
-     * @param \Traum\Entity\Contact $contact
+     * @param  int                   $listingId
+     * @param  \Traum\Entity\Contact $contact
      * @return \Traum\Entity\Contact
      * @throws \Traum\Exception\InvalidRequest
      */
@@ -41,8 +42,8 @@ final class Contact extends Resource
     }
 
     /**
-     * @param int $listingId
-     * @param \Traum\Entity\Contact $contact
+     * @param  int                   $listingId
+     * @param  \Traum\Entity\Contact $contact
      * @return \Traum\Entity\Contact
      * @throws \Traum\Exception\InvalidRequest
      */

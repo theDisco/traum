@@ -8,13 +8,14 @@ use Traum\Transformer;
 
 /**
  * Class PriceOption
+ *
  * @package Traum\Resource
- * @author Wojtek Gancarczyk <wojtek@aferalabs.com>
+ * @author  Wojtek Gancarczyk <wojtek@aferalabs.com>
  */
 final class PriceOption extends Resource
 {
     /**
-     * @param int $listingId
+     * @param  int $listingId
      * @return \Traum\Entity\PriceOption
      * @throws \Traum\Exception\InvalidRequest
      */
@@ -27,8 +28,8 @@ final class PriceOption extends Resource
     }
 
     /**
-     * @param int $listingId
-     * @param \Traum\Entity\PriceOption $priceOption
+     * @param  int                       $listingId
+     * @param  \Traum\Entity\PriceOption $priceOption
      * @return \Traum\Entity\PriceOption
      * @throws \Traum\Exception\InvalidRequest
      */

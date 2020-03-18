@@ -6,8 +6,9 @@ use Traum\Entity;
 
 /**
  * Class ListingPictureTitle
+ *
  * @package Traum\Entity
- * @author Wojtek Gancarczyk <wojtek@aferalabs.com>
+ * @author  Wojtek Gancarczyk <wojtek@aferalabs.com>
  */
 final class ListingPictureTitle extends Entity
 {
@@ -24,7 +25,7 @@ final class ListingPictureTitle extends Entity
     }
 
     /**
-     * @param int $id
+     * @param  int $id
      * @return void
      */
     public function setId($id)
@@ -41,7 +42,7 @@ final class ListingPictureTitle extends Entity
     }
 
     /**
-     * @param string $text
+     * @param  string $text
      * @return void
      */
     public function setText($text)
@@ -58,7 +59,7 @@ final class ListingPictureTitle extends Entity
     }
 
     /**
-     * @param string $language
+     * @param  string $language
      * @return void
      */
     public function setLanguage($language)

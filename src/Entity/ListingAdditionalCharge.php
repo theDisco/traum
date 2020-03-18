@@ -6,8 +6,9 @@ use Traum\Entity;
 
 /**
  * Class ListingAdditionalCharge
+ *
  * @package Traum\Entity
- * @author Oskar Golde <info@oskargolde.de>
+ * @author  Oskar Golde <info@oskargolde.de>
  */
 class ListingAdditionalCharge extends Entity
 {
@@ -26,7 +27,7 @@ class ListingAdditionalCharge extends Entity
     }
 
     /**
-     * @param int $id
+     * @param  int $id
      * @return void
      */
     public function setId($id)
@@ -43,7 +44,7 @@ class ListingAdditionalCharge extends Entity
     }
 
     /**
-     * @param int $id
+     * @param  int $id
      * @return void
      */
     public function setAdditionalChargeId($id)
@@ -60,7 +61,7 @@ class ListingAdditionalCharge extends Entity
     }
 
     /**
-     * @param int $id
+     * @param  int $id
      * @return void
      */
     public function setAdditionalChargeUnitId($id)
@@ -77,7 +78,7 @@ class ListingAdditionalCharge extends Entity
     }
 
     /**
-     * @param boolean $value
+     * @param  boolean $value
      * @return void
      */
     public function setOptional($value)
@@ -94,7 +95,7 @@ class ListingAdditionalCharge extends Entity
     }
 
     /**
-     * @param integer $value
+     * @param  integer $value
      * @return void
      */
     public function setPrice($value)

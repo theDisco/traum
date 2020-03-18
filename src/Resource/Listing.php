@@ -8,13 +8,14 @@ use Traum\Transformer;
 
 /**
  * Class Listing
+ *
  * @package Traum\Resource
- * @author Wojtek Gancarczyk <wojtek@aferalabs.com>
+ * @author  Wojtek Gancarczyk <wojtek@aferalabs.com>
  */
 final class Listing extends Resource
 {
     /**
-     * @param int $listingId
+     * @param  int $listingId
      * @return \Traum\Entity\Listing
      * @throws \Traum\Exception\InvalidRequest
      */
@@ -27,7 +28,7 @@ final class Listing extends Resource
     }
 
     /**
-     * @param \Traum\Entity\Listing $listing
+     * @param  \Traum\Entity\Listing $listing
      * @return \Traum\Entity\Listing
      * @throws \Traum\Exception\InvalidRequest
      */
@@ -40,7 +41,7 @@ final class Listing extends Resource
     }
 
     /**
-     * @param int $listingId
+     * @param  int $listingId
      * @return \Traum\Entity\ListingTextCollection|\Traum\Entity\ListingText
      * @throws \Traum\Exception\InvalidRequest
      */
@@ -53,8 +54,8 @@ final class Listing extends Resource
     }
 
     /**
-     * @param int                       $listingId
-     * @param \Traum\Entity\ListingText $text
+     * @param  int                       $listingId
+     * @param  \Traum\Entity\ListingText $text
      * @return \Traum\Entity\ListingText
      * @throws \Traum\Exception\InvalidRequest
      */
@@ -67,8 +68,8 @@ final class Listing extends Resource
     }
 
     /**
-     * @param int                       $listingId
-     * @param \Traum\Entity\ListingText $text
+     * @param  int                       $listingId
+     * @param  \Traum\Entity\ListingText $text
      * @return \Traum\Entity\ListingText
      * @throws \Traum\Exception\InvalidRequest
      */
@@ -81,8 +82,8 @@ final class Listing extends Resource
     }
 
     /**
-     * @param int                       $listingId
-     * @param \Traum\Entity\ListingText $text
+     * @param  int                       $listingId
+     * @param  \Traum\Entity\ListingText $text
      * @return bool
      * @throws \Traum\Exception\InvalidRequest
      */
@@ -95,7 +96,7 @@ final class Listing extends Resource
     }
 
     /**
-     * @param int $listingId
+     * @param  int $listingId
      * @return \Traum\Entity\ListingPictureCollection|\Traum\Entity\ListingPicture
      */
     public function getListingPictures($listingId)
@@ -107,8 +108,8 @@ final class Listing extends Resource
     }
 
     /**
-     * @param int                          $listingId
-     * @param \Traum\Entity\ListingPicture $listingPicture
+     * @param  int                          $listingId
+     * @param  \Traum\Entity\ListingPicture $listingPicture
      * @return \Traum\Entity\ListingPicture
      */
     public function postListingPicture($listingId, Entity\ListingPicture $listingPicture)
@@ -120,7 +121,7 @@ final class Listing extends Resource
     }
 
     /**
-     * @param int $listingId
+     * @param  int $listingId
      * @return bool
      * @throws \Traum\Exception\InvalidRequest
      */
@@ -133,8 +134,8 @@ final class Listing extends Resource
     }
 
     /**
-     * @param int $listingId
-     * @param int $pictureId
+     * @param  int $listingId
+     * @param  int $pictureId
      * @return \Traum\Entity\ListingPictureTitleCollection|\Traum\Entity\ListingPictureTitle[]
      */
     public function getListingPictureTitles($listingId, $pictureId)
@@ -146,9 +147,9 @@ final class Listing extends Resource
     }
 
     /**
-     * @param int $listingId
-     * @param int $pictureId
-     * @param int $pictureTitleId
+     * @param  int $listingId
+     * @param  int $pictureId
+     * @param  int $pictureTitleId
      * @return \Traum\Entity\ListingPictureTitle
      */
     public function getListingPictureTitle($listingId, $pictureId, $pictureTitleId)
@@ -160,9 +161,9 @@ final class Listing extends Resource
     }
 
     /**
-     * @param int                               $listingId
-     * @param int                               $pictureId
-     * @param \Traum\Entity\ListingPictureTitle $pictureTitle
+     * @param  int                               $listingId
+     * @param  int                               $pictureId
+     * @param  \Traum\Entity\ListingPictureTitle $pictureTitle
      * @return \Traum\Entity\ListingPictureTitle
      */
     public function patchListingPictureTitle($listingId, $pictureId, Entity\ListingPictureTitle $pictureTitle)
@@ -174,7 +175,7 @@ final class Listing extends Resource
     }
 
     /**
-     * @param int $listingId
+     * @param  int $listingId
      * @return \Traum\Entity\ListingPriceTableCollection
      */
     public function getPriceTables($listingId)
@@ -186,8 +187,8 @@ final class Listing extends Resource
     }
 
     /**
-     * @param int                                       $listingId
-     * @param \Traum\Entity\ListingPriceTableCollection $listingPriceTableCollection
+     * @param  int                                       $listingId
+     * @param  \Traum\Entity\ListingPriceTableCollection $listingPriceTableCollection
      * @return \Traum\Entity\ListingPriceTableCollection
      */
     public function postPriceTables($listingId, Entity\ListingPriceTableCollection $listingPriceTableCollection)
@@ -199,8 +200,8 @@ final class Listing extends Resource
     }
 
     /**
-     * @param int                             $listingId
-     * @param \Traum\Entity\ListingPriceTable $listingPriceTable
+     * @param  int                             $listingId
+     * @param  \Traum\Entity\ListingPriceTable $listingPriceTable
      * @return \Traum\Entity\ListingPriceTable
      */
     public function postPriceTable($listingId, Entity\ListingPriceTable $listingPriceTable)
@@ -212,7 +213,7 @@ final class Listing extends Resource
     }
 
     /**
-     * @param int $listingId
+     * @param  int $listingId
      * @return bool
      * @throws \Traum\Exception\InvalidRequest
      */
@@ -225,8 +226,8 @@ final class Listing extends Resource
     }
 
     /**
-     * @param int                                       $listingId
-     * @param \Traum\Entity\ListingPriceTableCollection $listingPriceTableCollection
+     * @param  int                                       $listingId
+     * @param  \Traum\Entity\ListingPriceTableCollection $listingPriceTableCollection
      * @return \Traum\Entity\ListingPriceTableCollection
      */
     public function patchPriceTables($listingId, Entity\ListingPriceTableCollection $listingPriceTableCollection)
@@ -238,8 +239,8 @@ final class Listing extends Resource
     }
 
     /**
-     * @param int                             $listingId
-     * @param \Traum\Entity\ListingPriceTable $listingPriceTable
+     * @param  int                             $listingId
+     * @param  \Traum\Entity\ListingPriceTable $listingPriceTable
      * @return \Traum\Entity\ListingPriceTable
      */
     public function patchPriceTable($listingId, Entity\ListingPriceTable $listingPriceTable)
@@ -251,7 +252,7 @@ final class Listing extends Resource
     }
 
     /**
-     * @param int $listingId
+     * @param  int $listingId
      * @return \Traum\Entity\ListingWeekPriceTableCollection
      */
     public function getWeekPriceTables($listingId)
@@ -263,7 +264,7 @@ final class Listing extends Resource
     }
 
     /**
-     * @param int $listingId
+     * @param  int $listingId
      * @return bool
      * @throws \Traum\Exception\InvalidRequest
      */
@@ -276,8 +277,8 @@ final class Listing extends Resource
     }
 
     /**
-     * @param int $listingId
-     * @param int $weekPriceTableId
+     * @param  int $listingId
+     * @param  int $weekPriceTableId
      * @return \Traum\Entity\ListingWeekPriceTable
      */
     public function getWeekPriceTable($listingId, $weekPriceTableId)
@@ -289,8 +290,8 @@ final class Listing extends Resource
     }
 
     /**
-     * @param int                                 $listingId
-     * @param \Traum\Entity\ListingWeekPriceTable $listingWeekPriceTable
+     * @param  int                                 $listingId
+     * @param  \Traum\Entity\ListingWeekPriceTable $listingWeekPriceTable
      * @return \Traum\Entity\ListingWeekPriceTable
      */
     public function postWeekPriceTable($listingId, Entity\ListingWeekPriceTable $listingWeekPriceTable)
@@ -302,8 +303,8 @@ final class Listing extends Resource
     }
 
     /**
-     * @param int                                 $listingId
-     * @param \Traum\Entity\ListingWeekPriceTable $listingWeekPriceTable
+     * @param  int                                 $listingId
+     * @param  \Traum\Entity\ListingWeekPriceTable $listingWeekPriceTable
      * @return \Traum\Entity\ListingWeekPriceTable
      */
     public function patchWeekPriceTable($listingId, Entity\ListingWeekPriceTable $listingWeekPriceTable)
@@ -315,8 +316,8 @@ final class Listing extends Resource
     }
 
     /**
-     * @param int $listingId
-     * @param int $weekPriceTableId
+     * @param  int $listingId
+     * @param  int $weekPriceTableId
      * @return \Traum\Entity\ListingWeekPriceTable
      */
     public function deleteWeekPriceTable($listingId, $weekPriceTableId)
@@ -328,7 +329,7 @@ final class Listing extends Resource
     }
 
     /**
-     * @param int $listingId
+     * @param  int $listingId
      * @return \Traum\Entity\ListingPaymentMethodCollection
      */
     public function getPaymentMethods($listingId)
@@ -340,7 +341,7 @@ final class Listing extends Resource
     }
 
     /**
-     * @param int $listingId
+     * @param  int $listingId
      * @return bool
      * @throws \Traum\Exception\InvalidRequest
      */
@@ -353,8 +354,8 @@ final class Listing extends Resource
     }
 
     /**
-     * @param int                                $listingId
-     * @param \Traum\Entity\ListingPaymentMethod $listingPaymentMethod
+     * @param  int                                $listingId
+     * @param  \Traum\Entity\ListingPaymentMethod $listingPaymentMethod
      * @return \Traum\Entity\ListingPaymentMethod
      */
     public function postPaymentMethod($listingId, Entity\ListingPaymentMethod $listingPaymentMethod)
@@ -366,8 +367,8 @@ final class Listing extends Resource
     }
 
     /**
-     * @param int $listingId
-     * @param int $paymentMethodId
+     * @param  int $listingId
+     * @param  int $paymentMethodId
      * @return bool
      */
     public function deletePaymentMethod($listingId, $paymentMethodId)
@@ -379,7 +380,7 @@ final class Listing extends Resource
     }
 
     /**
-     * @param int $listingId
+     * @param  int $listingId
      * @return \Traum\Entity\ListingLeisureActivityCollection
      */
     public function getLeisureActivities($listingId)
@@ -391,8 +392,8 @@ final class Listing extends Resource
     }
 
     /**
-     * @param int                                  $listingId
-     * @param \Traum\Entity\ListingLeisureActivity $listingLeisureActivity
+     * @param  int                                  $listingId
+     * @param  \Traum\Entity\ListingLeisureActivity $listingLeisureActivity
      * @return \Traum\Entity\ListingLeisureActivity
      */
     public function postLeisureActivity($listingId, Entity\ListingLeisureActivity $listingLeisureActivity)
@@ -404,8 +405,8 @@ final class Listing extends Resource
     }
 
     /**
-     * @param int                                            $listingId
-     * @param \Traum\Entity\ListingLeisureActivityCollection $listingLeisureActivityCollection
+     * @param  int                                            $listingId
+     * @param  \Traum\Entity\ListingLeisureActivityCollection $listingLeisureActivityCollection
      * @return \Traum\Entity\ListingLeisureActivityCollection
      */
     public function postLeisureActivities(
@@ -423,7 +424,7 @@ final class Listing extends Resource
     }
 
     /**
-     * @param int $listingId
+     * @param  int $listingId
      * @return bool
      * @throws \Traum\Exception\InvalidRequest
      */
@@ -436,8 +437,8 @@ final class Listing extends Resource
     }
 
     /**
-     * @param int $listingId
-     * @param int $leisureActivityId
+     * @param  int $listingId
+     * @param  int $leisureActivityId
      * @return \Traum\Entity\ListingLeisureActivity
      */
     public function getLeisureActivity($listingId, $leisureActivityId)
@@ -449,8 +450,8 @@ final class Listing extends Resource
     }
 
     /**
-     * @param int $listingId
-     * @param int $leisureActivityId
+     * @param  int $listingId
+     * @param  int $leisureActivityId
      * @return \Traum\Entity\ListingLeisureActivity
      */
     public function deleteLeisureActivity($listingId, $leisureActivityId)
@@ -462,7 +463,7 @@ final class Listing extends Resource
     }
 
     /**
-     * @param int $listingId
+     * @param  int $listingId
      * @return \Traum\Entity\ListingLanguageCollection
      */
     public function getLanguages($listingId)
@@ -474,8 +475,8 @@ final class Listing extends Resource
     }
 
     /**
-     * @param int                           $listingId
-     * @param \Traum\Entity\ListingLanguage $listingLanguage
+     * @param  int                           $listingId
+     * @param  \Traum\Entity\ListingLanguage $listingLanguage
      * @return \Traum\Entity\ListingLanguage
      */
     public function postLanguage($listingId, Entity\ListingLanguage $listingLanguage)
@@ -487,7 +488,7 @@ final class Listing extends Resource
     }
 
     /**
-     * @param int $listingId
+     * @param  int $listingId
      * @return bool
      * @throws \Traum\Exception\InvalidRequest
      */
@@ -500,8 +501,8 @@ final class Listing extends Resource
     }
 
     /**
-     * @param int $listingId
-     * @param int $languageId
+     * @param  int $listingId
+     * @param  int $languageId
      * @return \Traum\Entity\ListingLanguage
      */
     public function getLanguage($listingId, $languageId)
@@ -513,8 +514,8 @@ final class Listing extends Resource
     }
 
     /**
-     * @param int $listingId
-     * @param int $languageId
+     * @param  int $listingId
+     * @param  int $languageId
      * @return \Traum\Entity\ListingLanguage
      */
     public function deleteLanguage($listingId, $languageId)
@@ -526,7 +527,7 @@ final class Listing extends Resource
     }
 
     /**
-     * @param int $listingId
+     * @param  int $listingId
      * @return \Traum\Entity\ListingArrivalCollection
      */
     public function getArrivals($listingId)
@@ -538,8 +539,8 @@ final class Listing extends Resource
     }
 
     /**
-     * @param int                          $listingId
-     * @param \Traum\Entity\ListingArrival $listingArrival
+     * @param  int                          $listingId
+     * @param  \Traum\Entity\ListingArrival $listingArrival
      * @return \Traum\Entity\ListingArrival
      */
     public function postArrival($listingId, Entity\ListingArrival $listingArrival)
@@ -551,7 +552,7 @@ final class Listing extends Resource
     }
 
     /**
-     * @param int $listingId
+     * @param  int $listingId
      * @return bool
      * @throws \Traum\Exception\InvalidRequest
      */
@@ -564,8 +565,8 @@ final class Listing extends Resource
     }
 
     /**
-     * @param int $listingId
-     * @param int $arrivalId
+     * @param  int $listingId
+     * @param  int $arrivalId
      * @return \Traum\Entity\ListingArrival
      */
     public function getArrival($listingId, $arrivalId)
@@ -577,8 +578,8 @@ final class Listing extends Resource
     }
 
     /**
-     * @param int $listingId
-     * @param int $arrivalId
+     * @param  int $listingId
+     * @param  int $arrivalId
      * @return \Traum\Entity\ListingArrival
      */
     public function deleteArrival($listingId, $arrivalId)
@@ -590,8 +591,8 @@ final class Listing extends Resource
     }
 
     /**
-     * @param int $listingId
-     * @param int $suitabilityId
+     * @param  int $listingId
+     * @param  int $suitabilityId
      * @return \Traum\Entity\ListingSuitability
      */
     public function getSuitability($listingId, $suitabilityId)
@@ -603,7 +604,7 @@ final class Listing extends Resource
     }
 
     /**
-     * @param int $listingId
+     * @param  int $listingId
      * @return \Traum\Entity\ListingSuitabilityCollection
      */
     public function getSuitabilities($listingId)
@@ -615,8 +616,8 @@ final class Listing extends Resource
     }
 
     /**
-     * @param int                              $listingId
-     * @param \Traum\Entity\ListingSuitability $listingSuitability
+     * @param  int                              $listingId
+     * @param  \Traum\Entity\ListingSuitability $listingSuitability
      * @return \Traum\Entity\ListingSuitability
      */
     public function postSuitability($listingId, Entity\ListingSuitability $listingSuitability)
@@ -628,8 +629,8 @@ final class Listing extends Resource
     }
 
     /**
-     * @param int                                        $listingId
-     * @param \Traum\Entity\ListingSuitabilityCollection $listingSuitabilityCollection
+     * @param  int                                        $listingId
+     * @param  \Traum\Entity\ListingSuitabilityCollection $listingSuitabilityCollection
      * @return \Traum\Entity\ListingSuitabilityCollection
      */
     public function postSuitabilities($listingId, Entity\ListingSuitabilityCollection $listingSuitabilityCollection)
@@ -645,8 +646,8 @@ final class Listing extends Resource
     }
 
     /**
-     * @param int                              $listingId
-     * @param \Traum\Entity\ListingSuitability $listingSuitability
+     * @param  int                              $listingId
+     * @param  \Traum\Entity\ListingSuitability $listingSuitability
      * @return \Traum\Entity\ListingSuitability
      */
     public function patchSuitability($listingId, Entity\ListingSuitability $listingSuitability)
@@ -658,8 +659,8 @@ final class Listing extends Resource
     }
 
     /**
-     * @param int                                        $listingId
-     * @param \Traum\Entity\ListingSuitabilityCollection $listingSuitabilityCollection
+     * @param  int                                        $listingId
+     * @param  \Traum\Entity\ListingSuitabilityCollection $listingSuitabilityCollection
      * @return \Traum\Entity\ListingSuitability
      */
     public function patchSuitabilities($listingId, Entity\ListingSuitabilityCollection $listingSuitabilityCollection)
@@ -675,7 +676,7 @@ final class Listing extends Resource
     }
 
     /**
-     * @param int $listingId
+     * @param  int $listingId
      * @return \Traum\Entity\ListingAdditionalChargeCollection
      */
     public function getAdditionalCharges($listingId)
@@ -687,8 +688,8 @@ final class Listing extends Resource
     }
 
     /**
-     * @param int                                   $listingId
-     * @param \Traum\Entity\ListingAdditionalCharge $listingAdditionalCharge
+     * @param  int                                   $listingId
+     * @param  \Traum\Entity\ListingAdditionalCharge $listingAdditionalCharge
      * @return \Traum\Entity\ListingAdditionalCharge
      */
     public function postAdditionalCharge($listingId, Entity\ListingAdditionalCharge $listingAdditionalCharge)
@@ -700,8 +701,8 @@ final class Listing extends Resource
     }
 
     /**
-     * @param int                                             $listingId
-     * @param \Traum\Entity\ListingAdditionalChargeCollection $listingAdditionalChargeCollection
+     * @param  int                                             $listingId
+     * @param  \Traum\Entity\ListingAdditionalChargeCollection $listingAdditionalChargeCollection
      * @return \Traum\Entity\ListingAdditionalChargeCollection
      */
     public function postAdditionalCharges(
@@ -719,7 +720,7 @@ final class Listing extends Resource
     }
 
     /**
-     * @param int $listingId
+     * @param  int $listingId
      * @return bool
      * @throws \Traum\Exception\InvalidRequest
      */
@@ -732,7 +733,7 @@ final class Listing extends Resource
     }
 
     /**
-     * @param int $listingId
+     * @param  int $listingId
      * @return \Traum\Entity\ListingRoomCollection
      */
     public function getRooms($listingId)
@@ -744,8 +745,8 @@ final class Listing extends Resource
     }
 
     /**
-     * @param int                                 $listingId
-     * @param \Traum\Entity\ListingRoomCollection $listingRoomCollection
+     * @param  int                                 $listingId
+     * @param  \Traum\Entity\ListingRoomCollection $listingRoomCollection
      * @return \Traum\Entity\ListingRoomCollection
      */
     public function postRooms(
@@ -763,7 +764,7 @@ final class Listing extends Resource
     }
 
     /**
-     * @param int $listingId
+     * @param  int $listingId
      * @return bool
      * @throws \Traum\Exception\InvalidRequest
      */
@@ -776,8 +777,8 @@ final class Listing extends Resource
     }
 
     /**
-     * @param int $listingId
-     * @param int $roomId
+     * @param  int $listingId
+     * @param  int $roomId
      * @return \Traum\Entity\ListingRoom
      */
     public function getRoom($listingId, $roomId)
@@ -789,8 +790,8 @@ final class Listing extends Resource
     }
 
     /**
-     * @param int $listingId
-     * @param int $roomId
+     * @param  int $listingId
+     * @param  int $roomId
      * @return \Traum\Entity\ListingRoom
      */
     public function deleteRoom($listingId, $roomId)
@@ -802,8 +803,8 @@ final class Listing extends Resource
     }
 
     /**
-     * @param int                       $listingId
-     * @param \Traum\Entity\ListingRoom $listingRoom
+     * @param  int                       $listingId
+     * @param  \Traum\Entity\ListingRoom $listingRoom
      * @return \Traum\Entity\ListingRoom
      */
     public function patchRoom($listingId, Entity\ListingRoom $listingRoom)

@@ -4,8 +4,9 @@ namespace Traum\Enum;
 
 /**
  * Interface TextTypeId
+ *
  * @package Traum\Enum
- * @author Wojtek Gancarczyk <wojtek@aferalabs.com>
+ * @author  Wojtek Gancarczyk <wojtek@aferalabs.com>
  */
 interface TextTypeId
 {
@@ -19,4 +20,5 @@ interface TextTypeId
     const ENVIRONMENT_DESCRIPTION = 13;
     const VACATION_AREA_DESCRIPTION = 17;
     const SERVICE_AVAILABILITY = 18;
+    const CANCELLATION_POLICIES = 21;
 }

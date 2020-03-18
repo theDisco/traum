@@ -4,8 +4,9 @@ namespace Traum;
 
 /**
  * Class Entity
+ *
  * @package Traum
- * @author Wojtek Gancarczyk <wojtek@aferalabs.com>
+ * @author  Wojtek Gancarczyk <wojtek@aferalabs.com>
  */
 abstract class Entity
 {
@@ -16,6 +17,7 @@ abstract class Entity
 
     /**
      * Entity constructor.
+     *
      * @param array $data
      */
     public function __construct(array $data = [])
@@ -25,6 +27,7 @@ abstract class Entity
 
     /**
      * @param string $name
+     *
      * @return mixed
      */
     protected function getData($name)
@@ -34,7 +37,8 @@ abstract class Entity
 
     /**
      * @param string $name
-     * @param mixed $value
+     * @param mixed  $value
+     *
      * @return void
      */
     protected function setData($name, $value)

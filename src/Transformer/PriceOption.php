@@ -7,13 +7,15 @@ use Traum\Entity;
 
 /**
  * Class PriceOption
+ *
  * @package Traum\Transformer
- * @author Wojtek Gancarczyk <wojtek@aferalabs.com>
+ * @author  Wojtek Gancarczyk <wojtek@aferalabs.com>
  */
 final class PriceOption extends Transformer
 {
     /**
      * @param \Traum\Entity\PriceOption $priceOption
+     *
      * @return array
      */
     public function transform(Entity\PriceOption $priceOption)

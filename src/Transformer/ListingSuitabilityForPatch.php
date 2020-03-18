@@ -7,13 +7,15 @@ use Traum\Transformer;
 
 /**
  * Class ListingSuitabilityForPatch
+ *
  * @package Traum\Transformer
- * @author Wojtek Gancarczyk <wojtek@aferalabs.com>
+ * @author  Wojtek Gancarczyk <wojtek@aferalabs.com>
  */
 final class ListingSuitabilityForPatch extends Transformer
 {
     /**
      * @param \Traum\Entity\ListingSuitability $listingSuitability
+     *
      * @return array
      */
     public function transform(Entity\ListingSuitability $listingSuitability)

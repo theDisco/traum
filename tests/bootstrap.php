@@ -7,9 +7,11 @@ use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Middleware;
 use Traum\Client;
 
-// Make HHVM happy
-defined('JSON_OBJECT_AS_ARRAY') || define('JSON_OBJECT_AS_ARRAY', true);
-
+/**
+ * @param $fixture
+ * @param array $container
+ * @return Client
+ */
 function createClient($fixture, array &$container)
 {
     $vcr = VcrHandler::turnOn(__DIR__ . '/Fixtures/' . $fixture . '.json');
@@ -21,18 +23,32 @@ function createClient($fixture, array &$container)
     return Client::create(['handler' => $stack]);
 }
 
+/**
+ * @param \Traum\Entity $entity
+ * @param $transport
+ * @param $assertion
+ */
 function compare(\Traum\Entity $entity, $transport, $assertion)
 {
-    $request = json_decode((string) $transport->getBody(), JSON_OBJECT_AS_ARRAY);
+    $request = json_decode((string)$transport->getBody(), JSON_OBJECT_AS_ARRAY);
     $assertion->assertEquals($entity->getRawData(), $request);
 }
 
+/**
+ * @param \Traum\Collection $collection
+ * @param $transport
+ * @param $assertion
+ */
 function compareCollection(\Traum\Collection $collection, $transport, $assertion)
 {
-    $request = json_decode((string) $transport->getBody(), JSON_OBJECT_AS_ARRAY);
+    $request = json_decode((string)$transport->getBody(), JSON_OBJECT_AS_ARRAY);
     $assertion->assertEquals($collection->getData(), $request);
 }
 
+/**
+ * @param $name
+ * @return mixed
+ */
 function fixture($name)
 {
     $content = file_get_contents(__DIR__ . '/Fixtures/' . $name . '.json');

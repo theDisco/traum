@@ -8,13 +8,14 @@ use Traum\Transformer;
 
 /**
  * Class Vat
+ *
  * @package Traum\Resource
- * @author Wojtek Gancarczyk <wojtek@aferalabs.com>
+ * @author  Wojtek Gancarczyk <wojtek@aferalabs.com>
  */
 final class Vat extends Resource
 {
     /**
-     * @param int $customerId
+     * @param  int $customerId
      * @return \Traum\Entity\Vat
      * @throws \Traum\Exception\InvalidRequest
      */
@@ -28,8 +29,8 @@ final class Vat extends Resource
     }
 
     /**
-     * @param int $customerId
-     * @param \Traum\Entity\Vat $vat
+     * @param  int               $customerId
+     * @param  \Traum\Entity\Vat $vat
      * @return \Traum\Entity\Listing
      * @throws \Traum\Exception\InvalidRequest
      */

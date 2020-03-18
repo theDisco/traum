@@ -6,8 +6,9 @@ use Traum\Entity;
 
 /**
  * Class Listing
+ *
  * @package Traum\Entity
- * @author Wojtek Gancarczyk <wojtek@aferalabs.com>
+ * @author  Wojtek Gancarczyk <wojtek@aferalabs.com>
  */
 final class Listing extends Entity
 {
@@ -28,7 +29,7 @@ final class Listing extends Entity
     }
 
     /**
-     * @param int $id
+     * @param  int $id
      * @return void
      */
     public function setId($id)
@@ -45,7 +46,7 @@ final class Listing extends Entity
     }
 
     /**
-     * @param int $accessibilityId
+     * @param  int $accessibilityId
      * @return void
      */
     public function setAccessibilityId($accessibilityId)
@@ -62,7 +63,7 @@ final class Listing extends Entity
     }
 
     /**
-     * @param int $classificationStarId
+     * @param  int $classificationStarId
      * @return void
      */
     public function setClassificationStarId($classificationStarId)
@@ -79,7 +80,7 @@ final class Listing extends Entity
     }
 
     /**
-     * @param string $classificationExpireDate
+     * @param  string $classificationExpireDate
      * @return void
      */
     public function setClassificationExpireDate($classificationExpireDate)
@@ -96,7 +97,7 @@ final class Listing extends Entity
     }
 
     /**
-     * @param int $maxPersons
+     * @param  int $maxPersons
      * @return void
      */
     public function setMaxPersons($maxPersons)
@@ -113,7 +114,7 @@ final class Listing extends Entity
     }
 
     /**
-     * @param int $size
+     * @param  int $size
      * @return void
      */
     public function setSize($size)
@@ -130,7 +131,7 @@ final class Listing extends Entity
     }
 
     /**
-     * @param int $objectTypeId
+     * @param  int $objectTypeId
      * @return void
      */
     public function setObjectTypeId($objectTypeId)

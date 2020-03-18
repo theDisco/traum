@@ -6,8 +6,9 @@ use Traum\Entity;
 
 /**
  * Class Listing
+ *
  * @package Traum\Entity
- * @author Wojtek Gancarczyk <wojtek@aferalabs.com>
+ * @author  Wojtek Gancarczyk <wojtek@aferalabs.com>
  */
 final class CustomerListing extends Entity
 {
@@ -24,7 +25,7 @@ final class CustomerListing extends Entity
     }
 
     /**
-     * @param int $id
+     * @param  int $id
      * @return void
      */
     public function setId($id)
@@ -41,7 +42,7 @@ final class CustomerListing extends Entity
     }
 
     /**
-     * @param int $objectTypeId
+     * @param  int $objectTypeId
      * @return void
      */
     public function setObjectTypeId($objectTypeId)
@@ -58,7 +59,7 @@ final class CustomerListing extends Entity
     }
 
     /**
-     * @param int $emailTypeId
+     * @param  int $emailTypeId
      * @return void
      */
     public function setEmailTypeId($emailTypeId)

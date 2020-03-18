@@ -4,8 +4,9 @@ namespace Traum\Enum;
 
 /**
  * Interface EmailType
+ *
  * @package Traum\Enum
- * @author Wojtek Gancarczyk <wojtek@aferalabs.com>
+ * @author  Wojtek Gancarczyk <wojtek@aferalabs.com>
  */
 interface EmailType
 {

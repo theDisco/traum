@@ -11,8 +11,9 @@ use Traum\Exception\InvalidRequest;
 
 /**
  * Class Resource
+ *
  * @package Traum
- * @author Wojtek Gancarczyk <wojtek@aferalabs.com>
+ * @author  Wojtek Gancarczyk <wojtek@aferalabs.com>
  */
 abstract class Resource
 {
@@ -28,6 +29,7 @@ abstract class Resource
 
     /**
      * Resource constructor.
+     *
      * @param \GuzzleHttp\Client $httpClient
      */
     public function __construct(HttpClient $httpClient)
@@ -37,7 +39,8 @@ abstract class Resource
 
     /**
      * @param \Traum\Entity $entity
-     * @param Transformer $transformer
+     * @param Transformer   $transformer
+     *
      * @return \League\Fractal\Scope
      */
     protected function transformEntity(Entity $entity, Transformer $transformer)
@@ -49,7 +52,8 @@ abstract class Resource
 
     /**
      * @param \Traum\Collection $collection
-     * @param Transformer $transformer
+     * @param Transformer       $transformer
+     *
      * @return \League\Fractal\Scope
      */
     protected function transformCollection(Collection $collection, Transformer $transformer)
@@ -75,9 +79,12 @@ abstract class Resource
     /**
      * @param string $method
      * @param string $uri
-     * @param array $headers
+     * @param array  $headers
      * @param string $body
+     *
      * @return \Psr\Http\Message\ResponseInterface
+     *
+     * @throws Exception\GuzzleException
      * @throws InvalidRequest
      */
     protected function request($method, $uri, array $headers = [], $body = null)
@@ -93,8 +100,11 @@ abstract class Resource
 
     /**
      * @param string $uri
+     *
      * @return array
-     * @throws \Traum\Exception\InvalidRequest
+     *
+     * @throws Exception\GuzzleException
+     * @throws InvalidRequest
      */
     protected function executeGet($uri)
     {
@@ -105,11 +115,12 @@ abstract class Resource
     }
 
     /**
-     * @param string $uri
-     * @param \Traum\Entity $entity
-     * @param \Traum\Transformer $transformer
+     * @param  string             $uri
+     * @param  \Traum\Entity      $entity
+     * @param  \Traum\Transformer $transformer
      * @return array
      * @throws \Traum\Exception\InvalidRequest
+     * @throws Exception\GuzzleException
      */
     protected function executePost($uri, Entity $entity, Transformer $transformer)
     {
@@ -117,10 +128,14 @@ abstract class Resource
     }
 
     /**
-     * @param string $uri
-     * @param \Traum\Collection $collection
+     * @param string             $uri
+     * @param \Traum\Collection  $collection
      * @param \Traum\Transformer $transformer
+     *
      * @return array
+     *
+     * @throws InvalidRequest
+     * @throws Exception\GuzzleException
      */
     protected function executePostForCollection($uri, Collection $collection, Transformer $transformer)
     {
@@ -128,10 +143,14 @@ abstract class Resource
     }
 
     /**
-     * @param string $uri
-     * @param \Traum\Collection $collection
+     * @param string             $uri
+     * @param \Traum\Collection  $collection
      * @param \Traum\Transformer $transformer
+     *
      * @return array
+     *
+     * @throws InvalidRequest
+     * @throws Exception\GuzzleException
      */
     protected function executePatchForCollection($uri, Collection $collection, Transformer $transformer)
     {
@@ -139,11 +158,14 @@ abstract class Resource
     }
 
     /**
-     * @param string $uri
-     * @param \Traum\Entity $entity
+     * @param string             $uri
+     * @param \Traum\Entity      $entity
      * @param \Traum\Transformer $transformer
+     *
      * @return array
+     *
      * @throws \Traum\Exception\InvalidRequest
+     * @throws Exception\GuzzleException
      */
     protected function executePatch($uri, Entity $entity, Transformer $transformer)
     {
@@ -151,11 +173,12 @@ abstract class Resource
     }
 
     /**
-     * @param string $uri
-     * @param \Traum\Entity $entity
-     * @param \Traum\Transformer $transformer
+     * @param  string             $uri
+     * @param  \Traum\Entity      $entity
+     * @param  \Traum\Transformer $transformer
      * @return array
      * @throws \Traum\Exception\InvalidRequest
+     * @throws Exception\GuzzleException
      */
     protected function executePut($uri, Entity $entity, Transformer $transformer)
     {
@@ -163,12 +186,15 @@ abstract class Resource
     }
 
     /**
-     * @param string $method
-     * @param string $uri
+     * @param string        $method
+     * @param string        $uri
      * @param \Traum\Entity $entity
-     * @param Transformer $transformer
+     * @param Transformer   $transformer
+     *
      * @return array
-     * @throws \Traum\Exception\InvalidRequest
+     *
+     * @throws Exception\GuzzleException
+     * @throws InvalidRequest
      */
     private function executeWrite($method, $uri, Entity $entity, Transformer $transformer)
     {
@@ -180,12 +206,15 @@ abstract class Resource
     }
 
     /**
-     * @param string $method
-     * @param string $uri
+     * @param string            $method
+     * @param string            $uri
      * @param \Traum\Collection $collection
-     * @param Transformer $transformer
+     * @param Transformer       $transformer
+     *
      * @return array
+     *
      * @throws \Traum\Exception\InvalidRequest
+     * @throws Exception\GuzzleException
      */
     private function executeWriteForCollection($method, $uri, Collection $collection, Transformer $transformer)
     {

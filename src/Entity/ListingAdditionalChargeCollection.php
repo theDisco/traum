@@ -7,8 +7,9 @@ use Traum\Entity;
 
 /**
  * Class ListingAdditionalChargeCollection
+ *
  * @package Traum\Entity
- * @author Oskar Golde <info@oskargolde.de>
+ * @author  Oskar Golde <info@oskargolde.de>
  */
 class ListingAdditionalChargeCollection extends Collection
 {
@@ -21,7 +22,7 @@ class ListingAdditionalChargeCollection extends Collection
     }
 
     /**
-     * @param array $data
+     * @param  array $data
      * @return \Traum\Entity\ListingAdditionalCharge
      */
     protected function createEntity(array $data)

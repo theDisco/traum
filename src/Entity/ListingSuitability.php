@@ -6,8 +6,9 @@ use Traum\Entity;
 
 /**
  * Class ListingSuitability
+ *
  * @package Traum\Entity
- * @author Oskar Golde <info@oskargolde.de>
+ * @author  Oskar Golde <info@oskargolde.de>
  */
 class ListingSuitability extends Entity
 {
@@ -24,7 +25,7 @@ class ListingSuitability extends Entity
     }
 
     /**
-     * @param int $id
+     * @param  int $id
      * @return void
      */
     public function setId($id)
@@ -41,7 +42,7 @@ class ListingSuitability extends Entity
     }
 
     /**
-     * @param int $id
+     * @param  int $id
      * @return void
      */
     public function setSuitabilityId($id)
@@ -60,7 +61,7 @@ class ListingSuitability extends Entity
     
 
     /**
-     * @param int $id
+     * @param  int $id
      * @return void
      */
     public function setSuitabilityStatusId($id)
